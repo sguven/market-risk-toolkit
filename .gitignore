@@ -12,3 +12,4 @@ frontend/out/
 .env
 .env.local
 frontend/out/
+!frontend/lib/data/
