@@ -5,6 +5,12 @@ import { PageHeader } from "@/components/risklab/PageHeader";
 import { ErrorPanel } from "@/components/risklab/ErrorPanel";
 import { ExerciseRunner } from "@/components/risklab/ExerciseRunner";
 import { ValidationBadge, VALIDATION_META } from "@/components/risklab/ValidationBadge";
+import { staticParams } from "@/lib/static-api";
+
+
+export function generateStaticParams() {
+  return staticParams.calcs();
+}
 
 export default async function CalcPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

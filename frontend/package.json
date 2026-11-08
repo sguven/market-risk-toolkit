@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "parity": "tsx scripts/parity.ts",
+    "build:static": "NEXT_PUBLIC_STATIC=1 next build"
   },
   "dependencies": {
     "katex": "^0.19.1",
@@ -28,6 +30,7 @@
     "@types/react-dom": "^19.3.0",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.5",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

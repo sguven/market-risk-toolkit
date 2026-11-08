@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { fmtDate } from "@/lib/utils";
+import { staticParams } from "@/lib/static-api";
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -17,6 +18,11 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
       {children}
     </section>
   );
+}
+
+
+export function generateStaticParams() {
+  return staticParams.provisions();
 }
 
 export default async function ProvisionPage({ params }: { params: Promise<{ chapter: string; para: string }> }) {

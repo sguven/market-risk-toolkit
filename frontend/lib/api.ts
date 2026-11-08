@@ -3,6 +3,8 @@
  * Server components call these with `cache: 'no-store'`; client components reuse the same helpers.
  */
 
+import { IS_STATIC, resolveStatic } from "./static-api";
+
 export const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
@@ -251,6 +253,13 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (IS_STATIC) {
+    try {
+      return await resolveStatic<T>(path, init);
+    } catch (e) {
+      throw new ApiError((e as Error).message, (e as { status?: number }).status ?? 500);
+    }
+  }
   let res: Response;
   try {
     res = await fetch(`${API_BASE}${path}`, { cache: "no-store", ...init });

@@ -12,6 +12,7 @@ import { KnowledgeCheck } from "@/components/risklab/KnowledgeCheck";
 import { TrackView } from "@/components/risklab/ProgressWidgets";
 import { Badge } from "@/components/ui/badge";
 import { Table, THead, TBody, TR, TH, TD } from "@/components/ui/table";
+import { staticParams } from "@/lib/static-api";
 
 const SECTIONS = [
   ["concept", "1. Concept"],
@@ -33,6 +34,11 @@ function Section({ id, title, children }: { id: string; title: string; children:
       {children}
     </section>
   );
+}
+
+
+export function generateStaticParams() {
+  return staticParams.topics();
 }
 
 export default async function TopicPage({ params }: { params: Promise<{ slug: string }> }) {

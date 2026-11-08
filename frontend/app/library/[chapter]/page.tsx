@@ -7,6 +7,12 @@ import { ErrorPanel } from "@/components/risklab/ErrorPanel";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { fmtDate } from "@/lib/utils";
+import { staticParams } from "@/lib/static-api";
+
+
+export function generateStaticParams() {
+  return staticParams.chapters();
+}
 
 export default async function ChapterPage({ params }: { params: Promise<{ chapter: string }> }) {
   const { chapter } = await params;

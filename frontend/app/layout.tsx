@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: "Understand Risk. Explore the Models. Calculate the Capital.",
 };
 
-export const dynamic = "force-dynamic";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const health = await safe(api.health());
