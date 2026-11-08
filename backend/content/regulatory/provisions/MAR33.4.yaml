@@ -1,0 +1,42 @@
+id: MAR33.4
+title: Liquidity-horizon scaling of ES from a 10-day base horizon
+excerpt_kind: paraphrase
+excerpt: >-
+  Liquidity horizons must be reflected by scaling an ES calculated on a base horizon of 10 days.
+  The ES for a position set P is computed as the square root of the sum of the squared base ES
+  and, for each liquidity-horizon bucket j ≥ 2, the squared ES of the risk factors with liquidity
+  horizon at least LH_j, scaled by the square root of (LH_j − LH_{j−1}) / 10. Table 1 lists the
+  horizons 10, 20, 40, 60 and 120 days.
+plain_language: >-
+  Not every risk can be hedged or sold in ten days. A large-cap equity position can; a
+  high-yield credit spread or an exotic commodity volatility cannot. FRTB therefore assigns each
+  risk factor a *liquidity horizon* and stretches the 10-day ES so that slow-moving risks are
+  measured over a longer holding period. Instead of re-running the model at 20, 40, 60 and 120
+  days, the formula builds the longer-horizon ES from a sequence of 10-day ES calculations on
+  shrinking subsets of risk factors.
+technical_interpretation: >-
+  $ES_T(P)$ is the 10-day ES with all risk factors shocked. $ES_T(P,j)$ is the 10-day ES when
+  only risk factors with liquidity horizon ≥ $LH_j$ are shocked and the others are frozen. Each
+  increment $(LH_j - LH_{j-1})$ is scaled by square-root-of-time and the increments are combined
+  in quadrature, which implicitly assumes the P&L over successive 10-day windows is uncorrelated.
+  In practice banks compute $ES_T(P,j)$ by nesting the risk-factor subsets, so five ES runs
+  (full set, LH ≥ 20, ≥ 40, ≥ 60, ≥ 120) are needed per calculation, each for current and
+  stressed calibration and for the full and reduced risk-factor sets.
+mathematical_implications: >-
+  $$ES = \sqrt{ES_T(P)^2 + \sum_{j \ge 2}\left(ES_T(P,j)\sqrt{\tfrac{LH_j - LH_{j-1}}{T}}\right)^2}, \qquad T = 10$$
+  If every risk factor has the same horizon $LH_k$, the nested ES values coincide and the
+  expression collapses to $ES_T(P)\sqrt{LH_k/10}$: a 60-day book carries $\sqrt 6 \approx 2.45\times$
+  its 10-day ES. Because the terms add in quadrature, moving a small portion of risk to a long
+  horizon costs much less than moving all of it — try it in the **Liquidity-horizon ES scaling** calculator.
+related_calculations:
+  - calc_id: liquidity_horizon_scaling
+related_topics:
+  - slug: liquidity-horizons
+  - slug: expected-shortfall
+cross_references:
+  - id: MAR33.12
+    relation: liquidity horizon per risk factor category (Table 2)
+  - id: MAR33.3
+    relation: confidence level of each ES term
+  - id: MAR33.5
+    relation: stressed calibration of the same ES

@@ -1,0 +1,28 @@
+id: MAR33.9
+title: No prescribed model type (historical simulation, Monte Carlo or analytical)
+excerpt_kind: paraphrase
+excerpt: >-
+  No particular type of ES model is prescribed. Historical simulation, Monte Carlo simulation or
+  other analytical methods are acceptable provided the model captures all material risks and
+  meets the backtesting and P&L attribution requirements.
+plain_language: >-
+  Regulators care about outcomes, not technique. A bank can replay history, simulate thousands
+  of random futures, or use closed-form approximations — as long as the resulting ES captures
+  the risks it runs and the model passes the MAR32 tests.
+technical_interpretation: >-
+  In practice most IMA banks use (filtered) historical simulation because it needs no
+  distributional assumption and makes the stress-period calibration (MAR33.5–33.7) natural.
+  Monte Carlo is common for path-dependent options. Parametric methods are rare for ES because
+  tail shape matters more than for VaR.
+mathematical_implications: >-
+  Whatever the method, the output is a loss distribution from which $ES_{0.975}$ is read. The
+  **Historical VaR & ES simulator** and the **Parametric VaR & ES** calculators show the same
+  statistic computed two ways and why they diverge under fat tails.
+related_calculations:
+  - calc_id: var_es_historical
+  - calc_id: var_es_parametric
+related_topics:
+  - slug: historical-vs-parametric
+cross_references:
+  - id: MAR32
+    relation: validation tests the model must pass

@@ -1,0 +1,112 @@
+# Basel Framework chapter index for the RiskLab Regulatory Library.
+# Titles, effective dates and "last update" dates verified on bis.org on 2026-11-08
+# (https://www.bis.org/basel_framework/standard/MAR.htm and /chapter/RBC/25.htm).
+# version_tag identifies the framework version RiskLab is implementing against.
+version_tag: MAR-2023-01
+verified_on: "2026-11-08"
+chapters:
+  - code: RBC25
+    standard: RBC
+    group: Boundary
+    title: Boundary between the banking book and the trading book
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Which instruments belong in the trading book (market risk capital) versus the banking book (credit risk capital), and the limits on moving instruments between them.
+  - code: MAR10
+    standard: MAR
+    group: Definitions
+    title: Market risk terminology
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Definitions of the terms used throughout the market risk standard (risk factors, sensitivities, trading desk, notional, etc.).
+  - code: MAR11
+    standard: MAR
+    group: Definitions
+    title: Definitions and application of market risk
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: What market risk is, which positions and risk types (interest rate, credit spread, equity, FX, commodity) the capital requirement covers, and how the SA and IMA fit together.
+  - code: MAR12
+    standard: MAR
+    group: Definitions
+    title: Definition of trading desk
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: The trading desk is the unit at which IMA approval is granted; this chapter sets the organisational and documentation requirements a desk must meet.
+  - code: MAR20
+    standard: MAR
+    group: Standardised approach
+    title: "Standardised approach: general provisions and structure"
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: The SA capital requirement is the sum of the sensitivities-based method, the default risk capital requirement and the residual risk add-on; this chapter sets out that structure.
+  - code: MAR21
+    standard: MAR
+    group: Standardised approach
+    title: "Standardised approach: sensitivities-based method"
+    effective_date: "2023-01-01"
+    last_update: "2026-03-23"
+    summary: Delta, vega and curvature risk charges by risk class (GIRR, CSR, equity, commodity, FX), with prescribed buckets, risk weights and correlations. Note the 2026 revision — risk-weight tables must be transcribed from the current text.
+  - code: MAR22
+    standard: MAR
+    group: Standardised approach
+    title: "Standardised approach: default risk capital requirement"
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Jump-to-default risk for non-securitisations, securitisations and the correlation trading portfolio, with netting, hedge-benefit ratio and default risk weights.
+  - code: MAR23
+    standard: MAR
+    group: Standardised approach
+    title: "Standardised approach: residual risk add-on"
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: A notional-based add-on for instruments with exotic underlyings or other residual risks not captured by the sensitivities-based method.
+  - code: MAR30
+    standard: MAR
+    group: Internal models approach
+    title: "Internal models approach: general provisions"
+    effective_date: "2023-01-01"
+    last_update: "2024-07-05"
+    summary: General criteria and qualitative standards a bank must meet to use internal models for market risk capital.
+  - code: MAR31
+    standard: MAR
+    group: Internal models approach
+    title: "Internal models approach: model requirements"
+    effective_date: "2023-01-01"
+    last_update: "2020-06-05"
+    summary: Specification of market risk factors, the risk factor eligibility test (RFET) and the distinction between modellable and non-modellable risk factors.
+  - code: MAR32
+    standard: MAR
+    group: Internal models approach
+    title: "Internal models approach: backtesting and P&L attribution test requirements"
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Desk-level and bank-wide backtesting, the P&L attribution test (Spearman correlation and Kolmogorov–Smirnov metrics) and the traffic-light consequences for IMA eligibility.
+  - code: MAR33
+    standard: MAR
+    group: Internal models approach
+    title: "Internal models approach: capital requirements calculation"
+    effective_date: "2023-01-01"
+    last_update: "2020-06-05"
+    summary: How the IMA capital requirement is computed — Expected Shortfall at 97.5%, liquidity horizons, stress calibration, non-modellable risk factors (SES), the default risk charge and aggregation.
+  - code: MAR40
+    standard: MAR
+    group: Other
+    title: Simplified standardised approach
+    effective_date: "2023-01-01"
+    last_update: "2024-07-05"
+    summary: The Basel II-style simplified approach available to banks that meet supervisory criteria, with scalars applied to the legacy risk charges.
+  - code: MAR90
+    standard: MAR
+    group: Other
+    title: Transitional arrangements
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Transitional provisions for the revised market risk framework.
+  - code: MAR99
+    standard: MAR
+    group: Other
+    title: Guidance on use of the internal models approach
+    effective_date: "2023-01-01"
+    last_update: "2020-03-27"
+    summary: Application guidance on internal model use, including stress testing and model validation.

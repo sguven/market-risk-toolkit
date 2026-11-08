@@ -1,0 +1,96 @@
+title: Historical vs parametric models
+level: beginner
+summary: Two ways to estimate the same P&L distribution — replaying history or assuming a formula — and what each gets wrong.
+sections:
+  concept: |
+    Every VaR or ES number needs a **distribution of P&L**. There are two classic ways to get one:
+
+    - **Historical simulation** applies past market moves (e.g. the last 250–500 daily changes in
+      rates, spreads, prices) to today's portfolio and reads the quantile or tail mean from the
+      resulting scenario P&Ls. No distributional assumption; the data *is* the model.
+    - **Parametric (variance–covariance)** assumes returns follow a known distribution — almost
+      always the normal — estimates volatilities and correlations, and uses closed-form
+      expressions ($V\sigma z_\alpha$ for VaR).
+
+    Monte Carlo is a third route: simulate many random paths from an assumed model. It shares the
+    parametric method's reliance on assumptions but can handle non-linear instruments.
+  why_it_matters: |
+    FRTB does not prescribe a model type (MAR33.9) — but its other requirements push banks toward
+    historical simulation:
+
+    - The stressed calibration (MAR33.5–33.7) is naturally a *window* of history.
+    - ES at 97.5% is sensitive to tail shape; the normal assumption understates fat tails, so
+      parametric ES is rarely accepted for capital.
+    - Backtesting and P&L attribution (MAR32) compare model P&L to realised P&L, which rewards
+      models that reproduce realised market behaviour.
+
+    Parametric methods survive for intraday limit monitoring, quick what-if analysis and as a
+    sanity check on the full model.
+  real_world_example: |
+    In early 2020 a parametric model calibrated on the previous year's calm data produced a 99%
+    equity VaR near 1.5% of position value. In March 2020 daily index moves of 8–12% occurred on
+    several days — eight-to-ten-standard-deviation events under the normal assumption, which
+    should "never" happen. A historical-simulation model with a 500-day window picked the moves up
+    within days as they entered the window; a stressed window including 2008 already had them.
+    Age-weighted historical VaR (Boudoukh–Richardson–Whitelaw) reacts faster still by giving
+    recent scenarios more weight — at the cost of being *more* pro-cyclical.
+  mathematical_logic:
+    intro: Both methods estimate the same quantile; the difference is where the distribution comes from.
+    formulas:
+      - latex: "\\text{P\\&L}_t = \\sum_k \\frac{\\partial V}{\\partial x_k}\\,\\Delta x_{k,t} \\quad\\text{or}\\quad V(x_{\\text{today}} + \\Delta x_t) - V(x_{\\text{today}})"
+        caption: Historical scenario P&L — sensitivity-based (linear) or full revaluation.
+      - latex: "\\sigma_P^2 = \\mathbf{w}^\\top \\Sigma\\, \\mathbf{w}, \\qquad \\mathrm{VaR}_\\alpha = z_\\alpha \\sigma_P\\sqrt h"
+        caption: Parametric portfolio volatility from position weights w and covariance matrix Σ.
+      - latex: "w_k = \\lambda^k\\,\\frac{1-\\lambda}{1-\\lambda^n}"
+        caption: Age-weighted historical simulation — weight of the scenario k days old (λ ≈ 0.94–0.99).
+  variables:
+    - {symbol: "\\Delta x_{k,t}", name: historical shock, meaning: "Change in risk factor k observed on past day t, applied to today's level", units: factor units}
+    - {symbol: "\\Sigma", name: covariance matrix, meaning: "Estimated covariances of risk-factor returns", units: "fraction²"}
+    - {symbol: "\\mathbf{w}", name: exposures, meaning: "Position sensitivities (delta-equivalents) to each risk factor", units: currency}
+    - {symbol: "\\lambda", name: decay, meaning: "Age-weighting decay; λ → 1 recovers equal weights", units: "—"}
+    - {symbol: "n", name: window length, meaning: "Number of historical days used", units: days}
+  worked_example:
+    intro: A three-currency FX position (long USD 2m, short EUR 1.5m, long GBP 0.5m) against a domestic currency, 250 days of synthetic history.
+    steps:
+      - {label: "Build daily return scenarios", math: "r_{c,t} = S_{c,t}/S_{c,t-1} - 1", result: "250 × 3 returns"}
+      - {label: "Apply to today's exposure", math: "\\text{P\\&L}_t = \\sum_c S_{c,\\text{today}}\\, q_c\\, r_{c,t}", result: "250 scenario P&Ls"}
+      - {label: "Equal-weight 99% VaR", math: "-\\,Q_{0.01}(\\text{P\\&L})", result: "between the 2nd and 3rd worst scenario"}
+      - {label: "Age-weighted VaR (λ = 0.97)", math: "\\text{accumulate } w_k \\text{ from the worst scenario until } 0.01", result: "higher if recent days were volatile, lower if calm"}
+      - {label: "Parametric cross-check", math: "z_{0.99}\\sqrt{\\mathbf{w}^\\top\\Sigma\\mathbf{w}}", result: "close to the historical number if returns were near-normal"}
+  related_concepts:
+    - {slug: value-at-risk, title: Value at Risk (VaR)}
+    - {slug: expected-shortfall, title: Expected Shortfall (ES)}
+    - {slug: monte-carlo-simulation, title: Monte Carlo simulation}
+    - {slug: stressed-expected-shortfall, title: Stressed Expected Shortfall}
+exercise:
+  calc_id: historical_var_fx
+  title: Equal-weight vs age-weighted historical VaR
+  description: |
+    Change the positions and the decay λ. With λ close to 1 the age-weighted VaR converges to the
+    equal-weight VaR; with λ = 0.9 only the last few weeks matter. Change the seed to generate a
+    different synthetic history and see how much a 99% quantile moves between samples of 250 days.
+regulatory_references:
+  - {id: MAR33.9, note: "No prescribed model type"}
+  - {id: MAR33.7, note: "Stress period must use equal weighting of observations"}
+  - {id: MAR33.5, note: "Stressed calibration"}
+questions:
+  - id: q1
+    stem: The main advantage of historical simulation over the parametric approach is…
+    choices: [It is faster to compute, It needs no distributional assumption, It always gives lower VaR, It does not need market data]
+    answer_index: 1
+    rationale: Historical simulation lets the data define the distribution, including fat tails and skew.
+  - id: q2
+    stem: Inside the FRTB stress window (MAR33.7), observations must be…
+    choices: [Exponentially weighted, Equally weighted, Weighted by liquidity horizon, Weighted by trading volume]
+    answer_index: 1
+    rationale: MAR33.7 requires equal weighting when identifying and using the 12-month stress period.
+  - id: q3
+    stem: Age-weighted (BRW) historical VaR with λ → 1 …
+    choices: [Tends to zero, Converges to equal-weight historical VaR, Becomes parametric VaR, Is undefined]
+    answer_index: 1
+    rationale: As λ → 1 all weights approach 1/n.
+  - id: q4
+    stem: Which FRTB requirement most discourages normal-distribution parametric ES for capital?
+    choices: [The 10-day base horizon, Sensitivity of 97.5% ES to tail shape plus backtesting and PLA against realised P&L, The desk-level approval process, The default risk charge]
+    answer_index: 1
+    rationale: Normal tails understate ES, and the MAR32 tests compare model output with realised P&L.

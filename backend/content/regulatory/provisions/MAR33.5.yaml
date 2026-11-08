@@ -1,0 +1,32 @@
+id: MAR33.5
+title: ES calibrated to a period of stress using a reduced set of risk factors
+excerpt_kind: paraphrase
+excerpt: >-
+  The ES measure must be calibrated to a period of significant financial stress. Because full
+  risk-factor histories rarely reach back to the stress period, the calibration is done with a
+  reduced set of risk factors that must explain at least 75% of the variation of the full ES
+  model, subject to supervisory approval.
+plain_language: >-
+  A model calibrated to calm recent markets understates risk. Basel 2.5 fixed this by adding a
+  separate "stressed VaR" on top of normal VaR. FRTB goes further: the *only* ES that matters
+  for capital is the stressed one. Since many risk factors (new issuers, new indices) have no
+  data from 2008, the bank is allowed to use a smaller set of long-history factors as long as
+  that set captures at least three-quarters of the full model's risk.
+technical_interpretation: >-
+  Define $ES_{F,C}$ (full set, current period), $ES_{R,C}$ (reduced set, current period) and
+  $ES_{R,S}$ (reduced set, stress period). MAR33.6 then scales the reduced-set stressed ES back
+  up to the full set: $ES = ES_{R,S} \cdot ES_{F,C}/ES_{R,C}$ with the ratio floored at 1. The
+  75% test is a model-adequacy test of the reduced set, assessed over a defined window.
+mathematical_implications: >-
+  $$ES = ES_{R,S}\times\max\!\left(1,\ \frac{ES_{F,C}}{ES_{R,C}}\right)$$
+  The ratio is a proxy for the risk the reduced set misses; flooring it at 1 means a reduced set
+  that happens to be riskier than the full set gives no capital relief.
+related_calculations: []
+related_topics:
+  - slug: expected-shortfall
+  - slug: why-frtb
+cross_references:
+  - id: MAR33.7
+    relation: identification of the stress period
+  - id: MAR33.4
+    relation: liquidity horizon structure applies to the stressed ES

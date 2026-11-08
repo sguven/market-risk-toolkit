@@ -1,0 +1,94 @@
+title: Liquidity horizons
+level: advanced
+summary: Why FRTB measures different risk factors over 10, 20, 40, 60 or 120 days, and how the MAR33.4 formula stretches a 10-day ES.
+sections:
+  concept: |
+    A **liquidity horizon** is the time a bank would need to exit or hedge a risk position in a
+    stressed market without moving the price against itself. Basel 2.5 assumed 10 days for
+    everything. FRTB recognises that a USD interest-rate swap can be hedged in days while a
+    high-yield credit spread, an exotic commodity volatility or a small-cap equity position may
+    take months.
+
+    Every risk factor is mapped to one of five horizons — **10, 20, 40, 60 or 120 days** — by
+    risk class and liquidity tier (MAR33.12, Table 2). The Expected Shortfall is then computed
+    so that each risk factor is shocked over *its* horizon.
+  why_it_matters: |
+    Liquidity horizons are one of the largest drivers of IMA capital:
+
+    - A 60-day horizon multiplies a 10-day ES by up to √6 ≈ 2.45; a 120-day horizon by up to √12 ≈ 3.46.
+    - They penalise illiquid risk even inside an approved model, which Basel 2.5 did not.
+    - They interact with the modellability test (MAR31): a non-modellable factor leaves the ES
+      model and is capitalised through SES with a *minimum* 20-day horizon (MAR33.16).
+    - Operationally, the nested ES calculation (MAR33.4) multiplies the number of ES runs a bank
+      must perform every night.
+  real_world_example: |
+    A rates desk holds USD swaps (10-day), a position in Polish zloty swaps (unspecified currency
+    → 20-day) and some swaption vega (interest-rate volatility → 60-day). Its 10-day ES with all
+    factors shocked is \$1.0m. Shocking only PLN rates and the vega gives \$0.5m; shocking only the
+    vega gives \$0.3m. The MAR33.4 formula turns these three numbers into a single
+    liquidity-adjusted ES of about \$1.27m — more than \$1.0m because of the slow-to-hedge factors,
+    but far less than \$2.45m because only part of the risk sits at 60 days.
+  mathematical_logic:
+    intro: |
+      MAR33.4 starts from a base horizon T = 10 days and adds horizon increments in quadrature.
+      $ES_T(P)$ shocks all factors; $ES_T(P,j)$ shocks only factors with horizon ≥ $LH_j$.
+    formulas:
+      - latex: "\\mathrm{ES} = \\sqrt{\\;ES_T(P)^2 + \\sum_{j\\ge 2}\\Big(ES_T(P,j)\\,\\sqrt{\\tfrac{LH_j - LH_{j-1}}{T}}\\Big)^2\\;}"
+        caption: MAR33.4 liquidity-adjusted ES, with LH = (10, 20, 40, 60, 120) and T = 10.
+      - latex: "\\mathrm{ES} = ES_T(P)\\,\\sqrt{LH_k / T}\\quad\\text{if every factor has horizon } LH_k"
+        caption: Single-horizon special case — plain square-root-of-time scaling.
+      - latex: "\\sqrt{\\tfrac{LH_j-LH_{j-1}}{10}} = 1,\\;1,\\;\\sqrt2,\\;\\sqrt2,\\;\\sqrt6\\quad (j=1..5)"
+        caption: The five scaling factors for the increments 10, 10, 20, 20 and 60 days.
+  variables:
+    - {symbol: "T", name: base horizon, meaning: "10 days", units: days}
+    - {symbol: "LH_j", name: liquidity horizon j, meaning: "10, 20, 40, 60, 120 days for j = 1..5 (MAR33.4 Table 1)", units: days}
+    - {symbol: "ES_T(P)", name: base ES, meaning: "10-day ES of portfolio P with all risk factors shocked", units: currency}
+    - {symbol: "ES_T(P,j)", name: nested ES, meaning: "10-day ES shocking only risk factors whose horizon is ≥ LH_j, others held constant", units: currency}
+    - {symbol: "n", name: risk factor horizon, meaning: "Horizon assigned to a risk factor by MAR33.12 Table 2; a floor, capped at instrument maturity", units: days}
+  worked_example:
+    intro: Use the rates-desk numbers from the example — ES_T(P) = 1,000,000; ES_T(P,2) = 500,000 (PLN rates + vega); ES_T(P,3) = 300,000 (vega only); ES_T(P,4) = 300,000 (vega only, LH ≥ 60); ES_T(P,5) = 0.
+    steps:
+      - {label: "Base term", math: "ES_T(P)^2 = 1{,}000{,}000^2 = 1.00\\times10^{12}", result: "1.00e12"}
+      - {label: "j = 2 (LH 20): increment 10 days, factor 1", math: "(500{,}000 \\times 1)^2 = 2.5\\times10^{11}", result: "2.50e11"}
+      - {label: "j = 3 (LH 40): increment 20 days, factor √2", math: "(300{,}000 \\times \\sqrt2)^2 = 1.8\\times10^{11}", result: "1.80e11"}
+      - {label: "j = 4 (LH 60): increment 20 days, factor √2", math: "(300{,}000 \\times \\sqrt2)^2 = 1.8\\times10^{11}", result: "1.80e11"}
+      - {label: "j = 5 (LH 120): increment 60 days, factor √6", math: "(0 \\times \\sqrt6)^2 = 0", result: "0"}
+      - {label: "Liquidity-adjusted ES", math: "\\sqrt{1.00e12 + 2.5e11 + 1.8e11 + 1.8e11} = \\sqrt{1.61e12}", result: "$1,268,858 — a 27% uplift on the 10-day ES"}
+  related_concepts:
+    - {slug: expected-shortfall, title: Expected Shortfall (ES)}
+    - {slug: non-modellable-risk-factors, title: Non-Modellable Risk Factors (NMRF)}
+    - {slug: rfet, title: Risk Factor Eligibility Test (RFET)}
+    - {slug: ima-expected-shortfall, title: Expected Shortfall under the IMA}
+exercise:
+  calc_id: liquidity_horizon_scaling
+  title: Stretch a 10-day ES across the five horizons
+  description: |
+    Enter the nested ES values (they must be non-increasing as the horizon grows if the excluded
+    factors add risk). Watch the uplift: setting every bucket equal to the base ES reproduces
+    √12 ≈ 3.46× — the whole book at 120 days. Setting all buckets to zero leaves the base ES
+    unchanged — everything hedgeable in ten days. Most real desks sit between 1.1× and 1.8×.
+regulatory_references:
+  - {id: MAR33.4, note: "Scaling formula and Table 1 horizons"}
+  - {id: MAR33.12, note: "Risk factor category → horizon mapping (Table 2)"}
+  - {id: MAR33.16, note: "NMRFs: minimum 20-day horizon in SES"}
+questions:
+  - id: q1
+    stem: Which are the FRTB liquidity horizons?
+    choices: ["1, 5, 10, 20, 60 days", "10, 20, 40, 60, 120 days", "10, 30, 60, 90, 250 days", "10 days for all risk factors"]
+    answer_index: 1
+    rationale: MAR33.4 Table 1 lists 10, 20, 40, 60 and 120 days.
+  - id: q2
+    stem: If every risk factor in a portfolio has a 60-day horizon, the liquidity-adjusted ES equals the 10-day ES times…
+    choices: ["6", "√6 ≈ 2.45", "√60 ≈ 7.75", "1 — horizons only matter for NMRFs"]
+    answer_index: 1
+    rationale: The nested ES values coincide and the formula collapses to ES·√(60/10).
+  - id: q3
+    stem: Under MAR33.12 a large-cap equity price and a high-yield corporate credit spread have horizons of…
+    choices: ["10 and 60 days", "20 and 20 days", "10 and 10 days", "60 and 120 days"]
+    answer_index: 0
+    rationale: Table 2 — equity price (large cap) 10 days; credit spread corporate (HY) 60 days.
+  - id: q4
+    stem: A bank wants to use a 10-day horizon for a risk factor the table assigns 40 days. It…
+    choices: ["May do so with documentation", "May not — horizons are floors; it may only lengthen them (with approval)", "May if the instrument matures within 10 days", "May if the factor is modellable"]
+    answer_index: 1
+    rationale: MAR33.12 — horizons are floors; the only shortening is the cap at instrument maturity.

@@ -5,3 +5,9 @@ __pycache__/
 data/
 *.xlsx
 *.csv
+node_modules/
+.next/
+frontend/out/
+*.tsbuildinfo
+.env
+.env.local

@@ -1,0 +1,85 @@
+title: Trading Book vs Banking Book
+level: beginner
+summary: The boundary that decides whether a position attracts market-risk or credit-risk capital — and why FRTB made it much harder to cross.
+sections:
+  concept: |
+    A bank's balance sheet is split into two regulatory books:
+
+    - The **trading book** holds instruments the bank intends to trade, market-make, hedge
+      trading positions with, or hold for short-term resale. They are marked to market daily and
+      attract **market risk** capital (the MAR standard).
+    - The **banking book** holds everything else — loans, deposits, held-to-maturity securities,
+      most derivatives hedging them. It attracts **credit risk** capital (CRE) and interest-rate
+      risk in the banking book is a Pillar 2 matter.
+
+    The **boundary** between them is defined in RBC25. It matters because the same bond can
+    carry very different capital depending on which book it sits in.
+  why_it_matters: |
+    Before FRTB the boundary was based mainly on the bank's stated *intent*, which made it
+    porous. During 2007–09 banks held large credit positions in the trading book at low
+    VaR-based capital, then moved illiquid positions to the banking book when prices fell —
+    "regulatory arbitrage". FRTB responded by:
+
+    - Listing instruments that are *presumed* to be in the trading book and others that *must*
+      be in the banking book (RBC25).
+    - Requiring supervisory approval for reclassification and, where a switch lowers capital,
+      imposing a capital surcharge so the bank gains no benefit.
+    - Making trading-book treatment contingent on daily fair valuation and active management.
+
+    For RiskLab, the boundary is the first gate: every SA or IMA calculation applies only to
+    trading-book positions.
+  real_world_example: |
+    A bank buys \$100m of an investment-grade corporate bond. Held in the treasury portfolio as a
+    liquidity asset, it sits in the banking book and is capitalised for credit risk with a
+    risk weight tied to the issuer's rating. The same bond bought by the credit trading desk to
+    make markets sits in the trading book: it is marked to market daily and capitalised under
+    the SA for credit-spread delta (MAR21), default risk (MAR22) and, if applicable, curvature
+    and vega. The two capital numbers can differ several-fold, which is exactly why the switch
+    is policed.
+  mathematical_logic:
+    intro: |
+      The boundary is a classification rule rather than a formula, but it has a quantitative
+      consequence — total market-risk capital is computed over the trading book only, and a
+      reclassification that reduces total capital triggers a surcharge equal to the difference:
+    formulas:
+      - latex: "K_{\\text{total}} = K_{\\text{MAR}}(\\text{TB}) + K_{\\text{CRE}}(\\text{BB}) + \\dots"
+        caption: Capital is additive across books; the boundary decides which function applies to each position.
+      - latex: "\\text{Surcharge} = \\max\\big(0,\\; K_{\\text{before}} - K_{\\text{after}}\\big)"
+        caption: A permitted switch that lowers capital earns no benefit — the difference is held as a Pillar 1 surcharge until the position matures or expires.
+  variables:
+    - {symbol: "\\text{TB}", name: trading book, meaning: "Positions held with trading intent, fair-valued daily", units: "—"}
+    - {symbol: "\\text{BB}", name: banking book, meaning: "All other positions", units: "—"}
+    - {symbol: "K_{\\text{MAR}}", name: market risk capital, meaning: "SA or IMA capital requirement on the trading book", units: currency}
+    - {symbol: "K_{\\text{CRE}}", name: credit risk capital, meaning: "Standardised or IRB credit risk capital on the banking book", units: currency}
+  worked_example:
+    intro: Illustrative only — numbers are synthetic and the credit-risk side is simplified.
+    steps:
+      - {label: "Bond in the banking book: 100% risk weight, 8% minimum capital", math: "K_{\\text{CRE}} = 100\\text{m} \\times 100\\% \\times 8\\%", result: "$8.0m"}
+      - {label: "Same bond in the trading book: CSR delta (illustrative risk weight) + DRC", math: "K_{\\text{MAR}} \\approx K_{\\text{CSR}} + K_{\\text{DRC}}", result: "depends on bucket, duration and hedges — computed in the SA Lab (Phase 3)"}
+      - {label: "If the bank reclassifies after capital falls", math: "\\text{Surcharge} = \\max(0, K_{\\text{before}} - K_{\\text{after}})", result: "no net capital saving"}
+  related_concepts:
+    - {slug: trading-book-boundary, title: Trading book boundary}
+    - {slug: why-frtb, title: Why Basel introduced FRTB}
+    - {slug: trading-desk-structure, title: Trading desk structure}
+    - {slug: market-risk-fundamentals, title: Market risk fundamentals}
+exercise: null
+regulatory_references:
+  - {id: RBC25, note: "Boundary between the banking book and the trading book"}
+  - {id: MAR11, note: "Definitions and application of market risk"}
+  - {id: MAR12, note: "Trading desk definition"}
+questions:
+  - id: q1
+    stem: A position is in the trading book if it is…
+    choices: [Any derivative, Held with trading intent or to hedge trading-book positions and fair-valued daily, Any bond rated below investment grade, Held for more than one year]
+    answer_index: 1
+    rationale: Trading intent and daily fair valuation are the core criteria in RBC25.
+  - id: q2
+    stem: Under FRTB, moving an instrument from the trading book to the banking book…
+    choices: [Is at the bank's discretion, Requires supervisory approval and any capital benefit is neutralised by a surcharge, Is prohibited in all cases, Is automatic after 90 days]
+    answer_index: 1
+    rationale: RBC25 restricts switching and removes the capital incentive.
+  - id: q3
+    stem: Why did the Basel Committee tighten the boundary?
+    choices: [To simplify reporting, Because intent-based classification enabled regulatory arbitrage during the crisis, To eliminate the banking book, To reduce capital for trading desks]
+    answer_index: 1
+    rationale: Banks had moved positions between books to lower capital.

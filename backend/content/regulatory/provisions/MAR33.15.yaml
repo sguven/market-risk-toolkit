@@ -1,0 +1,29 @@
+id: MAR33.15
+title: IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)
+excerpt_kind: paraphrase
+excerpt: >-
+  The aggregate capital requirement for modellable risk factors (IMCC) is a weighted average of
+  the unconstrained ES and the sum of the partial ES values by risk class, with the weight ρ set
+  at 0.5.
+plain_language: >-
+  Regulators split the difference: half the credit for the bank's own diversification view, half
+  for the no-diversification view. A bank whose model claims very large diversification benefits
+  only gets to keep half of them.
+technical_interpretation: >-
+  This is the FRTB replacement for the Basel 2.5 practice of simply summing VaR and stressed VaR.
+  Because the constrained sum is always at least the unconstrained ES, IMCC lies between
+  $IMCC(C)$ and $\sum_i IMCC(C_i)$ and is at least the unconstrained ES.
+mathematical_implications: >-
+  $$IMCC = \rho \cdot IMCC(C) + (1-\rho)\sum_{i=1}^{5} IMCC(C_i), \qquad \rho = 0.5$$
+  The **SA vs IMA comparison engine** (Phase 5) exposes ρ as an educational slider so the effect
+  of the supervisory correlation constraint on capital can be seen directly.
+related_calculations: []
+related_topics:
+  - slug: expected-shortfall
+cross_references:
+  - id: MAR33.13
+    relation: IMCC(C)
+  - id: MAR33.14
+    relation: IMCC(C_i)
+  - id: MAR33.16
+    relation: non-modellable risk factors are capitalised separately

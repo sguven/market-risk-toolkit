@@ -1,0 +1,106 @@
+title: Value at Risk (VaR)
+level: beginner
+summary: The loss you expect to exceed only rarely — how it is defined, computed and why FRTB demoted it.
+sections:
+  concept: |
+    **Value at Risk** answers one question: *over a given horizon, what loss will we exceed only
+    (1 − α) of the time?* With α = 99% and a one-day horizon, a VaR of \$25,000 means that on
+    99 days out of 100 the portfolio should lose less than \$25,000 — and on roughly one day in a
+    hundred it will lose more. VaR says nothing about *how much* more.
+
+    VaR is a quantile of the profit-and-loss (P&L) distribution. Everything about a VaR number is
+    determined by three choices: the **confidence level**, the **horizon**, and **how the P&L
+    distribution is estimated** (historical, parametric, Monte Carlo).
+  why_it_matters: |
+    VaR was the regulatory market-risk measure from the 1996 Market Risk Amendment until FRTB.
+    Banks still run it every day because:
+
+    - **Limits.** Trading desks are given VaR limits; breaching one triggers escalation.
+    - **Backtesting.** FRTB still requires daily VaR at 97.5% and 99% for backtesting (MAR32),
+      because a quantile forecast can be checked against realised P&L while ES cannot be checked
+      directly.
+    - **Communication.** A single currency amount at a stated confidence level is easy for
+      boards and regulators to understand.
+
+    Its weakness — ignoring the size of tail losses and failing sub-additivity — is the reason
+    FRTB replaced it with Expected Shortfall for *capital* (MAR33.3).
+  real_world_example: |
+    A market-making desk holds \$1,000,000 of a liquid equity index future. Its daily P&L has a
+    standard deviation of about 1.2% of the position, i.e. \$12,000. Using the last 500 trading
+    days as scenarios, the desk ranks the 500 daily P&Ls from worst to best. The 1% worst case
+    is the 5th-worst day, a loss of about \$25,600. That is the desk's 1-day 99% historical VaR.
+    If markets have been calm, the number is small; after a volatile quarter it jumps — VaR is
+    *pro-cyclical*, one reason FRTB insists on stressed calibration.
+  mathematical_logic:
+    intro: |
+      Let $L = -\text{P\&L}$ be the loss over the horizon. VaR at confidence α is the smallest
+      loss threshold that is exceeded with probability at most 1 − α:
+    formulas:
+      - latex: "\\mathrm{VaR}_\\alpha = \\inf\\{\\,\\ell : \\Pr(L > \\ell) \\le 1-\\alpha\\,\\} = -Q_{1-\\alpha}(\\text{P\\&L})"
+        caption: Definition as the (1 − α) quantile of P&L, sign-flipped to a positive loss.
+      - latex: "\\mathrm{VaR}_\\alpha^{\\text{normal}} = V\\,\\sigma\\,z_\\alpha\\sqrt{h}"
+        caption: Parametric (normal) shortcut with position value V, daily volatility σ, horizon h days.
+      - latex: "\\mathrm{VaR}_\\alpha^{\\text{hist}} = -\\,\\text{P\\&L}_{(\\lceil n(1-\\alpha)\\rceil)}"
+        caption: Historical simulation — the ⌈n(1 − α)⌉-th worst of n scenario P&Ls (interpolation conventions vary).
+  variables:
+    - {symbol: "\\alpha", name: confidence level, meaning: "Probability that the loss does *not* exceed VaR (0.99 for Basel 2.5 VaR; 0.975 and 0.99 for FRTB backtesting)", units: fraction}
+    - {symbol: "h", name: horizon, meaning: "Holding period over which the loss is measured", units: business days}
+    - {symbol: "V", name: position value, meaning: "Current market value of the position", units: currency}
+    - {symbol: "\\sigma", name: daily volatility, meaning: "Standard deviation of daily returns", units: fraction per day}
+    - {symbol: "z_\\alpha", name: normal quantile, meaning: "Standard-normal quantile, 2.326 at 99%, 1.960 at 97.5%", units: "—"}
+    - {symbol: "n", name: number of scenarios, meaning: "Historical observations used (typically 250–500 for VaR; ≥ 1 year)", units: count}
+  worked_example:
+    intro: |
+      Position V = \$10,000,000 in an equity index, daily volatility σ = 1%, one-day horizon,
+      normal distribution.
+    steps:
+      - {label: "Find the 99% normal quantile", math: "z_{0.99} = \\Phi^{-1}(0.99) = 2.3263", result: "2.3263"}
+      - {label: "Multiply by volatility and position", math: "\\mathrm{VaR} = 10{,}000{,}000 \\times 0.01 \\times 2.3263", result: "$232,635"}
+      - {label: "Scale to a 10-day horizon (√t rule)", math: "\\mathrm{VaR}_{10d} = 232{,}635 \\times \\sqrt{10}", result: "$735,650"}
+      - {label: "Compare with 97.5% ES (preview)", math: "\\mathrm{ES}_{0.975} = 10{,}000{,}000 \\times 0.01 \\times 2.3378", result: "$233,780 — almost identical under normality"}
+  related_concepts:
+    - {slug: expected-shortfall, title: Expected Shortfall (ES)}
+    - {slug: historical-vs-parametric, title: Historical vs parametric models}
+    - {slug: backtesting, title: Backtesting}
+    - {slug: liquidity-horizons, title: Liquidity horizons}
+exercise:
+  calc_id: var_es_historical
+  title: Historical VaR vs ES on synthetic P&L
+  description: |
+    Generate daily P&L scenarios for a \$1,000,000 position and read off VaR and ES. Start with
+    the normal distribution at 99%, then switch to **Student-t (df = 4)** and watch ES pull away
+    from VaR: the quantile barely moves, the tail average does. Lower the number of scenarios to
+    see how noisy a 99% quantile is on small samples.
+regulatory_references:
+  - {id: MAR33.3, note: "FRTB replaces VaR with ES at 97.5% for IMA capital"}
+  - {id: MAR32, note: "Backtesting still uses daily VaR at 97.5% and 99%"}
+  - {id: MAR33.9, note: "Model type (historical, Monte Carlo, analytical) is not prescribed"}
+questions:
+  - id: q1
+    stem: A one-day 99% VaR of $2m means…
+    choices:
+      - the portfolio cannot lose more than $2m in a day
+      - on about 1 day in 100 the loss is expected to exceed $2m
+      - the average daily loss is $2m
+      - the worst historical daily loss was $2m
+    answer_index: 1
+    rationale: VaR is a quantile — the threshold exceeded with probability 1 − α. It says nothing about the maximum loss or the average loss.
+  - id: q2
+    stem: Which property does VaR lack that Expected Shortfall has?
+    choices: [Monotonicity, Translation invariance, Sub-additivity, Positive homogeneity]
+    answer_index: 2
+    rationale: VaR can be larger for a diversified portfolio than the sum of its parts' VaRs; ES is sub-additive and therefore a coherent risk measure.
+  - id: q3
+    stem: Under the normal distribution, 97.5% ES compared with 99% VaR is…
+    choices: [About 25% higher, About the same, About half, Undefined]
+    answer_index: 1
+    rationale: ES₀.₉₇₅ ≈ 2.338σ and VaR₀.₉₉ ≈ 2.326σ, which is why the Basel Committee chose 97.5% — no mechanical capital jump under normality.
+  - id: q4
+    stem: Why does FRTB still require daily VaR even though capital is based on ES?
+    choices:
+      - VaR is more conservative
+      - Quantile forecasts can be backtested against realised P&L; ES cannot be tested directly
+      - Supervisors never approved ES
+      - VaR is needed for the standardised approach
+    answer_index: 1
+    rationale: MAR32 backtesting counts exceptions of realised P&L against VaR at 97.5% and 99%; ES is validated indirectly.

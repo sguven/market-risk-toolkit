@@ -1,0 +1,97 @@
+title: Foreign exchange risk
+level: beginner
+summary: How currency exposure arises, how it is measured (open position, delta, vega) and where it sits in the FRTB risk classes.
+sections:
+  concept: |
+    **FX risk** is the risk that exchange-rate moves change the value of positions denominated in
+    a currency other than the bank's reporting currency. It arises from:
+
+    - **Spot and forward positions** — an *open currency position* (net long or short in each
+      currency) that gains or loses one-for-one with the rate;
+    - **Options** — exposure to the rate (*delta*), to its volatility (*vega*) and to the
+      non-linearity of the payoff (*gamma / curvature*);
+    - **Translation** of foreign-currency assets and liabilities, including the FX component of
+      every non-domestic bond, equity or commodity position.
+
+    In the FRTB Standardised Approach, FX is one of the seven risk classes (MAR21); in the IMA,
+    FX rates for specified currency pairs carry a 10-day liquidity horizon and other pairs 20
+    days (MAR33.12).
+  why_it_matters: |
+    FX is the risk class every trading book has, because any instrument not in the reporting
+    currency carries it. Measuring it well matters because:
+
+    - FX delta is simple but **FX vega and curvature** on options can dominate the capital of an
+      options desk.
+    - In the SA, FX risk weights and the treatment of **currency pairs** (which pairs count as
+      liquid and attract a lower weight) are prescribed in MAR21.
+    - In the IMA, FX liquidity horizons depend on whether the pair is on the specified list
+      (e.g. USD/EUR, USD/JPY, USD/TRY) — a 10- vs 20-day difference is a √2 factor on ES.
+  real_world_example: |
+    A bank reporting in Turkish lira runs an FX desk long USD 2m, short EUR 1.5m, long GBP 0.5m.
+    On a day when USD/TRY rises 2% and EUR/TRY rises 1%, the desk makes about 2% × 2m × 30
+    (spot) on USD and loses 1% × 1.5m × 33 on EUR. Historical simulation applies each of the
+    last 250 days' moves to today's exposure to build the P&L distribution and read off VaR.
+    The same desk's option book is priced with Garman–Kohlhagen; bumping spot by one basis
+    point gives the delta that feeds the SA sensitivities-based method.
+  mathematical_logic:
+    intro: Spot exposure is linear; options bring the Garman–Kohlhagen model and its Greeks.
+    formulas:
+      - latex: "\\text{P\\&L}_t = \\sum_c S_{c}\\, q_c\\,\\Big(\\tfrac{S_{c,t}}{S_{c,t-1}} - 1\\Big)"
+        caption: Historical P&L of an open currency position — today's spot S, foreign amount q, historical return.
+      - latex: "C = S e^{-r_f t} N(d_1) - K e^{-r_d t} N(d_2),\\quad d_1 = \\frac{\\ln(S/K) + (r_d - r_f + \\sigma^2/2)t}{\\sigma\\sqrt t}"
+        caption: Garman–Kohlhagen price of a European FX call; the foreign rate plays the role of a dividend yield.
+      - latex: "\\Delta \\approx \\frac{V(S + h) - V(S - h)}{2h}"
+        caption: Finite-difference delta — how a risk system turns a pricing model into the sensitivity the SA consumes.
+  variables:
+    - {symbol: "S", name: spot rate, meaning: "Domestic currency per unit of foreign (e.g. TRY per USD)", units: domestic/foreign}
+    - {symbol: "q_c", name: position, meaning: "Net foreign-currency amount; long > 0, short < 0", units: foreign currency}
+    - {symbol: "K", name: strike, meaning: "Option strike rate", units: domestic/foreign}
+    - {symbol: "r_d, r_f", name: interest rates, meaning: "Domestic and foreign continuously compounded rates", units: fraction p.a.}
+    - {symbol: "\\sigma", name: implied volatility, meaning: "Annualised volatility of the FX rate", units: fraction p.a.}
+    - {symbol: "t", name: time to expiry, meaning: "In years", units: years}
+  worked_example:
+    intro: Price a 90-day EUR call / USD put, spot 1.08, strike 1.10, r_USD = 4.5%, r_EUR = 3.0%, σ = 9%, notional EUR 1m (USD is the domestic currency here).
+    steps:
+      - {label: "Time to expiry", math: "t = 90/365 = 0.2466", result: "0.2466"}
+      - {label: "d1", math: "d_1 = \\frac{\\ln(1.08/1.10) + (0.045 - 0.03 + 0.09^2/2)\\times 0.2466}{0.09\\sqrt{0.2466}}", result: "−0.3055"}
+      - {label: "d2", math: "d_2 = d_1 - 0.09\\sqrt{0.2466}", result: "−0.3502"}
+      - {label: "Call price per EUR", math: "1.08 e^{-0.03 t} N(d_1) - 1.10 e^{-0.045 t} N(d_2)", result: "≈ USD 0.01237"}
+      - {label: "Position PV", math: "0.01237 \\times 1{,}000{,}000", result: "≈ USD 12,370"}
+  related_concepts:
+    - {slug: value-at-risk, title: Value at Risk (VaR)}
+    - {slug: historical-vs-parametric, title: Historical vs parametric models}
+    - {slug: sa-fx-risk, title: FX risk under the SA}
+    - {slug: liquidity-horizons, title: Liquidity horizons}
+exercise:
+  calc_id: fx_option_gk
+  title: Price an FX option and watch its delta
+  description: |
+    Move spot through the strike and watch delta rise from near 0 to near the discounted
+    notional — this delta (per unit of spot) is the FX sensitivity the SA risk weights are
+    applied to. Raise volatility to see the option value and vega grow. The calculator uses the
+    Garman–Kohlhagen code from the original market-risk toolkit.
+regulatory_references:
+  - {id: MAR21, note: "FX risk class in the sensitivities-based method"}
+  - {id: MAR33.12, note: "FX liquidity horizons: 10 days for specified pairs, 20 otherwise"}
+  - {id: MAR11, note: "FX risk within the scope of market risk capital"}
+questions:
+  - id: q1
+    stem: In the Garman–Kohlhagen model the foreign interest rate plays the role of…
+    choices: [The risk-free discount rate, A continuous dividend yield on the underlying, The volatility, The strike adjustment]
+    answer_index: 1
+    rationale: Holding foreign currency earns the foreign rate, exactly like a dividend yield on a stock.
+  - id: q2
+    stem: Under MAR33.12, the liquidity horizon of a specified FX pair such as USD/EUR is…
+    choices: [10 days, 20 days, 40 days, 60 days]
+    answer_index: 0
+    rationale: Specified currency pairs are 10 days; other pairs 20; FX volatility 40.
+  - id: q3
+    stem: A bank long EUR 1.5m against TRY loses money when…
+    choices: [EUR/TRY rises, EUR/TRY falls, TRY interest rates rise, USD/TRY rises]
+    answer_index: 1
+    rationale: A long EUR position gains when EUR strengthens (EUR/TRY rises) and loses when it falls.
+  - id: q4
+    stem: Which sensitivities does an FX option book contribute to the SA sensitivities-based method?
+    choices: [Delta only, Delta and vega only, Delta, vega and curvature, Curvature only]
+    answer_index: 2
+    rationale: Options carry all three SBM risk charges.

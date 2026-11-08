@@ -1,0 +1,100 @@
+# RiskLab learning syllabus. Topics with a matching file in topics/<slug>.yaml are "authored";
+# the rest are listed so the full curriculum is visible but are never rendered as empty pages.
+paths:
+  - slug: market-risk-foundations
+    title: Market Risk Foundations
+    level: beginner
+    ordinal: 1
+    description: What market risk is, where it lives in a bank, and the three measures everything else builds on — VaR, Expected Shortfall and stress.
+    topics:
+      - {slug: trading-book-vs-banking-book, title: Trading Book vs Banking Book}
+      - {slug: market-risk-fundamentals, title: Market risk fundamentals}
+      - {slug: risk-factors, title: Risk factors}
+      - {slug: interest-rate-risk, title: Interest rate risk}
+      - {slug: credit-spread-risk, title: Credit spread risk}
+      - {slug: equity-risk, title: Equity risk}
+      - {slug: fx-risk, title: Foreign exchange risk}
+      - {slug: commodity-risk, title: Commodity risk}
+      - {slug: value-at-risk, title: Value at Risk (VaR)}
+      - {slug: expected-shortfall, title: Expected Shortfall (ES)}
+      - {slug: stress-testing, title: Stress testing}
+      - {slug: historical-vs-parametric, title: Historical vs parametric models}
+      - {slug: monte-carlo-simulation, title: Monte Carlo simulation}
+  - slug: introduction-to-frtb
+    title: Introduction to FRTB
+    level: beginner
+    ordinal: 2
+    description: Why the Fundamental Review of the Trading Book happened, what changed from Basel 2.5, and how SA and IMA fit together.
+    topics:
+      - {slug: why-frtb, title: Why Basel introduced FRTB}
+      - {slug: basel-25-to-frtb, title: Evolution from Basel 2.5 to FRTB}
+      - {slug: trading-book-boundary, title: Trading book boundary}
+      - {slug: trading-desk-structure, title: Trading desk structure}
+      - {slug: sa-vs-ima-overview, title: Standardised Approach vs Internal Models Approach}
+      - {slug: regulatory-capital-framework, title: Regulatory capital framework}
+      - {slug: frtb-implementation-challenges, title: FRTB implementation challenges}
+  - slug: standardised-approach
+    title: Standardised Approach (SA)
+    level: intermediate
+    ordinal: 3
+    description: The sensitivities-based method, default risk charge and residual risk add-on — buckets, risk weights, correlations and aggregation.
+    topics:
+      - {slug: sensitivities-based-method, title: Sensitivities-Based Method (SBM)}
+      - {slug: delta-risk, title: Delta risk}
+      - {slug: vega-risk, title: Vega risk}
+      - {slug: curvature-risk, title: Curvature risk}
+      - {slug: girr, title: General Interest Rate Risk (GIRR)}
+      - {slug: csr, title: Credit Spread Risk (CSR)}
+      - {slug: sa-equity-risk, title: Equity risk under the SA}
+      - {slug: sa-commodity-risk, title: Commodity risk under the SA}
+      - {slug: sa-fx-risk, title: FX risk under the SA}
+      - {slug: risk-classes-and-buckets, title: Risk classes and buckets}
+      - {slug: risk-weights, title: Risk weights}
+      - {slug: correlation-aggregation, title: Correlation aggregation}
+      - {slug: default-risk-charge, title: Default Risk Charge (DRC)}
+      - {slug: residual-risk-add-on, title: Residual Risk Add-on (RRAO)}
+      - {slug: sa-capital-aggregation, title: Capital aggregation}
+  - slug: internal-models-approach
+    title: Internal Models Approach (IMA)
+    level: advanced
+    ordinal: 4
+    description: Expected Shortfall with liquidity horizons, stressed calibration, modellable vs non-modellable risk factors, SES and the IMA default risk charge.
+    topics:
+      - {slug: ima-expected-shortfall, title: Expected Shortfall under the IMA}
+      - {slug: liquidity-horizons, title: Liquidity horizons}
+      - {slug: stressed-expected-shortfall, title: Stressed Expected Shortfall}
+      - {slug: rfet, title: Risk Factor Eligibility Test (RFET)}
+      - {slug: modellable-risk-factors, title: Modellable Risk Factors (MRF)}
+      - {slug: non-modellable-risk-factors, title: Non-Modellable Risk Factors (NMRF)}
+      - {slug: ses, title: Stress Scenario Risk Measure (SES)}
+      - {slug: ima-default-risk-charge, title: IMA Default Risk Charge}
+      - {slug: trading-desk-approval, title: Trading desk approval}
+      - {slug: internal-model-requirements, title: Internal model requirements}
+  - slug: model-validation-and-monitoring
+    title: Model Validation & Monitoring
+    level: advanced
+    ordinal: 5
+    description: Backtesting, the three P&L measures, the P&L attribution test and what happens when a model fails.
+    topics:
+      - {slug: backtesting, title: Backtesting}
+      - {slug: actual-pnl, title: Actual P&L}
+      - {slug: hypothetical-pnl, title: Hypothetical P&L}
+      - {slug: risk-theoretical-pnl, title: Risk-Theoretical P&L}
+      - {slug: pla-test, title: P&L Attribution Test (PLA)}
+      - {slug: traffic-light-zones, title: Traffic light zones}
+      - {slug: model-exceptions, title: Model exceptions}
+      - {slug: regulatory-model-approval, title: Regulatory model approval}
+      - {slug: model-limitations, title: Model limitations}
+  - slug: capital-calculation-and-reporting
+    title: Capital Calculation & Reporting
+    level: intermediate
+    ordinal: 6
+    description: From risk measures to risk-weighted assets and regulatory capital, under SA and IMA, and how the two compare.
+    topics:
+      - {slug: sa-capital-requirements, title: SA capital requirements}
+      - {slug: ima-capital-requirements, title: IMA capital requirements}
+      - {slug: risk-weighted-assets, title: Risk-weighted assets}
+      - {slug: regulatory-capital, title: Regulatory capital}
+      - {slug: capital-aggregation, title: Capital aggregation}
+      - {slug: regulatory-disclosures, title: Regulatory disclosures}
+      - {slug: sa-vs-ima-comparison, title: SA versus IMA comparisons}

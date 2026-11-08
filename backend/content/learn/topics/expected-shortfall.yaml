@@ -1,0 +1,105 @@
+title: Expected Shortfall (ES)
+level: beginner
+summary: The average loss in the tail beyond VaR — the risk measure FRTB uses for internal-model capital.
+sections:
+  concept: |
+    **Expected Shortfall** (also called Conditional VaR or tail loss) is the *average* loss on the
+    worst (1 − α) of outcomes. Where VaR draws a line and stops, ES walks past the line and asks
+    how bad it gets on average out there.
+
+    At α = 97.5%, ES is the mean of the worst 2.5% of P&L scenarios. If the tail is "thin" (like a
+    normal distribution) ES is only a little above VaR; if the tail is "fat" (occasional very large
+    losses) ES can be far above it.
+  why_it_matters: |
+    FRTB made ES at 97.5% the risk measure for the Internal Models Approach (MAR33.3) for three
+    reasons:
+
+    1. **Tail risk.** The 2008 crisis showed that losses *beyond* VaR were the ones that mattered.
+    2. **Coherence.** ES is sub-additive, so diversification never increases the measure —
+       a property VaR lacks, which made VaR-based limit systems gameable.
+    3. **Continuity with the past.** 97.5% ES ≈ 99% VaR under normality, so the switch did not by
+       itself raise or lower capital for well-behaved portfolios.
+
+    ES also underpins the liquidity-horizon formula (MAR33.4), the stressed calibration (MAR33.5)
+    and the modellable-risk charge IMCC (MAR33.15). Learn it well and the IMA module follows.
+  real_world_example: |
+    Two desks each report a 99% one-day VaR of \$1m. Desk A trades liquid index futures: on its
+    worst 1% of days it loses \$1.0–1.3m. Desk B sells deep out-of-the-money options: most days it
+    earns premium, but on its worst 1% of days it loses \$3–8m. Same VaR, very different risk.
+    Their 97.5% ES might be \$1.1m and \$4.5m respectively — ES *sees* Desk B's tail. This is
+    precisely the asymmetry FRTB wanted capital to reflect.
+  mathematical_logic:
+    intro: |
+      With loss $L = -\text{P\&L}$ and a continuous distribution, ES is the conditional expectation
+      of the loss given that it exceeds VaR; equivalently it is the average of all VaRs at levels
+      above α:
+    formulas:
+      - latex: "\\mathrm{ES}_\\alpha = \\mathbb{E}\\,[\\,L \\mid L \\ge \\mathrm{VaR}_\\alpha\\,]"
+        caption: Conditional-expectation definition (continuous case).
+      - latex: "\\mathrm{ES}_\\alpha = \\frac{1}{1-\\alpha}\\int_\\alpha^1 \\mathrm{VaR}_u\\,du"
+        caption: Average of the VaRs in the tail — the definition that also works for discrete distributions.
+      - latex: "\\mathrm{ES}_\\alpha^{\\text{normal}} = V\\,\\sigma\\,\\frac{\\varphi(z_\\alpha)}{1-\\alpha}\\sqrt{h}"
+        caption: Closed form under the normal distribution; φ is the standard-normal density.
+      - latex: "\\mathrm{ES}_\\alpha^{\\text{hist}} = -\\frac{1}{\\alpha' n}\\sum_{i=1}^{\\lfloor \\alpha' n\\rfloor} \\text{P\\&L}_{(i)}\\;(\\text{+ fractional term}),\\quad \\alpha' = 1-\\alpha"
+        caption: Historical estimator — average of the worst α′n ordered scenarios.
+  variables:
+    - {symbol: "\\alpha", name: confidence level, meaning: "0.975 under FRTB IMA (MAR33.3)", units: fraction}
+    - {symbol: "L", name: loss, meaning: "Negative of P&L over the horizon", units: currency}
+    - {symbol: "\\varphi(z)", name: normal density, meaning: "Standard-normal pdf evaluated at the quantile", units: "—"}
+    - {symbol: "\\mathrm{P\\&L}_{(i)}", name: ordered scenario, meaning: "i-th worst scenario P&L", units: currency}
+    - {symbol: "h", name: horizon, meaning: "10 days is the FRTB base horizon before liquidity scaling", units: days}
+  worked_example:
+    intro: Position V = \$10m, daily σ = 1%, normal distribution, α = 97.5%, one-day horizon.
+    steps:
+      - {label: "Quantile at 97.5%", math: "z_{0.975} = 1.9600", result: "1.9600"}
+      - {label: "Normal density at the quantile", math: "\\varphi(1.96) = \\tfrac{1}{\\sqrt{2\\pi}} e^{-1.96^2/2} = 0.05845", result: "0.05845"}
+      - {label: "ES factor", math: "\\varphi(z)/(1-\\alpha) = 0.05845 / 0.025 = 2.3378", result: "2.3378"}
+      - {label: "Expected Shortfall", math: "\\mathrm{ES} = 10{,}000{,}000 \\times 0.01 \\times 2.3378", result: "$233,780"}
+      - {label: "Compare with 99% VaR", math: "\\mathrm{VaR}_{0.99} = 10{,}000{,}000 \\times 0.01 \\times 2.3263", result: "$232,635 (ES is 0.5% higher)"}
+  related_concepts:
+    - {slug: value-at-risk, title: Value at Risk (VaR)}
+    - {slug: liquidity-horizons, title: Liquidity horizons}
+    - {slug: historical-vs-parametric, title: Historical vs parametric models}
+    - {slug: stressed-expected-shortfall, title: Stressed Expected Shortfall}
+exercise:
+  calc_id: var_es_historical
+  title: How fat tails separate ES from VaR
+  description: |
+    Set confidence to **0.975**, keep the normal distribution and note the ES/VaR ratio (≈ 1.15
+    for normal 97.5%). Switch to **Student-t, df = 3**: VaR changes modestly, ES jumps. Then set
+    confidence to 0.99 and compare 99% VaR with the 97.5% ES you saw — this is the comparison the
+    Basel Committee made when choosing 97.5%.
+regulatory_references:
+  - {id: MAR33.3, note: "97.5th percentile, one-tailed"}
+  - {id: MAR33.2, note: "Computed daily, bank-wide and per desk"}
+  - {id: MAR33.4, note: "Liquidity-horizon scaling applies to the ES"}
+  - {id: MAR33.15, note: "IMCC aggregates constrained and unconstrained ES"}
+questions:
+  - id: q1
+    stem: 97.5% Expected Shortfall is…
+    choices:
+      - the loss exceeded 2.5% of the time
+      - the average loss on the worst 2.5% of outcomes
+      - 2.5% of the position value
+      - the worst loss observed
+    answer_index: 1
+    rationale: ES is the conditional mean of losses beyond the 97.5% quantile.
+  - id: q2
+    stem: Why did the Basel Committee pick 97.5% rather than 99% for ES?
+    choices:
+      - 97.5% ES is roughly equal to 99% VaR under a normal distribution, avoiding a mechanical capital jump
+      - 97.5% is easier to backtest
+      - It reduces capital for all banks
+      - It matches the credit-risk confidence level
+    answer_index: 0
+    rationale: ES₀.₉₇₅ ≈ 2.338σ vs VaR₀.₉₉ ≈ 2.326σ under normality.
+  - id: q3
+    stem: For a portfolio of two desks, ES of the combined portfolio is…
+    choices: [Always equal to the sum of desk ESs, Never larger than the sum of desk ESs, Always larger than the sum, Unrelated to the desk ESs]
+    answer_index: 1
+    rationale: Sub-additivity — a coherence property VaR does not have.
+  - id: q4
+    stem: Under FRTB, ES must be computed…
+    choices: [Weekly bank-wide, Daily bank-wide and for each IMA desk, Monthly for capital reporting, Only at quarter-end]
+    answer_index: 1
+    rationale: MAR33.2 requires daily computation at both levels.

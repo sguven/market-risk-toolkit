@@ -1,0 +1,35 @@
+id: MAR33.3
+title: 97.5th percentile, one-tailed confidence level for ES
+excerpt_kind: quote
+excerpt: "In calculating ES, a bank must use a 97.5th percentile, one-tailed confidence level."
+plain_language: >-
+  Under Basel 2.5 the risk measure was VaR at 99%. FRTB replaced it with Expected Shortfall at
+  97.5%: instead of asking "what is the loss we exceed only 1% of the time", we ask "what is the
+  *average* loss on the worst 2.5% of days". For a normal distribution the two numbers are
+  almost identical, which is exactly why 97.5% was chosen — the switch does not mechanically
+  inflate capital, it changes *what* is measured.
+technical_interpretation: >-
+  ES is coherent (sub-additive), so diversified portfolios never attract more capital than the
+  sum of their parts, and it is sensitive to the shape of the tail beyond the quantile. The
+  97.5% level is applied to the 10-day base horizon ES and to every liquidity-horizon component
+  in MAR33.4, and to the stressed calibration in MAR33.5. Backtesting (MAR32) still uses VaR at
+  both 97.5% and 99% because ES itself is hard to backtest.
+mathematical_implications: >-
+  For a loss distribution $L$: $ES_{0.975} = \mathbb{E}[L \mid L \ge VaR_{0.975}]$. Under
+  normality $ES_{0.975} = \sigma\,\varphi(z_{0.975})/0.025 \approx 2.338\,\sigma$ while
+  $VaR_{0.99} = 2.326\,\sigma$: a difference of about 0.5%. Under fat tails (Student-t with
+  4 degrees of freedom) the ratio $ES_{0.975}/VaR_{0.99}$ rises well above 1 — the
+  **Historical VaR & ES simulator** lets you see this directly.
+related_calculations:
+  - calc_id: var_es_historical
+  - calc_id: var_es_parametric
+related_topics:
+  - slug: expected-shortfall
+  - slug: value-at-risk
+cross_references:
+  - id: MAR33.2
+    relation: daily computation
+  - id: MAR33.4
+    relation: liquidity horizon scaling of the same ES
+  - id: MAR32
+    relation: backtesting uses VaR at 97.5% and 99%
