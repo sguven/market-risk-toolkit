@@ -1,0 +1,22 @@
+id: MAR33.22
+title: IMA default risk charge — greater of 12-week average and latest measure
+excerpt_kind: paraphrase
+excerpt: >-
+  The default risk capital requirement under the IMA is the greater of the average of the DRC
+  model measures over the previous 12 weeks and the most recent DRC model measure.
+plain_language: >-
+  Default risk in the trading book (the chance an issuer actually defaults, not just that its
+  spread widens) is modelled separately from ES, at a 99.9% level over one year, and its capital
+  charge is smoothed over roughly a quarter — but can never fall below the latest number.
+technical_interpretation: >-
+  The DRC model (MAR33.18–33.27) is a weekly default-simulation VaR with two systematic factors,
+  PD floors of 0.03% and correlations calibrated to 10 years including a stress period. The
+  "greater of" rule parallels the 60-day averaging used for ES-based capital and prevents a
+  one-off low reading from reducing capital.
+mathematical_implications: >-
+  $$DRC = \max\!\big(\overline{DRC}_{12\text{ weeks}},\ DRC_{\text{latest}}\big)$$
+related_calculations: []
+related_topics: []
+cross_references:
+  - id: MAR22
+    relation: standardised DRC counterpart

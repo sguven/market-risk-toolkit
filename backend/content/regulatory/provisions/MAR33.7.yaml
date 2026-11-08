@@ -1,0 +1,29 @@
+id: MAR33.7
+title: Identifying the 12-month stress period
+excerpt_kind: paraphrase
+excerpt: >-
+  Banks must identify the 12-month period of stress over the observation horizon in which the
+  portfolio experiences the largest loss, searching back at least to 2007, with observations
+  equally weighted, and must update the identification at least quarterly.
+plain_language: >-
+  The stress period is not a fixed date chosen by regulators; it is whichever continuous year
+  since 2007 would have hurt *this* portfolio the most. A rates-heavy book may find its worst
+  year in 2022, an equity book in 2008–09, a credit book in 2020. Because the portfolio changes,
+  the search has to be repeated at least every quarter.
+technical_interpretation: >-
+  The search is a rolling-window optimisation over the reduced risk-factor set (MAR33.5):
+  for each candidate 12-month window compute the ES of the current portfolio and pick the
+  maximum. Equal weighting rules out exponential decay schemes (contrast age-weighted VaR, which
+  RiskLab includes as an educational calculator) inside the stress window.
+mathematical_implications: >-
+  $$\text{stress window} = \arg\max_{w \in \mathcal W} ES_{R}\big(P_{\text{today}},\, w\big)$$
+  where $\mathcal W$ is the set of 12-month windows from 2007 to today. The result is a
+  portfolio-specific quantity, so two banks with different books will legitimately use different
+  stress periods.
+related_calculations:
+  - calc_id: historical_var_fx
+related_topics:
+  - slug: historical-vs-parametric
+cross_references:
+  - id: MAR33.5
+    relation: stressed calibration

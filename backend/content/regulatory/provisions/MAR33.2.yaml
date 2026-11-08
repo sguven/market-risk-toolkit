@@ -1,0 +1,33 @@
+id: MAR33.2
+title: ES must be computed daily, bank-wide and per IMA desk
+excerpt_kind: paraphrase
+excerpt: >-
+  Expected Shortfall must be computed on a daily basis, both for the bank-wide internal model
+  and for each trading desk that uses the internal models approach.
+plain_language: >-
+  A bank using its own model cannot run it once a month. Every business day it must produce an
+  ES number for the whole bank *and* a separate one for each desk that has model approval.
+  The daily cadence feeds the backtesting and P&L attribution tests in MAR32 and the
+  60-day averaging in the capital formula.
+technical_interpretation: >-
+  Daily computation at desk level is what makes desk-level approval (MAR12, MAR32) operational:
+  the desk's own ES, backtesting exceptions and PLA metrics are all produced from the same daily
+  run. Operationally this requires end-of-day positions, a risk-factor time series updated at
+  least quarterly (MAR33.8) and a full-revaluation or sensitivity-based P&L engine that can run
+  inside the overnight batch.
+mathematical_implications: >-
+  The daily series $ES_t$ is the input to the time-averaging in the capital calculation, so a
+  single bad day is smoothed but not ignored. It is also why the ES must be a *reproducible*
+  function of positions and scenarios: two runs on the same inputs must agree.
+related_calculations:
+  - calc_id: var_es_historical
+related_topics:
+  - slug: expected-shortfall
+  - slug: value-at-risk
+cross_references:
+  - id: MAR33.3
+    relation: confidence level
+  - id: MAR32
+    relation: backtesting and PLA use the daily series
+  - id: MAR12
+    relation: trading desk definition

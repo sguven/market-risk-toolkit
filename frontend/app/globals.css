@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+/* ---------- RiskLab design tokens (light theme, Phase 1) ---------- */
+:root {
+  --rl-navy-900: #0b1b2b;
+  --rl-navy-800: #10253a;
+  --rl-navy-700: #173149;
+  --rl-navy-400: #5f7891;
+  --rl-navy-200: #c3cfdb;
+
+  --rl-surface: #ffffff;
+  --rl-surface-2: #f5f7fa;
+  --rl-surface-3: #eceff3;
+  --rl-border: #dde3ea;
+  --rl-border-strong: #c3cbd5;
+
+  --rl-text: #111827;
+  --rl-text-muted: #5b6b7c;
+  --rl-text-faint: #8a98a8;
+
+  --rl-accent: #0f766e; /* teal */
+  --rl-accent-hover: #0d655e;
+  --rl-accent-soft: #e6f4f2;
+
+  --rl-info: #1d4ed8;
+  --rl-warn: #b45309;
+  --rl-danger: #b91c1c;
+  --rl-ok: #15803d;
+
+  /* chart series (muted, restrained) */
+  --rl-series-1: #0f766e;
+  --rl-series-2: #1d4ed8;
+  --rl-series-3: #b45309;
+  --rl-series-4: #6b7280;
+
+  --rl-radius: 6px;
+  --rl-font: "Inter", "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --rl-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@theme inline {
+  --color-navy-900: var(--rl-navy-900);
+  --color-navy-800: var(--rl-navy-800);
+  --color-navy-700: var(--rl-navy-700);
+  --color-navy-400: var(--rl-navy-400);
+  --color-navy-200: var(--rl-navy-200);
+  --color-surface: var(--rl-surface);
+  --color-surface-2: var(--rl-surface-2);
+  --color-surface-3: var(--rl-surface-3);
+  --color-border: var(--rl-border);
+  --color-border-strong: var(--rl-border-strong);
+  --color-ink: var(--rl-text);
+  --color-muted: var(--rl-text-muted);
+  --color-faint: var(--rl-text-faint);
+  --color-accent: var(--rl-accent);
+  --color-accent-hover: var(--rl-accent-hover);
+  --color-accent-soft: var(--rl-accent-soft);
+  --color-info: var(--rl-info);
+  --color-warn: var(--rl-warn);
+  --color-danger: var(--rl-danger);
+  --color-ok: var(--rl-ok);
+  --font-sans: var(--rl-font);
+  --font-mono: var(--rl-mono);
+  --radius-rl: var(--rl-radius);
+}
+
+html {
+  font-family: var(--rl-font);
+  color: var(--rl-text);
+  background: var(--rl-surface-2);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01", "tnum";
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+  color: var(--rl-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* tabular numerals for all data */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Markdown prose ---------- */
+.rl-prose {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--rl-text);
+}
+.rl-prose p { margin: 0 0 0.85em; }
+.rl-prose ul, .rl-prose ol { margin: 0 0 0.85em 1.25em; padding: 0; }
+.rl-prose li { margin: 0.2em 0; }
+.rl-prose strong { font-weight: 600; }
+.rl-prose code {
+  font-family: var(--rl-mono);
+  font-size: 0.9em;
+  background: var(--rl-surface-3);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.rl-prose pre {
+  background: var(--rl-navy-900);
+  color: #e5edf5;
+  padding: 0.85em 1em;
+  border-radius: var(--rl-radius);
+  overflow-x: auto;
+  font-size: 13px;
+}
+.rl-prose pre code { background: transparent; padding: 0; color: inherit; }
+.rl-prose table { border-collapse: collapse; width: 100%; margin: 0.5em 0 1em; font-size: 13.5px; }
+.rl-prose th, .rl-prose td { border: 1px solid var(--rl-border); padding: 0.4em 0.6em; text-align: left; }
+.rl-prose th { background: var(--rl-surface-2); font-weight: 600; }
+.rl-prose blockquote {
+  margin: 0 0 0.85em;
+  padding: 0.4em 0.9em;
+  border-left: 3px solid var(--rl-navy-200);
+  color: var(--rl-text-muted);
+}
+.rl-prose h1, .rl-prose h2, .rl-prose h3 { margin: 1.2em 0 0.5em; font-weight: 600; }
+.rl-prose h3 { font-size: 15px; }
+.rl-prose .katex-display { margin: 0.6em 0 1em; overflow-x: auto; overflow-y: hidden; }
+
+/* ---------- Scrollbars on data tables ---------- */
+.rl-scroll::-webkit-scrollbar { height: 8px; width: 8px; }
+.rl-scroll::-webkit-scrollbar-thumb { background: var(--rl-border-strong); border-radius: 4px; }
+
+/* ---------- Range input ---------- */
+input[type="range"].rl-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--rl-border-strong);
+  outline: none;
+}
+input[type="range"].rl-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--rl-accent);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--rl-border-strong);
+  cursor: pointer;
+}
+input[type="range"].rl-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--rl-accent);
+  border: 2px solid #fff;
+  cursor: pointer;
+}

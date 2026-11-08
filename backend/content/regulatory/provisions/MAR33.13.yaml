@@ -1,0 +1,23 @@
+id: MAR33.13
+title: Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))
+excerpt_kind: paraphrase
+excerpt: >-
+  The bank-wide internal ES model must include all modellable risk factors and may be computed
+  without supervisory constraints on cross-risk-class correlations; the resulting stressed ES is
+  the unconstrained term IMCC(C).
+plain_language: >-
+  The first half of the modellable capital charge lets the bank's model use its own view of
+  diversification across rates, credit, equity, FX and commodities.
+technical_interpretation: >-
+  IMCC(C) is the stressed, liquidity-adjusted ES (MAR33.4–33.7) of the whole modellable book.
+  It is the "diversified" number; MAR33.14 produces the "undiversified" partner.
+mathematical_implications: >-
+  $IMCC(C) = ES_{R,S}(P)\cdot\max\!\big(1, ES_{F,C}(P)/ES_{R,C}(P)\big)$ with full cross-class diversification.
+related_calculations: []
+related_topics:
+  - slug: expected-shortfall
+cross_references:
+  - id: MAR33.14
+    relation: constrained partial ES by risk class
+  - id: MAR33.15
+    relation: aggregation into IMCC

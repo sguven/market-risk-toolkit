@@ -1,0 +1,34 @@
+id: MAR33.16
+title: Non-modellable risk factors capitalised with stress scenarios (SES)
+excerpt_kind: paraphrase
+excerpt: >-
+  Each non-modellable risk factor must be capitalised using a stress scenario calibrated to be at
+  least as prudent as the ES calibration, with a common 12-month stress period per broad risk
+  class and a liquidity horizon of at least 20 days; where no acceptable stress scenario can be
+  found, the maximum possible loss is used.
+plain_language: >-
+  A risk factor that fails the eligibility test in MAR31 (too few real price observations)
+  cannot go into the ES model. Instead the bank must work out how much it could lose on that
+  factor in a stressed year and hold that amount — with far less diversification benefit than
+  modellable risks enjoy (see MAR33.17).
+technical_interpretation: >-
+  The stress scenario risk measure SES is computed per NMRF over its liquidity horizon
+  (floor 20 days), calibrated to the same type of stress window used for ES but chosen per risk
+  class. Idiosyncratic equity and credit-spread NMRFs may be aggregated with zero correlation;
+  all other NMRFs are aggregated with a correlation parameter ρ = 0.6 (MAR33.17).
+mathematical_implications: >-
+  Each $SES_k$ is a loss at a 97.5%-equivalent stress; the aggregate is roughly
+  $\sqrt{\rho(\sum_k SES_k)^2 + (1-\rho)\sum_k SES_k^2}$ for the non-idiosyncratic set
+  (exact formula in MAR33.17, Phase 4). Because this sits *outside* the IMCC diversification,
+  an NMRF-heavy desk can see capital rise sharply when a factor loses modellability — a
+  scenario the Phase 5 comparison engine simulates.
+related_calculations: []
+related_topics:
+  - slug: liquidity-horizons
+cross_references:
+  - id: MAR31
+    relation: risk factor eligibility test
+  - id: MAR33.17
+    relation: SES aggregation formula
+  - id: MAR33.15
+    relation: modellable counterpart IMCC

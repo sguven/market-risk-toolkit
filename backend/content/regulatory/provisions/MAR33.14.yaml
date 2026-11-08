@@ -1,0 +1,25 @@
+id: MAR33.14
+title: Partial ES per broad risk class with other risk factors held constant
+excerpt_kind: paraphrase
+excerpt: >-
+  A partial ES is calculated for each broad regulatory risk class (interest rate, equity, FX,
+  commodity, credit spread) by shocking only that class's risk factors and holding all others
+  constant; the partial ES values are summed to give the constrained aggregate.
+plain_language: >-
+  The second half of the charge assumes *no* diversification between asset classes: compute the
+  ES of the rates book alone, the equity book alone, and so on, then add them up.
+technical_interpretation: >-
+  Each partial ES follows the same stressed, liquidity-adjusted recipe. Summing across classes
+  is equivalent to assuming correlation +1 between class-level losses, the most conservative
+  aggregation.
+mathematical_implications: >-
+  $\sum_i IMCC(C_i)$ where $i$ runs over the five broad risk classes. By sub-additivity of ES,
+  $\sum_i IMCC(C_i) \ge IMCC(C)$.
+related_calculations: []
+related_topics:
+  - slug: expected-shortfall
+cross_references:
+  - id: MAR33.13
+    relation: unconstrained ES
+  - id: MAR33.15
+    relation: aggregation into IMCC

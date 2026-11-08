@@ -1,0 +1,21 @@
+id: MAR33.17
+title: Aggregation of stress scenario capital (SES) across NMRFs
+excerpt_kind: paraphrase
+excerpt: >-
+  The aggregate SES combines idiosyncratic credit-spread and equity NMRFs aggregated with zero
+  correlation and all other NMRFs aggregated with a correlation parameter ρ of 0.6.
+plain_language: >-
+  Zero correlation for pure name-specific risks, 0.6 for everything else — a middle ground
+  between "add them all up" (ρ = 1) and "they fully diversify" (ρ = 0).
+technical_interpretation: >-
+  The exact aggregation expression is set out in the paragraph as a formula; RiskLab will
+  transcribe and implement it in Phase 4 (IMA Lab — NMRF/SES simulator) with a validation
+  record. Until then this page records the structural facts only.
+mathematical_implications: >-
+  Status: formula transcription pending (flagged in docs/ARCHITECTURE.md §8). Do not rely on
+  this page for the precise functional form.
+related_calculations: []
+related_topics: []
+cross_references:
+  - id: MAR33.16
+    relation: SES definition

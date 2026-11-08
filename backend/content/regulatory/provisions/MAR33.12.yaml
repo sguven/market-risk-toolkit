@@ -1,0 +1,32 @@
+id: MAR33.12
+title: Mapping risk factors to liquidity horizon categories (Table 2)
+excerpt_kind: paraphrase
+excerpt: >-
+  Each risk factor must be mapped to one of the risk factor categories in Table 2 using a
+  consistent, documented and validated procedure. The liquidity horizon is a floor (a bank may,
+  with approval, use a longer one) and is capped at the maturity of the instrument.
+plain_language: >-
+  This is the lookup table behind MAR33.4. Interest rates in major currencies and large-cap
+  equities get 10 days; high-yield corporate credit spreads get 60; credit-spread volatility and
+  exotic commodity volatility get 120. A bank cannot shorten a horizon, but a position maturing
+  in 30 days need not be measured over 60.
+technical_interpretation: >-
+  The mapping is part of the risk-factor taxonomy and must be validated like any model input.
+  Categories mix *asset class* (rates, credit, equity, FX, commodity), *liquidity tier*
+  (specified vs other currencies, IG vs HY, large vs small cap) and *risk type* (price vs
+  volatility vs "other"). Volatility and "other" types always carry a longer horizon than the
+  underlying price.
+mathematical_implications: >-
+  The table determines the nesting in MAR33.4: factors with horizon $n$ appear in every
+  $ES_T(P,j)$ with $LH_j \le n$. A risk factor at 120 days contributes to all five terms,
+  one at 10 days only to the first. The full table is stored in RiskLab's engine as
+  `params/mar33_liquidity_horizons.json` and rendered on the **Liquidity horizons** topic page.
+related_calculations:
+  - calc_id: liquidity_horizon_scaling
+related_topics:
+  - slug: liquidity-horizons
+cross_references:
+  - id: MAR33.4
+    relation: scaling formula
+  - id: MAR31
+    relation: risk factor specification and eligibility

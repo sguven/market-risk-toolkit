@@ -1,0 +1,98 @@
+title: Why Basel introduced FRTB
+level: beginner
+summary: The failures of the Basel 2.5 market-risk framework in 2007–09 and the design choices the Fundamental Review made in response.
+sections:
+  concept: |
+    The **Fundamental Review of the Trading Book (FRTB)** is the Basel Committee's overhaul of
+    market-risk capital, finalised in January 2019 and consolidated into the MAR standard with an
+    implementation date of 1 January 2023 (national timelines differ). It replaced the Basel II /
+    Basel 2.5 rules with:
+
+    - a revised **trading book boundary** (RBC25);
+    - a new, risk-sensitive **Standardised Approach** built on sensitivities (MAR20–23);
+    - an **Internal Models Approach** based on Expected Shortfall with liquidity horizons,
+      approved **desk by desk** and subject to tougher tests (MAR30–33);
+    - a **capital floor and fallback**: every bank computes the SA, and desks failing IMA
+      tests fall back to it.
+  why_it_matters: |
+    The crisis exposed four problems with VaR-based capital:
+
+    1. **Tail risk was invisible.** 99% VaR ignored how large losses beyond the quantile were.
+    2. **Illiquidity was ignored.** A 10-day horizon for everything let banks hold illiquid
+       credit positions at low capital.
+    3. **The boundary was gameable.** Positions migrated to whichever book carried less capital.
+    4. **Standardised and internal models were not comparable.** Banks' internal-model capital
+       varied widely for similar portfolios, and the old standardised approach was too crude to
+       act as a credible floor.
+
+    Basel 2.5 (2009) patched this with stressed VaR, the Incremental Risk Charge and the
+    Comprehensive Risk Measure, roughly tripling market-risk capital — but it was a patch. FRTB
+    rebuilt the framework.
+  real_world_example: |
+    In 2007–08 several large banks reported trading losses many times their VaR, on positions
+    (super-senior CDO tranches, leveraged loans) that could not be sold for months. Under
+    Basel 2.5 those positions attracted VaR + stressed VaR + IRC. Under FRTB the same book would
+    face ES at 97.5% calibrated to the stress period, 60–120-day liquidity horizons for
+    credit-spread risk, an SA-based floor via the fallback, and a desk-level approval that
+    could be withdrawn if backtesting or P&L attribution failed.
+  mathematical_logic:
+    intro: FRTB's key quantitative substitutions can be summarised side by side.
+    formulas:
+      - latex: "\\text{Basel 2.5: } K = m_c\\,\\overline{\\mathrm{VaR}}_{99\\%,10d} + m_s\\,\\overline{\\mathrm{sVaR}}_{99\\%,10d} + \\mathrm{IRC} + \\mathrm{CRM}"
+        caption: Pre-FRTB internal-model capital — VaR plus stressed VaR with multipliers, plus incremental and comprehensive risk charges.
+      - latex: "\\text{FRTB IMA: } \\mathrm{IMCC} = \\rho\\,\\mathrm{IMCC}(C) + (1-\\rho)\\sum_i \\mathrm{IMCC}(C_i),\\;\\; \\rho = 0.5"
+        caption: Modellable-risk capital — stressed, liquidity-adjusted ES, half diversified / half undiversified (MAR33.15), plus SES for non-modellable factors and the DRC.
+      - latex: "\\mathrm{ES}_{97.5\\%} \\approx \\mathrm{VaR}_{99\\%} \\text{ under normality}"
+        caption: Why the confidence level moved from 99% to 97.5% without a mechanical capital change.
+  variables:
+    - {symbol: "m_c, m_s", name: multipliers, meaning: "Supervisory multipliers (≥ 3) applied to VaR and stressed VaR under Basel 2.5", units: "—"}
+    - {symbol: "\\mathrm{IRC}", name: incremental risk charge, meaning: "Basel 2.5 charge for default and migration risk of credit positions", units: currency}
+    - {symbol: "\\mathrm{IMCC}", name: modellable capital charge, meaning: "FRTB internal-model capital for modellable risk factors", units: currency}
+    - {symbol: "\\rho", name: aggregation weight, meaning: "0.5 — weight on the diversified ES", units: "—"}
+  worked_example:
+    intro: A stylised comparison of the measure, not of actual capital levels.
+    steps:
+      - {label: "Normal 99% VaR on σ = $1m/day", math: "2.326 \\times 1\\text{m}", result: "$2.33m"}
+      - {label: "Normal 97.5% ES on the same σ", math: "2.338 \\times 1\\text{m}", result: "$2.34m — the measure changed, the number did not"}
+      - {label: "Fat tails (Student-t, 4 df, same σ): 99% VaR", math: "\\approx 2.65 \\times 1\\text{m}", result: "$2.65m"}
+      - {label: "Fat tails: 97.5% ES", math: "\\approx 3.0 \\times 1\\text{m}", result: "≈ $3.0m — ES responds to the tail, VaR much less"}
+  related_concepts:
+    - {slug: basel-25-to-frtb, title: Evolution from Basel 2.5 to FRTB}
+    - {slug: expected-shortfall, title: Expected Shortfall (ES)}
+    - {slug: liquidity-horizons, title: Liquidity horizons}
+    - {slug: trading-book-vs-banking-book, title: Trading Book vs Banking Book}
+    - {slug: sa-vs-ima-overview, title: Standardised Approach vs Internal Models Approach}
+exercise:
+  calc_id: var_es_historical
+  title: See the tail problem FRTB addressed
+  description: |
+    Run the simulator with the **normal** distribution at 99% and note VaR. Switch to
+    **Student-t (df = 4)** keeping the same volatility: VaR rises a little, ES rises much more.
+    This gap — risk beyond the quantile — is what Basel 2.5 capital could not see.
+regulatory_references:
+  - {id: MAR33.3, note: "ES at 97.5% replaces 99% VaR"}
+  - {id: MAR33.4, note: "Liquidity horizons"}
+  - {id: MAR33.5, note: "Stressed calibration replaces VaR + sVaR"}
+  - {id: RBC25, note: "Revised boundary"}
+  - {id: MAR20, note: "Structure of the new standardised approach"}
+questions:
+  - id: q1
+    stem: Which was NOT a weakness of the pre-FRTB framework identified by the Basel Committee?
+    choices: [VaR ignored losses beyond the quantile, A uniform 10-day horizon ignored illiquidity, The trading book boundary was easy to arbitrage, Capital requirements were too high for all banks]
+    answer_index: 3
+    rationale: The Committee's concern was under-capitalisation and incomparability, not excessive capital.
+  - id: q2
+    stem: Under FRTB, internal-model approval is granted…
+    choices: [Bank-wide only, At trading-desk level, Per instrument, Per legal entity only]
+    answer_index: 1
+    rationale: MAR12 defines the desk and MAR32 tests apply desk by desk.
+  - id: q3
+    stem: Why must every FRTB bank compute the Standardised Approach even if it uses internal models?
+    choices: [For disclosure comparability and as the fallback when desks fail IMA tests, Because the SA is always lower, To calibrate ES, It is optional]
+    answer_index: 0
+    rationale: The SA is the fallback and the basis for comparability across banks.
+  - id: q4
+    stem: Basel 2.5 (2009) added…
+    choices: [Expected Shortfall and liquidity horizons, Stressed VaR, the Incremental Risk Charge and the Comprehensive Risk Measure, The sensitivities-based method, Desk-level approval]
+    answer_index: 1
+    rationale: Basel 2.5 was the interim patch; ES, liquidity horizons, SBM and desk approval came with FRTB.

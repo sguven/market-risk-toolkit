@@ -1,3 +1,4 @@
+"""Original market-risk-toolkit tests, preserved unchanged in substance after the migration."""
 from datetime import date
 from math import exp
 
@@ -5,18 +6,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from market_risk import (
-    age_weighted_var,
-    discount_factor,
-    fixed_leg_cashflows,
-    fx_position_pnl,
-    garman_kohlhagen,
-    historical_var,
-    interpolate,
-    payment_schedule,
-    zero_coupon_pv,
-    zero_coupon_spread,
-)
+from risklab_engine.pricing import (discount_factor, fixed_leg_cashflows, garman_kohlhagen, interpolate, payment_schedule, zero_coupon_pv, zero_coupon_spread)
+from risklab_engine.var_es import (age_weighted_var, fx_position_pnl, historical_var)
+
 
 
 def test_put_call_parity():

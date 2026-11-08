@@ -1,0 +1,4219 @@
+{
+"health": {
+"status": "ok",
+"engine_version": "0.1.0",
+"regulatory_version": "Basel Framework — MAR (Calculation of RWA for market risk), in force 2023-01-01"
+},
+"paths": [
+{
+"slug": "market-risk-foundations",
+"title": "Market Risk Foundations",
+"level": "beginner",
+"ordinal": 1,
+"description": "What market risk is, where it lives in a bank, and the three measures everything else builds on — VaR, Expected Shortfall and stress.",
+"topics": [
+{
+"slug": "trading-book-vs-banking-book",
+"title": "Trading Book vs Banking Book",
+"level": "beginner",
+"ordinal": 1,
+"authored": true,
+"exercise_calc": null
+},
+{
+"slug": "market-risk-fundamentals",
+"title": "Market risk fundamentals",
+"level": "beginner",
+"ordinal": 2,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "risk-factors",
+"title": "Risk factors",
+"level": "beginner",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "interest-rate-risk",
+"title": "Interest rate risk",
+"level": "beginner",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "credit-spread-risk",
+"title": "Credit spread risk",
+"level": "beginner",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "equity-risk",
+"title": "Equity risk",
+"level": "beginner",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "fx-risk",
+"title": "Foreign exchange risk",
+"level": "beginner",
+"ordinal": 7,
+"authored": true,
+"exercise_calc": "fx_option_gk"
+},
+{
+"slug": "commodity-risk",
+"title": "Commodity risk",
+"level": "beginner",
+"ordinal": 8,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "value-at-risk",
+"title": "Value at Risk (VaR)",
+"level": "beginner",
+"ordinal": 9,
+"authored": true,
+"exercise_calc": "var_es_historical"
+},
+{
+"slug": "expected-shortfall",
+"title": "Expected Shortfall (ES)",
+"level": "beginner",
+"ordinal": 10,
+"authored": true,
+"exercise_calc": "var_es_historical"
+},
+{
+"slug": "stress-testing",
+"title": "Stress testing",
+"level": "beginner",
+"ordinal": 11,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "historical-vs-parametric",
+"title": "Historical vs parametric models",
+"level": "beginner",
+"ordinal": 12,
+"authored": true,
+"exercise_calc": "historical_var_fx"
+},
+{
+"slug": "monte-carlo-simulation",
+"title": "Monte Carlo simulation",
+"level": "beginner",
+"ordinal": 13,
+"authored": false,
+"exercise_calc": null
+}
+]
+},
+{
+"slug": "introduction-to-frtb",
+"title": "Introduction to FRTB",
+"level": "beginner",
+"ordinal": 2,
+"description": "Why the Fundamental Review of the Trading Book happened, what changed from Basel 2.5, and how SA and IMA fit together.",
+"topics": [
+{
+"slug": "why-frtb",
+"title": "Why Basel introduced FRTB",
+"level": "beginner",
+"ordinal": 1,
+"authored": true,
+"exercise_calc": "var_es_historical"
+},
+{
+"slug": "basel-25-to-frtb",
+"title": "Evolution from Basel 2.5 to FRTB",
+"level": "beginner",
+"ordinal": 2,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "trading-book-boundary",
+"title": "Trading book boundary",
+"level": "beginner",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "trading-desk-structure",
+"title": "Trading desk structure",
+"level": "beginner",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-vs-ima-overview",
+"title": "Standardised Approach vs Internal Models Approach",
+"level": "beginner",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "regulatory-capital-framework",
+"title": "Regulatory capital framework",
+"level": "beginner",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "frtb-implementation-challenges",
+"title": "FRTB implementation challenges",
+"level": "beginner",
+"ordinal": 7,
+"authored": false,
+"exercise_calc": null
+}
+]
+},
+{
+"slug": "standardised-approach",
+"title": "Standardised Approach (SA)",
+"level": "intermediate",
+"ordinal": 3,
+"description": "The sensitivities-based method, default risk charge and residual risk add-on — buckets, risk weights, correlations and aggregation.",
+"topics": [
+{
+"slug": "sensitivities-based-method",
+"title": "Sensitivities-Based Method (SBM)",
+"level": "intermediate",
+"ordinal": 1,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "delta-risk",
+"title": "Delta risk",
+"level": "intermediate",
+"ordinal": 2,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "vega-risk",
+"title": "Vega risk",
+"level": "intermediate",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "curvature-risk",
+"title": "Curvature risk",
+"level": "intermediate",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "girr",
+"title": "General Interest Rate Risk (GIRR)",
+"level": "intermediate",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "csr",
+"title": "Credit Spread Risk (CSR)",
+"level": "intermediate",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-equity-risk",
+"title": "Equity risk under the SA",
+"level": "intermediate",
+"ordinal": 7,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-commodity-risk",
+"title": "Commodity risk under the SA",
+"level": "intermediate",
+"ordinal": 8,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-fx-risk",
+"title": "FX risk under the SA",
+"level": "intermediate",
+"ordinal": 9,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "risk-classes-and-buckets",
+"title": "Risk classes and buckets",
+"level": "intermediate",
+"ordinal": 10,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "risk-weights",
+"title": "Risk weights",
+"level": "intermediate",
+"ordinal": 11,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "correlation-aggregation",
+"title": "Correlation aggregation",
+"level": "intermediate",
+"ordinal": 12,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "default-risk-charge",
+"title": "Default Risk Charge (DRC)",
+"level": "intermediate",
+"ordinal": 13,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "residual-risk-add-on",
+"title": "Residual Risk Add-on (RRAO)",
+"level": "intermediate",
+"ordinal": 14,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-capital-aggregation",
+"title": "Capital aggregation",
+"level": "intermediate",
+"ordinal": 15,
+"authored": false,
+"exercise_calc": null
+}
+]
+},
+{
+"slug": "internal-models-approach",
+"title": "Internal Models Approach (IMA)",
+"level": "advanced",
+"ordinal": 4,
+"description": "Expected Shortfall with liquidity horizons, stressed calibration, modellable vs non-modellable risk factors, SES and the IMA default risk charge.",
+"topics": [
+{
+"slug": "ima-expected-shortfall",
+"title": "Expected Shortfall under the IMA",
+"level": "advanced",
+"ordinal": 1,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "liquidity-horizons",
+"title": "Liquidity horizons",
+"level": "advanced",
+"ordinal": 2,
+"authored": true,
+"exercise_calc": "liquidity_horizon_scaling"
+},
+{
+"slug": "stressed-expected-shortfall",
+"title": "Stressed Expected Shortfall",
+"level": "advanced",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "rfet",
+"title": "Risk Factor Eligibility Test (RFET)",
+"level": "advanced",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "modellable-risk-factors",
+"title": "Modellable Risk Factors (MRF)",
+"level": "advanced",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "non-modellable-risk-factors",
+"title": "Non-Modellable Risk Factors (NMRF)",
+"level": "advanced",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "ses",
+"title": "Stress Scenario Risk Measure (SES)",
+"level": "advanced",
+"ordinal": 7,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "ima-default-risk-charge",
+"title": "IMA Default Risk Charge",
+"level": "advanced",
+"ordinal": 8,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "trading-desk-approval",
+"title": "Trading desk approval",
+"level": "advanced",
+"ordinal": 9,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "internal-model-requirements",
+"title": "Internal model requirements",
+"level": "advanced",
+"ordinal": 10,
+"authored": false,
+"exercise_calc": null
+}
+]
+},
+{
+"slug": "model-validation-and-monitoring",
+"title": "Model Validation & Monitoring",
+"level": "advanced",
+"ordinal": 5,
+"description": "Backtesting, the three P&L measures, the P&L attribution test and what happens when a model fails.",
+"topics": [
+{
+"slug": "backtesting",
+"title": "Backtesting",
+"level": "advanced",
+"ordinal": 1,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "actual-pnl",
+"title": "Actual P&L",
+"level": "advanced",
+"ordinal": 2,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "hypothetical-pnl",
+"title": "Hypothetical P&L",
+"level": "advanced",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "risk-theoretical-pnl",
+"title": "Risk-Theoretical P&L",
+"level": "advanced",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "pla-test",
+"title": "P&L Attribution Test (PLA)",
+"level": "advanced",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "traffic-light-zones",
+"title": "Traffic light zones",
+"level": "advanced",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "model-exceptions",
+"title": "Model exceptions",
+"level": "advanced",
+"ordinal": 7,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "regulatory-model-approval",
+"title": "Regulatory model approval",
+"level": "advanced",
+"ordinal": 8,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "model-limitations",
+"title": "Model limitations",
+"level": "advanced",
+"ordinal": 9,
+"authored": false,
+"exercise_calc": null
+}
+]
+},
+{
+"slug": "capital-calculation-and-reporting",
+"title": "Capital Calculation & Reporting",
+"level": "intermediate",
+"ordinal": 6,
+"description": "From risk measures to risk-weighted assets and regulatory capital, under SA and IMA, and how the two compare.",
+"topics": [
+{
+"slug": "sa-capital-requirements",
+"title": "SA capital requirements",
+"level": "intermediate",
+"ordinal": 1,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "ima-capital-requirements",
+"title": "IMA capital requirements",
+"level": "intermediate",
+"ordinal": 2,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "risk-weighted-assets",
+"title": "Risk-weighted assets",
+"level": "intermediate",
+"ordinal": 3,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "regulatory-capital",
+"title": "Regulatory capital",
+"level": "intermediate",
+"ordinal": 4,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "capital-aggregation",
+"title": "Capital aggregation",
+"level": "intermediate",
+"ordinal": 5,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "regulatory-disclosures",
+"title": "Regulatory disclosures",
+"level": "intermediate",
+"ordinal": 6,
+"authored": false,
+"exercise_calc": null
+},
+{
+"slug": "sa-vs-ima-comparison",
+"title": "SA versus IMA comparisons",
+"level": "intermediate",
+"ordinal": 7,
+"authored": false,
+"exercise_calc": null
+}
+]
+}
+],
+"topics": {
+"trading-book-vs-banking-book": {
+"title": "Trading Book vs Banking Book",
+"level": "beginner",
+"summary": "The boundary that decides whether a position attracts market-risk or credit-risk capital — and why FRTB made it much harder to cross.",
+"sections": {
+"concept": "A bank's balance sheet is split into two regulatory books:\n\n- The **trading book** holds instruments the bank intends to trade, market-make, hedge\n  trading positions with, or hold for short-term resale. They are marked to market daily and\n  attract **market risk** capital (the MAR standard).\n- The **banking book** holds everything else — loans, deposits, held-to-maturity securities,\n  most derivatives hedging them. It attracts **credit risk** capital (CRE) and interest-rate\n  risk in the banking book is a Pillar 2 matter.\n\nThe **boundary** between them is defined in RBC25. It matters because the same bond can\ncarry very different capital depending on which book it sits in.\n",
+"why_it_matters": "Before FRTB the boundary was based mainly on the bank's stated *intent*, which made it\nporous. During 2007–09 banks held large credit positions in the trading book at low\nVaR-based capital, then moved illiquid positions to the banking book when prices fell —\n\"regulatory arbitrage\". FRTB responded by:\n\n- Listing instruments that are *presumed* to be in the trading book and others that *must*\n  be in the banking book (RBC25).\n- Requiring supervisory approval for reclassification and, where a switch lowers capital,\n  imposing a capital surcharge so the bank gains no benefit.\n- Making trading-book treatment contingent on daily fair valuation and active management.\n\nFor RiskLab, the boundary is the first gate: every SA or IMA calculation applies only to\ntrading-book positions.\n",
+"real_world_example": "A bank buys \\$100m of an investment-grade corporate bond. Held in the treasury portfolio as a\nliquidity asset, it sits in the banking book and is capitalised for credit risk with a\nrisk weight tied to the issuer's rating. The same bond bought by the credit trading desk to\nmake markets sits in the trading book: it is marked to market daily and capitalised under\nthe SA for credit-spread delta (MAR21), default risk (MAR22) and, if applicable, curvature\nand vega. The two capital numbers can differ several-fold, which is exactly why the switch\nis policed.\n",
+"mathematical_logic": {
+"intro": "The boundary is a classification rule rather than a formula, but it has a quantitative\nconsequence — total market-risk capital is computed over the trading book only, and a\nreclassification that reduces total capital triggers a surcharge equal to the difference:\n",
+"formulas": [
+{
+"latex": "K_{\\text{total}} = K_{\\text{MAR}}(\\text{TB}) + K_{\\text{CRE}}(\\text{BB}) + \\dots",
+"caption": "Capital is additive across books; the boundary decides which function applies to each position."
+},
+{
+"latex": "\\text{Surcharge} = \\max\\big(0,\\; K_{\\text{before}} - K_{\\text{after}}\\big)",
+"caption": "A permitted switch that lowers capital earns no benefit — the difference is held as a Pillar 1 surcharge until the position matures or expires."
+}
+]
+},
+"variables": [
+{
+"symbol": "\\text{TB}",
+"name": "trading book",
+"meaning": "Positions held with trading intent, fair-valued daily",
+"units": "—"
+},
+{
+"symbol": "\\text{BB}",
+"name": "banking book",
+"meaning": "All other positions",
+"units": "—"
+},
+{
+"symbol": "K_{\\text{MAR}}",
+"name": "market risk capital",
+"meaning": "SA or IMA capital requirement on the trading book",
+"units": "currency"
+},
+{
+"symbol": "K_{\\text{CRE}}",
+"name": "credit risk capital",
+"meaning": "Standardised or IRB credit risk capital on the banking book",
+"units": "currency"
+}
+],
+"worked_example": {
+"intro": "Illustrative only — numbers are synthetic and the credit-risk side is simplified.",
+"steps": [
+{
+"label": "Bond in the banking book: 100% risk weight, 8% minimum capital",
+"math": "K_{\\text{CRE}} = 100\\text{m} \\times 100\\% \\times 8\\%",
+"result": "$8.0m"
+},
+{
+"label": "Same bond in the trading book: CSR delta (illustrative risk weight) + DRC",
+"math": "K_{\\text{MAR}} \\approx K_{\\text{CSR}} + K_{\\text{DRC}}",
+"result": "depends on bucket, duration and hedges — computed in the SA Lab (Phase 3)"
+},
+{
+"label": "If the bank reclassifies after capital falls",
+"math": "\\text{Surcharge} = \\max(0, K_{\\text{before}} - K_{\\text{after}})",
+"result": "no net capital saving"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "trading-book-boundary",
+"title": "Trading book boundary",
+"authored": false
+},
+{
+"slug": "why-frtb",
+"title": "Why Basel introduced FRTB",
+"authored": true
+},
+{
+"slug": "trading-desk-structure",
+"title": "Trading desk structure",
+"authored": false
+},
+{
+"slug": "market-risk-fundamentals",
+"title": "Market risk fundamentals",
+"authored": false
+}
+]
+},
+"exercise": null,
+"questions": [
+{
+"id": "q1",
+"stem": "A position is in the trading book if it is…",
+"choices": [
+"Any derivative",
+"Held with trading intent or to hedge trading-book positions and fair-valued daily",
+"Any bond rated below investment grade",
+"Held for more than one year"
+],
+"answer_index": 1,
+"rationale": "Trading intent and daily fair valuation are the core criteria in RBC25."
+},
+{
+"id": "q2",
+"stem": "Under FRTB, moving an instrument from the trading book to the banking book…",
+"choices": [
+"Is at the bank's discretion",
+"Requires supervisory approval and any capital benefit is neutralised by a surcharge",
+"Is prohibited in all cases",
+"Is automatic after 90 days"
+],
+"answer_index": 1,
+"rationale": "RBC25 restricts switching and removes the capital incentive."
+},
+{
+"id": "q3",
+"stem": "Why did the Basel Committee tighten the boundary?",
+"choices": [
+"To simplify reporting",
+"Because intent-based classification enabled regulatory arbitrage during the crisis",
+"To eliminate the banking book",
+"To reduce capital for trading desks"
+],
+"answer_index": 1,
+"rationale": "Banks had moved positions between books to lower capital."
+}
+],
+"slug": "trading-book-vs-banking-book",
+"path_slug": "market-risk-foundations",
+"regulatory_references": [
+{
+"id": "RBC25",
+"title": "Boundary between the banking book and the trading book",
+"url": "https://www.bis.org/basel_framework/chapter/RBC/25.htm",
+"chapter_code": "RBC25",
+"in_library": false,
+"note": "Boundary between the banking book and the trading book"
+},
+{
+"id": "MAR11",
+"title": "Definitions and application of market risk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/11.htm",
+"chapter_code": "MAR11",
+"in_library": false,
+"note": "Definitions and application of market risk"
+},
+{
+"id": "MAR12",
+"title": "Definition of trading desk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/12.htm",
+"chapter_code": "MAR12",
+"in_library": false,
+"note": "Trading desk definition"
+}
+]
+},
+"fx-risk": {
+"title": "Foreign exchange risk",
+"level": "beginner",
+"summary": "How currency exposure arises, how it is measured (open position, delta, vega) and where it sits in the FRTB risk classes.",
+"sections": {
+"concept": "**FX risk** is the risk that exchange-rate moves change the value of positions denominated in\na currency other than the bank's reporting currency. It arises from:\n\n- **Spot and forward positions** — an *open currency position* (net long or short in each\n  currency) that gains or loses one-for-one with the rate;\n- **Options** — exposure to the rate (*delta*), to its volatility (*vega*) and to the\n  non-linearity of the payoff (*gamma / curvature*);\n- **Translation** of foreign-currency assets and liabilities, including the FX component of\n  every non-domestic bond, equity or commodity position.\n\nIn the FRTB Standardised Approach, FX is one of the seven risk classes (MAR21); in the IMA,\nFX rates for specified currency pairs carry a 10-day liquidity horizon and other pairs 20\ndays (MAR33.12).\n",
+"why_it_matters": "FX is the risk class every trading book has, because any instrument not in the reporting\ncurrency carries it. Measuring it well matters because:\n\n- FX delta is simple but **FX vega and curvature** on options can dominate the capital of an\n  options desk.\n- In the SA, FX risk weights and the treatment of **currency pairs** (which pairs count as\n  liquid and attract a lower weight) are prescribed in MAR21.\n- In the IMA, FX liquidity horizons depend on whether the pair is on the specified list\n  (e.g. USD/EUR, USD/JPY, USD/TRY) — a 10- vs 20-day difference is a √2 factor on ES.\n",
+"real_world_example": "A bank reporting in Turkish lira runs an FX desk long USD 2m, short EUR 1.5m, long GBP 0.5m.\nOn a day when USD/TRY rises 2% and EUR/TRY rises 1%, the desk makes about 2% × 2m × 30\n(spot) on USD and loses 1% × 1.5m × 33 on EUR. Historical simulation applies each of the\nlast 250 days' moves to today's exposure to build the P&L distribution and read off VaR.\nThe same desk's option book is priced with Garman–Kohlhagen; bumping spot by one basis\npoint gives the delta that feeds the SA sensitivities-based method.\n",
+"mathematical_logic": {
+"intro": "Spot exposure is linear; options bring the Garman–Kohlhagen model and its Greeks.",
+"formulas": [
+{
+"latex": "\\text{P\\&L}_t = \\sum_c S_{c}\\, q_c\\,\\Big(\\tfrac{S_{c,t}}{S_{c,t-1}} - 1\\Big)",
+"caption": "Historical P&L of an open currency position — today's spot S, foreign amount q, historical return."
+},
+{
+"latex": "C = S e^{-r_f t} N(d_1) - K e^{-r_d t} N(d_2),\\quad d_1 = \\frac{\\ln(S/K) + (r_d - r_f + \\sigma^2/2)t}{\\sigma\\sqrt t}",
+"caption": "Garman–Kohlhagen price of a European FX call; the foreign rate plays the role of a dividend yield."
+},
+{
+"latex": "\\Delta \\approx \\frac{V(S + h) - V(S - h)}{2h}",
+"caption": "Finite-difference delta — how a risk system turns a pricing model into the sensitivity the SA consumes."
+}
+]
+},
+"variables": [
+{
+"symbol": "S",
+"name": "spot rate",
+"meaning": "Domestic currency per unit of foreign (e.g. TRY per USD)",
+"units": "domestic/foreign"
+},
+{
+"symbol": "q_c",
+"name": "position",
+"meaning": "Net foreign-currency amount; long > 0, short < 0",
+"units": "foreign currency"
+},
+{
+"symbol": "K",
+"name": "strike",
+"meaning": "Option strike rate",
+"units": "domestic/foreign"
+},
+{
+"symbol": "r_d, r_f",
+"name": "interest rates",
+"meaning": "Domestic and foreign continuously compounded rates",
+"units": "fraction p.a."
+},
+{
+"symbol": "\\sigma",
+"name": "implied volatility",
+"meaning": "Annualised volatility of the FX rate",
+"units": "fraction p.a."
+},
+{
+"symbol": "t",
+"name": "time to expiry",
+"meaning": "In years",
+"units": "years"
+}
+],
+"worked_example": {
+"intro": "Price a 90-day EUR call / USD put, spot 1.08, strike 1.10, r_USD = 4.5%, r_EUR = 3.0%, σ = 9%, notional EUR 1m (USD is the domestic currency here).",
+"steps": [
+{
+"label": "Time to expiry",
+"math": "t = 90/365 = 0.2466",
+"result": "0.2466"
+},
+{
+"label": "d1",
+"math": "d_1 = \\frac{\\ln(1.08/1.10) + (0.045 - 0.03 + 0.09^2/2)\\times 0.2466}{0.09\\sqrt{0.2466}}",
+"result": "−0.3055"
+},
+{
+"label": "d2",
+"math": "d_2 = d_1 - 0.09\\sqrt{0.2466}",
+"result": "−0.3502"
+},
+{
+"label": "Call price per EUR",
+"math": "1.08 e^{-0.03 t} N(d_1) - 1.10 e^{-0.045 t} N(d_2)",
+"result": "≈ USD 0.01237"
+},
+{
+"label": "Position PV",
+"math": "0.01237 \\times 1{,}000{,}000",
+"result": "≈ USD 12,370"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "value-at-risk",
+"title": "Value at Risk (VaR)",
+"authored": true
+},
+{
+"slug": "historical-vs-parametric",
+"title": "Historical vs parametric models",
+"authored": true
+},
+{
+"slug": "sa-fx-risk",
+"title": "FX risk under the SA",
+"authored": false
+},
+{
+"slug": "liquidity-horizons",
+"title": "Liquidity horizons",
+"authored": true
+}
+]
+},
+"exercise": {
+"calc_id": "fx_option_gk",
+"title": "Price an FX option and watch its delta",
+"description": "Move spot through the strike and watch delta rise from near 0 to near the discounted\nnotional — this delta (per unit of spot) is the FX sensitivity the SA risk weights are\napplied to. Raise volatility to see the option value and vega grow. The calculator uses the\nGarman–Kohlhagen code from the original market-risk toolkit.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "In the Garman–Kohlhagen model the foreign interest rate plays the role of…",
+"choices": [
+"The risk-free discount rate",
+"A continuous dividend yield on the underlying",
+"The volatility",
+"The strike adjustment"
+],
+"answer_index": 1,
+"rationale": "Holding foreign currency earns the foreign rate, exactly like a dividend yield on a stock."
+},
+{
+"id": "q2",
+"stem": "Under MAR33.12, the liquidity horizon of a specified FX pair such as USD/EUR is…",
+"choices": [
+"10 days",
+"20 days",
+"40 days",
+"60 days"
+],
+"answer_index": 0,
+"rationale": "Specified currency pairs are 10 days; other pairs 20; FX volatility 40."
+},
+{
+"id": "q3",
+"stem": "A bank long EUR 1.5m against TRY loses money when…",
+"choices": [
+"EUR/TRY rises",
+"EUR/TRY falls",
+"TRY interest rates rise",
+"USD/TRY rises"
+],
+"answer_index": 1,
+"rationale": "A long EUR position gains when EUR strengthens (EUR/TRY rises) and loses when it falls."
+},
+{
+"id": "q4",
+"stem": "Which sensitivities does an FX option book contribute to the SA sensitivities-based method?",
+"choices": [
+"Delta only",
+"Delta and vega only",
+"Delta",
+"vega and curvature",
+"Curvature only"
+],
+"answer_index": 2,
+"rationale": "Options carry all three SBM risk charges."
+}
+],
+"slug": "fx-risk",
+"path_slug": "market-risk-foundations",
+"regulatory_references": [
+{
+"id": "MAR21",
+"title": "Standardised approach: sensitivities-based method",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/21.htm",
+"chapter_code": "MAR21",
+"in_library": false,
+"note": "FX risk class in the sensitivities-based method"
+},
+{
+"id": "MAR33.12",
+"title": "Mapping risk factors to liquidity horizon categories (Table 2)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_12",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "FX liquidity horizons: 10 days for specified pairs, 20 otherwise"
+},
+{
+"id": "MAR11",
+"title": "Definitions and application of market risk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/11.htm",
+"chapter_code": "MAR11",
+"in_library": false,
+"note": "FX risk within the scope of market risk capital"
+}
+]
+},
+"value-at-risk": {
+"title": "Value at Risk (VaR)",
+"level": "beginner",
+"summary": "The loss you expect to exceed only rarely — how it is defined, computed and why FRTB demoted it.",
+"sections": {
+"concept": "**Value at Risk** answers one question: *over a given horizon, what loss will we exceed only\n(1 − α) of the time?* With α = 99% and a one-day horizon, a VaR of \\$25,000 means that on\n99 days out of 100 the portfolio should lose less than \\$25,000 — and on roughly one day in a\nhundred it will lose more. VaR says nothing about *how much* more.\n\nVaR is a quantile of the profit-and-loss (P&L) distribution. Everything about a VaR number is\ndetermined by three choices: the **confidence level**, the **horizon**, and **how the P&L\ndistribution is estimated** (historical, parametric, Monte Carlo).\n",
+"why_it_matters": "VaR was the regulatory market-risk measure from the 1996 Market Risk Amendment until FRTB.\nBanks still run it every day because:\n\n- **Limits.** Trading desks are given VaR limits; breaching one triggers escalation.\n- **Backtesting.** FRTB still requires daily VaR at 97.5% and 99% for backtesting (MAR32),\n  because a quantile forecast can be checked against realised P&L while ES cannot be checked\n  directly.\n- **Communication.** A single currency amount at a stated confidence level is easy for\n  boards and regulators to understand.\n\nIts weakness — ignoring the size of tail losses and failing sub-additivity — is the reason\nFRTB replaced it with Expected Shortfall for *capital* (MAR33.3).\n",
+"real_world_example": "A market-making desk holds \\$1,000,000 of a liquid equity index future. Its daily P&L has a\nstandard deviation of about 1.2% of the position, i.e. \\$12,000. Using the last 500 trading\ndays as scenarios, the desk ranks the 500 daily P&Ls from worst to best. The 1% worst case\nis the 5th-worst day, a loss of about \\$25,600. That is the desk's 1-day 99% historical VaR.\nIf markets have been calm, the number is small; after a volatile quarter it jumps — VaR is\n*pro-cyclical*, one reason FRTB insists on stressed calibration.\n",
+"mathematical_logic": {
+"intro": "Let $L = -\\text{P\\&L}$ be the loss over the horizon. VaR at confidence α is the smallest\nloss threshold that is exceeded with probability at most 1 − α:\n",
+"formulas": [
+{
+"latex": "\\mathrm{VaR}_\\alpha = \\inf\\{\\,\\ell : \\Pr(L > \\ell) \\le 1-\\alpha\\,\\} = -Q_{1-\\alpha}(\\text{P\\&L})",
+"caption": "Definition as the (1 − α) quantile of P&L, sign-flipped to a positive loss."
+},
+{
+"latex": "\\mathrm{VaR}_\\alpha^{\\text{normal}} = V\\,\\sigma\\,z_\\alpha\\sqrt{h}",
+"caption": "Parametric (normal) shortcut with position value V, daily volatility σ, horizon h days."
+},
+{
+"latex": "\\mathrm{VaR}_\\alpha^{\\text{hist}} = -\\,\\text{P\\&L}_{(\\lceil n(1-\\alpha)\\rceil)}",
+"caption": "Historical simulation — the ⌈n(1 − α)⌉-th worst of n scenario P&Ls (interpolation conventions vary)."
+}
+]
+},
+"variables": [
+{
+"symbol": "\\alpha",
+"name": "confidence level",
+"meaning": "Probability that the loss does *not* exceed VaR (0.99 for Basel 2.5 VaR; 0.975 and 0.99 for FRTB backtesting)",
+"units": "fraction"
+},
+{
+"symbol": "h",
+"name": "horizon",
+"meaning": "Holding period over which the loss is measured",
+"units": "business days"
+},
+{
+"symbol": "V",
+"name": "position value",
+"meaning": "Current market value of the position",
+"units": "currency"
+},
+{
+"symbol": "\\sigma",
+"name": "daily volatility",
+"meaning": "Standard deviation of daily returns",
+"units": "fraction per day"
+},
+{
+"symbol": "z_\\alpha",
+"name": "normal quantile",
+"meaning": "Standard-normal quantile, 2.326 at 99%, 1.960 at 97.5%",
+"units": "—"
+},
+{
+"symbol": "n",
+"name": "number of scenarios",
+"meaning": "Historical observations used (typically 250–500 for VaR; ≥ 1 year)",
+"units": "count"
+}
+],
+"worked_example": {
+"intro": "Position V = \\$10,000,000 in an equity index, daily volatility σ = 1%, one-day horizon,\nnormal distribution.\n",
+"steps": [
+{
+"label": "Find the 99% normal quantile",
+"math": "z_{0.99} = \\Phi^{-1}(0.99) = 2.3263",
+"result": "2.3263"
+},
+{
+"label": "Multiply by volatility and position",
+"math": "\\mathrm{VaR} = 10{,}000{,}000 \\times 0.01 \\times 2.3263",
+"result": "$232,635"
+},
+{
+"label": "Scale to a 10-day horizon (√t rule)",
+"math": "\\mathrm{VaR}_{10d} = 232{,}635 \\times \\sqrt{10}",
+"result": "$735,650"
+},
+{
+"label": "Compare with 97.5% ES (preview)",
+"math": "\\mathrm{ES}_{0.975} = 10{,}000{,}000 \\times 0.01 \\times 2.3378",
+"result": "$233,780 — almost identical under normality"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "expected-shortfall",
+"title": "Expected Shortfall (ES)",
+"authored": true
+},
+{
+"slug": "historical-vs-parametric",
+"title": "Historical vs parametric models",
+"authored": true
+},
+{
+"slug": "backtesting",
+"title": "Backtesting",
+"authored": false
+},
+{
+"slug": "liquidity-horizons",
+"title": "Liquidity horizons",
+"authored": true
+}
+]
+},
+"exercise": {
+"calc_id": "var_es_historical",
+"title": "Historical VaR vs ES on synthetic P&L",
+"description": "Generate daily P&L scenarios for a \\$1,000,000 position and read off VaR and ES. Start with\nthe normal distribution at 99%, then switch to **Student-t (df = 4)** and watch ES pull away\nfrom VaR: the quantile barely moves, the tail average does. Lower the number of scenarios to\nsee how noisy a 99% quantile is on small samples.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "A one-day 99% VaR of $2m means…",
+"choices": [
+"the portfolio cannot lose more than $2m in a day",
+"on about 1 day in 100 the loss is expected to exceed $2m",
+"the average daily loss is $2m",
+"the worst historical daily loss was $2m"
+],
+"answer_index": 1,
+"rationale": "VaR is a quantile — the threshold exceeded with probability 1 − α. It says nothing about the maximum loss or the average loss."
+},
+{
+"id": "q2",
+"stem": "Which property does VaR lack that Expected Shortfall has?",
+"choices": [
+"Monotonicity",
+"Translation invariance",
+"Sub-additivity",
+"Positive homogeneity"
+],
+"answer_index": 2,
+"rationale": "VaR can be larger for a diversified portfolio than the sum of its parts' VaRs; ES is sub-additive and therefore a coherent risk measure."
+},
+{
+"id": "q3",
+"stem": "Under the normal distribution, 97.5% ES compared with 99% VaR is…",
+"choices": [
+"About 25% higher",
+"About the same",
+"About half",
+"Undefined"
+],
+"answer_index": 1,
+"rationale": "ES₀.₉₇₅ ≈ 2.338σ and VaR₀.₉₉ ≈ 2.326σ, which is why the Basel Committee chose 97.5% — no mechanical capital jump under normality."
+},
+{
+"id": "q4",
+"stem": "Why does FRTB still require daily VaR even though capital is based on ES?",
+"choices": [
+"VaR is more conservative",
+"Quantile forecasts can be backtested against realised P&L; ES cannot be tested directly",
+"Supervisors never approved ES",
+"VaR is needed for the standardised approach"
+],
+"answer_index": 1,
+"rationale": "MAR32 backtesting counts exceptions of realised P&L against VaR at 97.5% and 99%; ES is validated indirectly."
+}
+],
+"slug": "value-at-risk",
+"path_slug": "market-risk-foundations",
+"regulatory_references": [
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "FRTB replaces VaR with ES at 97.5% for IMA capital"
+},
+{
+"id": "MAR32",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"chapter_code": "MAR32",
+"in_library": false,
+"note": "Backtesting still uses daily VaR at 97.5% and 99%"
+},
+{
+"id": "MAR33.9",
+"title": "No prescribed model type (historical simulation, Monte Carlo or analytical)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_9",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Model type (historical, Monte Carlo, analytical) is not prescribed"
+}
+]
+},
+"expected-shortfall": {
+"title": "Expected Shortfall (ES)",
+"level": "beginner",
+"summary": "The average loss in the tail beyond VaR — the risk measure FRTB uses for internal-model capital.",
+"sections": {
+"concept": "**Expected Shortfall** (also called Conditional VaR or tail loss) is the *average* loss on the\nworst (1 − α) of outcomes. Where VaR draws a line and stops, ES walks past the line and asks\nhow bad it gets on average out there.\n\nAt α = 97.5%, ES is the mean of the worst 2.5% of P&L scenarios. If the tail is \"thin\" (like a\nnormal distribution) ES is only a little above VaR; if the tail is \"fat\" (occasional very large\nlosses) ES can be far above it.\n",
+"why_it_matters": "FRTB made ES at 97.5% the risk measure for the Internal Models Approach (MAR33.3) for three\nreasons:\n\n1. **Tail risk.** The 2008 crisis showed that losses *beyond* VaR were the ones that mattered.\n2. **Coherence.** ES is sub-additive, so diversification never increases the measure —\n   a property VaR lacks, which made VaR-based limit systems gameable.\n3. **Continuity with the past.** 97.5% ES ≈ 99% VaR under normality, so the switch did not by\n   itself raise or lower capital for well-behaved portfolios.\n\nES also underpins the liquidity-horizon formula (MAR33.4), the stressed calibration (MAR33.5)\nand the modellable-risk charge IMCC (MAR33.15). Learn it well and the IMA module follows.\n",
+"real_world_example": "Two desks each report a 99% one-day VaR of \\$1m. Desk A trades liquid index futures: on its\nworst 1% of days it loses \\$1.0–1.3m. Desk B sells deep out-of-the-money options: most days it\nearns premium, but on its worst 1% of days it loses \\$3–8m. Same VaR, very different risk.\nTheir 97.5% ES might be \\$1.1m and \\$4.5m respectively — ES *sees* Desk B's tail. This is\nprecisely the asymmetry FRTB wanted capital to reflect.\n",
+"mathematical_logic": {
+"intro": "With loss $L = -\\text{P\\&L}$ and a continuous distribution, ES is the conditional expectation\nof the loss given that it exceeds VaR; equivalently it is the average of all VaRs at levels\nabove α:\n",
+"formulas": [
+{
+"latex": "\\mathrm{ES}_\\alpha = \\mathbb{E}\\,[\\,L \\mid L \\ge \\mathrm{VaR}_\\alpha\\,]",
+"caption": "Conditional-expectation definition (continuous case)."
+},
+{
+"latex": "\\mathrm{ES}_\\alpha = \\frac{1}{1-\\alpha}\\int_\\alpha^1 \\mathrm{VaR}_u\\,du",
+"caption": "Average of the VaRs in the tail — the definition that also works for discrete distributions."
+},
+{
+"latex": "\\mathrm{ES}_\\alpha^{\\text{normal}} = V\\,\\sigma\\,\\frac{\\varphi(z_\\alpha)}{1-\\alpha}\\sqrt{h}",
+"caption": "Closed form under the normal distribution; φ is the standard-normal density."
+},
+{
+"latex": "\\mathrm{ES}_\\alpha^{\\text{hist}} = -\\frac{1}{\\alpha' n}\\sum_{i=1}^{\\lfloor \\alpha' n\\rfloor} \\text{P\\&L}_{(i)}\\;(\\text{+ fractional term}),\\quad \\alpha' = 1-\\alpha",
+"caption": "Historical estimator — average of the worst α′n ordered scenarios."
+}
+]
+},
+"variables": [
+{
+"symbol": "\\alpha",
+"name": "confidence level",
+"meaning": "0.975 under FRTB IMA (MAR33.3)",
+"units": "fraction"
+},
+{
+"symbol": "L",
+"name": "loss",
+"meaning": "Negative of P&L over the horizon",
+"units": "currency"
+},
+{
+"symbol": "\\varphi(z)",
+"name": "normal density",
+"meaning": "Standard-normal pdf evaluated at the quantile",
+"units": "—"
+},
+{
+"symbol": "\\mathrm{P\\&L}_{(i)}",
+"name": "ordered scenario",
+"meaning": "i-th worst scenario P&L",
+"units": "currency"
+},
+{
+"symbol": "h",
+"name": "horizon",
+"meaning": "10 days is the FRTB base horizon before liquidity scaling",
+"units": "days"
+}
+],
+"worked_example": {
+"intro": "Position V = \\$10m, daily σ = 1%, normal distribution, α = 97.5%, one-day horizon.",
+"steps": [
+{
+"label": "Quantile at 97.5%",
+"math": "z_{0.975} = 1.9600",
+"result": "1.9600"
+},
+{
+"label": "Normal density at the quantile",
+"math": "\\varphi(1.96) = \\tfrac{1}{\\sqrt{2\\pi}} e^{-1.96^2/2} = 0.05845",
+"result": "0.05845"
+},
+{
+"label": "ES factor",
+"math": "\\varphi(z)/(1-\\alpha) = 0.05845 / 0.025 = 2.3378",
+"result": "2.3378"
+},
+{
+"label": "Expected Shortfall",
+"math": "\\mathrm{ES} = 10{,}000{,}000 \\times 0.01 \\times 2.3378",
+"result": "$233,780"
+},
+{
+"label": "Compare with 99% VaR",
+"math": "\\mathrm{VaR}_{0.99} = 10{,}000{,}000 \\times 0.01 \\times 2.3263",
+"result": "$232,635 (ES is 0.5% higher)"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "value-at-risk",
+"title": "Value at Risk (VaR)",
+"authored": true
+},
+{
+"slug": "liquidity-horizons",
+"title": "Liquidity horizons",
+"authored": true
+},
+{
+"slug": "historical-vs-parametric",
+"title": "Historical vs parametric models",
+"authored": true
+},
+{
+"slug": "stressed-expected-shortfall",
+"title": "Stressed Expected Shortfall",
+"authored": false
+}
+]
+},
+"exercise": {
+"calc_id": "var_es_historical",
+"title": "How fat tails separate ES from VaR",
+"description": "Set confidence to **0.975**, keep the normal distribution and note the ES/VaR ratio (≈ 1.15\nfor normal 97.5%). Switch to **Student-t, df = 3**: VaR changes modestly, ES jumps. Then set\nconfidence to 0.99 and compare 99% VaR with the 97.5% ES you saw — this is the comparison the\nBasel Committee made when choosing 97.5%.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "97.5% Expected Shortfall is…",
+"choices": [
+"the loss exceeded 2.5% of the time",
+"the average loss on the worst 2.5% of outcomes",
+"2.5% of the position value",
+"the worst loss observed"
+],
+"answer_index": 1,
+"rationale": "ES is the conditional mean of losses beyond the 97.5% quantile."
+},
+{
+"id": "q2",
+"stem": "Why did the Basel Committee pick 97.5% rather than 99% for ES?",
+"choices": [
+"97.5% ES is roughly equal to 99% VaR under a normal distribution, avoiding a mechanical capital jump",
+"97.5% is easier to backtest",
+"It reduces capital for all banks",
+"It matches the credit-risk confidence level"
+],
+"answer_index": 0,
+"rationale": "ES₀.₉₇₅ ≈ 2.338σ vs VaR₀.₉₉ ≈ 2.326σ under normality."
+},
+{
+"id": "q3",
+"stem": "For a portfolio of two desks, ES of the combined portfolio is…",
+"choices": [
+"Always equal to the sum of desk ESs",
+"Never larger than the sum of desk ESs",
+"Always larger than the sum",
+"Unrelated to the desk ESs"
+],
+"answer_index": 1,
+"rationale": "Sub-additivity — a coherence property VaR does not have."
+},
+{
+"id": "q4",
+"stem": "Under FRTB, ES must be computed…",
+"choices": [
+"Weekly bank-wide",
+"Daily bank-wide and for each IMA desk",
+"Monthly for capital reporting",
+"Only at quarter-end"
+],
+"answer_index": 1,
+"rationale": "MAR33.2 requires daily computation at both levels."
+}
+],
+"slug": "expected-shortfall",
+"path_slug": "market-risk-foundations",
+"regulatory_references": [
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "97.5th percentile, one-tailed"
+},
+{
+"id": "MAR33.2",
+"title": "ES must be computed daily, bank-wide and per IMA desk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_2",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Computed daily, bank-wide and per desk"
+},
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Liquidity-horizon scaling applies to the ES"
+},
+{
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_15",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "IMCC aggregates constrained and unconstrained ES"
+}
+]
+},
+"historical-vs-parametric": {
+"title": "Historical vs parametric models",
+"level": "beginner",
+"summary": "Two ways to estimate the same P&L distribution — replaying history or assuming a formula — and what each gets wrong.",
+"sections": {
+"concept": "Every VaR or ES number needs a **distribution of P&L**. There are two classic ways to get one:\n\n- **Historical simulation** applies past market moves (e.g. the last 250–500 daily changes in\n  rates, spreads, prices) to today's portfolio and reads the quantile or tail mean from the\n  resulting scenario P&Ls. No distributional assumption; the data *is* the model.\n- **Parametric (variance–covariance)** assumes returns follow a known distribution — almost\n  always the normal — estimates volatilities and correlations, and uses closed-form\n  expressions ($V\\sigma z_\\alpha$ for VaR).\n\nMonte Carlo is a third route: simulate many random paths from an assumed model. It shares the\nparametric method's reliance on assumptions but can handle non-linear instruments.\n",
+"why_it_matters": "FRTB does not prescribe a model type (MAR33.9) — but its other requirements push banks toward\nhistorical simulation:\n\n- The stressed calibration (MAR33.5–33.7) is naturally a *window* of history.\n- ES at 97.5% is sensitive to tail shape; the normal assumption understates fat tails, so\n  parametric ES is rarely accepted for capital.\n- Backtesting and P&L attribution (MAR32) compare model P&L to realised P&L, which rewards\n  models that reproduce realised market behaviour.\n\nParametric methods survive for intraday limit monitoring, quick what-if analysis and as a\nsanity check on the full model.\n",
+"real_world_example": "In early 2020 a parametric model calibrated on the previous year's calm data produced a 99%\nequity VaR near 1.5% of position value. In March 2020 daily index moves of 8–12% occurred on\nseveral days — eight-to-ten-standard-deviation events under the normal assumption, which\nshould \"never\" happen. A historical-simulation model with a 500-day window picked the moves up\nwithin days as they entered the window; a stressed window including 2008 already had them.\nAge-weighted historical VaR (Boudoukh–Richardson–Whitelaw) reacts faster still by giving\nrecent scenarios more weight — at the cost of being *more* pro-cyclical.\n",
+"mathematical_logic": {
+"intro": "Both methods estimate the same quantile; the difference is where the distribution comes from.",
+"formulas": [
+{
+"latex": "\\text{P\\&L}_t = \\sum_k \\frac{\\partial V}{\\partial x_k}\\,\\Delta x_{k,t} \\quad\\text{or}\\quad V(x_{\\text{today}} + \\Delta x_t) - V(x_{\\text{today}})",
+"caption": "Historical scenario P&L — sensitivity-based (linear) or full revaluation."
+},
+{
+"latex": "\\sigma_P^2 = \\mathbf{w}^\\top \\Sigma\\, \\mathbf{w}, \\qquad \\mathrm{VaR}_\\alpha = z_\\alpha \\sigma_P\\sqrt h",
+"caption": "Parametric portfolio volatility from position weights w and covariance matrix Σ."
+},
+{
+"latex": "w_k = \\lambda^k\\,\\frac{1-\\lambda}{1-\\lambda^n}",
+"caption": "Age-weighted historical simulation — weight of the scenario k days old (λ ≈ 0.94–0.99)."
+}
+]
+},
+"variables": [
+{
+"symbol": "\\Delta x_{k,t}",
+"name": "historical shock",
+"meaning": "Change in risk factor k observed on past day t, applied to today's level",
+"units": "factor units"
+},
+{
+"symbol": "\\Sigma",
+"name": "covariance matrix",
+"meaning": "Estimated covariances of risk-factor returns",
+"units": "fraction²"
+},
+{
+"symbol": "\\mathbf{w}",
+"name": "exposures",
+"meaning": "Position sensitivities (delta-equivalents) to each risk factor",
+"units": "currency"
+},
+{
+"symbol": "\\lambda",
+"name": "decay",
+"meaning": "Age-weighting decay; λ → 1 recovers equal weights",
+"units": "—"
+},
+{
+"symbol": "n",
+"name": "window length",
+"meaning": "Number of historical days used",
+"units": "days"
+}
+],
+"worked_example": {
+"intro": "A three-currency FX position (long USD 2m, short EUR 1.5m, long GBP 0.5m) against a domestic currency, 250 days of synthetic history.",
+"steps": [
+{
+"label": "Build daily return scenarios",
+"math": "r_{c,t} = S_{c,t}/S_{c,t-1} - 1",
+"result": "250 × 3 returns"
+},
+{
+"label": "Apply to today's exposure",
+"math": "\\text{P\\&L}_t = \\sum_c S_{c,\\text{today}}\\, q_c\\, r_{c,t}",
+"result": "250 scenario P&Ls"
+},
+{
+"label": "Equal-weight 99% VaR",
+"math": "-\\,Q_{0.01}(\\text{P\\&L})",
+"result": "between the 2nd and 3rd worst scenario"
+},
+{
+"label": "Age-weighted VaR (λ = 0.97)",
+"math": "\\text{accumulate } w_k \\text{ from the worst scenario until } 0.01",
+"result": "higher if recent days were volatile, lower if calm"
+},
+{
+"label": "Parametric cross-check",
+"math": "z_{0.99}\\sqrt{\\mathbf{w}^\\top\\Sigma\\mathbf{w}}",
+"result": "close to the historical number if returns were near-normal"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "value-at-risk",
+"title": "Value at Risk (VaR)",
+"authored": true
+},
+{
+"slug": "expected-shortfall",
+"title": "Expected Shortfall (ES)",
+"authored": true
+},
+{
+"slug": "monte-carlo-simulation",
+"title": "Monte Carlo simulation",
+"authored": false
+},
+{
+"slug": "stressed-expected-shortfall",
+"title": "Stressed Expected Shortfall",
+"authored": false
+}
+]
+},
+"exercise": {
+"calc_id": "historical_var_fx",
+"title": "Equal-weight vs age-weighted historical VaR",
+"description": "Change the positions and the decay λ. With λ close to 1 the age-weighted VaR converges to the\nequal-weight VaR; with λ = 0.9 only the last few weeks matter. Change the seed to generate a\ndifferent synthetic history and see how much a 99% quantile moves between samples of 250 days.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "The main advantage of historical simulation over the parametric approach is…",
+"choices": [
+"It is faster to compute",
+"It needs no distributional assumption",
+"It always gives lower VaR",
+"It does not need market data"
+],
+"answer_index": 1,
+"rationale": "Historical simulation lets the data define the distribution, including fat tails and skew."
+},
+{
+"id": "q2",
+"stem": "Inside the FRTB stress window (MAR33.7), observations must be…",
+"choices": [
+"Exponentially weighted",
+"Equally weighted",
+"Weighted by liquidity horizon",
+"Weighted by trading volume"
+],
+"answer_index": 1,
+"rationale": "MAR33.7 requires equal weighting when identifying and using the 12-month stress period."
+},
+{
+"id": "q3",
+"stem": "Age-weighted (BRW) historical VaR with λ → 1 …",
+"choices": [
+"Tends to zero",
+"Converges to equal-weight historical VaR",
+"Becomes parametric VaR",
+"Is undefined"
+],
+"answer_index": 1,
+"rationale": "As λ → 1 all weights approach 1/n."
+},
+{
+"id": "q4",
+"stem": "Which FRTB requirement most discourages normal-distribution parametric ES for capital?",
+"choices": [
+"The 10-day base horizon",
+"Sensitivity of 97.5% ES to tail shape plus backtesting and PLA against realised P&L",
+"The desk-level approval process",
+"The default risk charge"
+],
+"answer_index": 1,
+"rationale": "Normal tails understate ES, and the MAR32 tests compare model output with realised P&L."
+}
+],
+"slug": "historical-vs-parametric",
+"path_slug": "market-risk-foundations",
+"regulatory_references": [
+{
+"id": "MAR33.9",
+"title": "No prescribed model type (historical simulation, Monte Carlo or analytical)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_9",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "No prescribed model type"
+},
+{
+"id": "MAR33.7",
+"title": "Identifying the 12-month stress period",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_7",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Stress period must use equal weighting of observations"
+},
+{
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_5",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Stressed calibration"
+}
+]
+},
+"why-frtb": {
+"title": "Why Basel introduced FRTB",
+"level": "beginner",
+"summary": "The failures of the Basel 2.5 market-risk framework in 2007–09 and the design choices the Fundamental Review made in response.",
+"sections": {
+"concept": "The **Fundamental Review of the Trading Book (FRTB)** is the Basel Committee's overhaul of\nmarket-risk capital, finalised in January 2019 and consolidated into the MAR standard with an\nimplementation date of 1 January 2023 (national timelines differ). It replaced the Basel II /\nBasel 2.5 rules with:\n\n- a revised **trading book boundary** (RBC25);\n- a new, risk-sensitive **Standardised Approach** built on sensitivities (MAR20–23);\n- an **Internal Models Approach** based on Expected Shortfall with liquidity horizons,\n  approved **desk by desk** and subject to tougher tests (MAR30–33);\n- a **capital floor and fallback**: every bank computes the SA, and desks failing IMA\n  tests fall back to it.\n",
+"why_it_matters": "The crisis exposed four problems with VaR-based capital:\n\n1. **Tail risk was invisible.** 99% VaR ignored how large losses beyond the quantile were.\n2. **Illiquidity was ignored.** A 10-day horizon for everything let banks hold illiquid\n   credit positions at low capital.\n3. **The boundary was gameable.** Positions migrated to whichever book carried less capital.\n4. **Standardised and internal models were not comparable.** Banks' internal-model capital\n   varied widely for similar portfolios, and the old standardised approach was too crude to\n   act as a credible floor.\n\nBasel 2.5 (2009) patched this with stressed VaR, the Incremental Risk Charge and the\nComprehensive Risk Measure, roughly tripling market-risk capital — but it was a patch. FRTB\nrebuilt the framework.\n",
+"real_world_example": "In 2007–08 several large banks reported trading losses many times their VaR, on positions\n(super-senior CDO tranches, leveraged loans) that could not be sold for months. Under\nBasel 2.5 those positions attracted VaR + stressed VaR + IRC. Under FRTB the same book would\nface ES at 97.5% calibrated to the stress period, 60–120-day liquidity horizons for\ncredit-spread risk, an SA-based floor via the fallback, and a desk-level approval that\ncould be withdrawn if backtesting or P&L attribution failed.\n",
+"mathematical_logic": {
+"intro": "FRTB's key quantitative substitutions can be summarised side by side.",
+"formulas": [
+{
+"latex": "\\text{Basel 2.5: } K = m_c\\,\\overline{\\mathrm{VaR}}_{99\\%,10d} + m_s\\,\\overline{\\mathrm{sVaR}}_{99\\%,10d} + \\mathrm{IRC} + \\mathrm{CRM}",
+"caption": "Pre-FRTB internal-model capital — VaR plus stressed VaR with multipliers, plus incremental and comprehensive risk charges."
+},
+{
+"latex": "\\text{FRTB IMA: } \\mathrm{IMCC} = \\rho\\,\\mathrm{IMCC}(C) + (1-\\rho)\\sum_i \\mathrm{IMCC}(C_i),\\;\\; \\rho = 0.5",
+"caption": "Modellable-risk capital — stressed, liquidity-adjusted ES, half diversified / half undiversified (MAR33.15), plus SES for non-modellable factors and the DRC."
+},
+{
+"latex": "\\mathrm{ES}_{97.5\\%} \\approx \\mathrm{VaR}_{99\\%} \\text{ under normality}",
+"caption": "Why the confidence level moved from 99% to 97.5% without a mechanical capital change."
+}
+]
+},
+"variables": [
+{
+"symbol": "m_c, m_s",
+"name": "multipliers",
+"meaning": "Supervisory multipliers (≥ 3) applied to VaR and stressed VaR under Basel 2.5",
+"units": "—"
+},
+{
+"symbol": "\\mathrm{IRC}",
+"name": "incremental risk charge",
+"meaning": "Basel 2.5 charge for default and migration risk of credit positions",
+"units": "currency"
+},
+{
+"symbol": "\\mathrm{IMCC}",
+"name": "modellable capital charge",
+"meaning": "FRTB internal-model capital for modellable risk factors",
+"units": "currency"
+},
+{
+"symbol": "\\rho",
+"name": "aggregation weight",
+"meaning": "0.5 — weight on the diversified ES",
+"units": "—"
+}
+],
+"worked_example": {
+"intro": "A stylised comparison of the measure, not of actual capital levels.",
+"steps": [
+{
+"label": "Normal 99% VaR on σ = $1m/day",
+"math": "2.326 \\times 1\\text{m}",
+"result": "$2.33m"
+},
+{
+"label": "Normal 97.5% ES on the same σ",
+"math": "2.338 \\times 1\\text{m}",
+"result": "$2.34m — the measure changed, the number did not"
+},
+{
+"label": "Fat tails (Student-t, 4 df, same σ): 99% VaR",
+"math": "\\approx 2.65 \\times 1\\text{m}",
+"result": "$2.65m"
+},
+{
+"label": "Fat tails: 97.5% ES",
+"math": "\\approx 3.0 \\times 1\\text{m}",
+"result": "≈ $3.0m — ES responds to the tail, VaR much less"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "basel-25-to-frtb",
+"title": "Evolution from Basel 2.5 to FRTB",
+"authored": false
+},
+{
+"slug": "expected-shortfall",
+"title": "Expected Shortfall (ES)",
+"authored": true
+},
+{
+"slug": "liquidity-horizons",
+"title": "Liquidity horizons",
+"authored": true
+},
+{
+"slug": "trading-book-vs-banking-book",
+"title": "Trading Book vs Banking Book",
+"authored": true
+},
+{
+"slug": "sa-vs-ima-overview",
+"title": "Standardised Approach vs Internal Models Approach",
+"authored": false
+}
+]
+},
+"exercise": {
+"calc_id": "var_es_historical",
+"title": "See the tail problem FRTB addressed",
+"description": "Run the simulator with the **normal** distribution at 99% and note VaR. Switch to\n**Student-t (df = 4)** keeping the same volatility: VaR rises a little, ES rises much more.\nThis gap — risk beyond the quantile — is what Basel 2.5 capital could not see.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "Which was NOT a weakness of the pre-FRTB framework identified by the Basel Committee?",
+"choices": [
+"VaR ignored losses beyond the quantile",
+"A uniform 10-day horizon ignored illiquidity",
+"The trading book boundary was easy to arbitrage",
+"Capital requirements were too high for all banks"
+],
+"answer_index": 3,
+"rationale": "The Committee's concern was under-capitalisation and incomparability, not excessive capital."
+},
+{
+"id": "q2",
+"stem": "Under FRTB, internal-model approval is granted…",
+"choices": [
+"Bank-wide only",
+"At trading-desk level",
+"Per instrument",
+"Per legal entity only"
+],
+"answer_index": 1,
+"rationale": "MAR12 defines the desk and MAR32 tests apply desk by desk."
+},
+{
+"id": "q3",
+"stem": "Why must every FRTB bank compute the Standardised Approach even if it uses internal models?",
+"choices": [
+"For disclosure comparability and as the fallback when desks fail IMA tests",
+"Because the SA is always lower",
+"To calibrate ES",
+"It is optional"
+],
+"answer_index": 0,
+"rationale": "The SA is the fallback and the basis for comparability across banks."
+},
+{
+"id": "q4",
+"stem": "Basel 2.5 (2009) added…",
+"choices": [
+"Expected Shortfall and liquidity horizons",
+"Stressed VaR",
+"the Incremental Risk Charge and the Comprehensive Risk Measure",
+"The sensitivities-based method",
+"Desk-level approval"
+],
+"answer_index": 1,
+"rationale": "Basel 2.5 was the interim patch; ES, liquidity horizons, SBM and desk approval came with FRTB."
+}
+],
+"slug": "why-frtb",
+"path_slug": "introduction-to-frtb",
+"regulatory_references": [
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "ES at 97.5% replaces 99% VaR"
+},
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Liquidity horizons"
+},
+{
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_5",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Stressed calibration replaces VaR + sVaR"
+},
+{
+"id": "RBC25",
+"title": "Boundary between the banking book and the trading book",
+"url": "https://www.bis.org/basel_framework/chapter/RBC/25.htm",
+"chapter_code": "RBC25",
+"in_library": false,
+"note": "Revised boundary"
+},
+{
+"id": "MAR20",
+"title": "Standardised approach: general provisions and structure",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/20.htm",
+"chapter_code": "MAR20",
+"in_library": false,
+"note": "Structure of the new standardised approach"
+}
+]
+},
+"liquidity-horizons": {
+"title": "Liquidity horizons",
+"level": "advanced",
+"summary": "Why FRTB measures different risk factors over 10, 20, 40, 60 or 120 days, and how the MAR33.4 formula stretches a 10-day ES.",
+"sections": {
+"concept": "A **liquidity horizon** is the time a bank would need to exit or hedge a risk position in a\nstressed market without moving the price against itself. Basel 2.5 assumed 10 days for\neverything. FRTB recognises that a USD interest-rate swap can be hedged in days while a\nhigh-yield credit spread, an exotic commodity volatility or a small-cap equity position may\ntake months.\n\nEvery risk factor is mapped to one of five horizons — **10, 20, 40, 60 or 120 days** — by\nrisk class and liquidity tier (MAR33.12, Table 2). The Expected Shortfall is then computed\nso that each risk factor is shocked over *its* horizon.\n",
+"why_it_matters": "Liquidity horizons are one of the largest drivers of IMA capital:\n\n- A 60-day horizon multiplies a 10-day ES by up to √6 ≈ 2.45; a 120-day horizon by up to √12 ≈ 3.46.\n- They penalise illiquid risk even inside an approved model, which Basel 2.5 did not.\n- They interact with the modellability test (MAR31): a non-modellable factor leaves the ES\n  model and is capitalised through SES with a *minimum* 20-day horizon (MAR33.16).\n- Operationally, the nested ES calculation (MAR33.4) multiplies the number of ES runs a bank\n  must perform every night.\n",
+"real_world_example": "A rates desk holds USD swaps (10-day), a position in Polish zloty swaps (unspecified currency\n→ 20-day) and some swaption vega (interest-rate volatility → 60-day). Its 10-day ES with all\nfactors shocked is \\$1.0m. Shocking only PLN rates and the vega gives \\$0.5m; shocking only the\nvega gives \\$0.3m. The MAR33.4 formula turns these three numbers into a single\nliquidity-adjusted ES of about \\$1.27m — more than \\$1.0m because of the slow-to-hedge factors,\nbut far less than \\$2.45m because only part of the risk sits at 60 days.\n",
+"mathematical_logic": {
+"intro": "MAR33.4 starts from a base horizon T = 10 days and adds horizon increments in quadrature.\n$ES_T(P)$ shocks all factors; $ES_T(P,j)$ shocks only factors with horizon ≥ $LH_j$.\n",
+"formulas": [
+{
+"latex": "\\mathrm{ES} = \\sqrt{\\;ES_T(P)^2 + \\sum_{j\\ge 2}\\Big(ES_T(P,j)\\,\\sqrt{\\tfrac{LH_j - LH_{j-1}}{T}}\\Big)^2\\;}",
+"caption": "MAR33.4 liquidity-adjusted ES, with LH = (10, 20, 40, 60, 120) and T = 10."
+},
+{
+"latex": "\\mathrm{ES} = ES_T(P)\\,\\sqrt{LH_k / T}\\quad\\text{if every factor has horizon } LH_k",
+"caption": "Single-horizon special case — plain square-root-of-time scaling."
+},
+{
+"latex": "\\sqrt{\\tfrac{LH_j-LH_{j-1}}{10}} = 1,\\;1,\\;\\sqrt2,\\;\\sqrt2,\\;\\sqrt6\\quad (j=1..5)",
+"caption": "The five scaling factors for the increments 10, 10, 20, 20 and 60 days."
+}
+]
+},
+"variables": [
+{
+"symbol": "T",
+"name": "base horizon",
+"meaning": "10 days",
+"units": "days"
+},
+{
+"symbol": "LH_j",
+"name": "liquidity horizon j",
+"meaning": "10, 20, 40, 60, 120 days for j = 1..5 (MAR33.4 Table 1)",
+"units": "days"
+},
+{
+"symbol": "ES_T(P)",
+"name": "base ES",
+"meaning": "10-day ES of portfolio P with all risk factors shocked",
+"units": "currency"
+},
+{
+"symbol": "ES_T(P,j)",
+"name": "nested ES",
+"meaning": "10-day ES shocking only risk factors whose horizon is ≥ LH_j, others held constant",
+"units": "currency"
+},
+{
+"symbol": "n",
+"name": "risk factor horizon",
+"meaning": "Horizon assigned to a risk factor by MAR33.12 Table 2; a floor, capped at instrument maturity",
+"units": "days"
+}
+],
+"worked_example": {
+"intro": "Use the rates-desk numbers from the example — ES_T(P) = 1,000,000; ES_T(P,2) = 500,000 (PLN rates + vega); ES_T(P,3) = 300,000 (vega only); ES_T(P,4) = 300,000 (vega only, LH ≥ 60); ES_T(P,5) = 0.",
+"steps": [
+{
+"label": "Base term",
+"math": "ES_T(P)^2 = 1{,}000{,}000^2 = 1.00\\times10^{12}",
+"result": "1.00e12"
+},
+{
+"label": "j = 2 (LH 20): increment 10 days, factor 1",
+"math": "(500{,}000 \\times 1)^2 = 2.5\\times10^{11}",
+"result": "2.50e11"
+},
+{
+"label": "j = 3 (LH 40): increment 20 days, factor √2",
+"math": "(300{,}000 \\times \\sqrt2)^2 = 1.8\\times10^{11}",
+"result": "1.80e11"
+},
+{
+"label": "j = 4 (LH 60): increment 20 days, factor √2",
+"math": "(300{,}000 \\times \\sqrt2)^2 = 1.8\\times10^{11}",
+"result": "1.80e11"
+},
+{
+"label": "j = 5 (LH 120): increment 60 days, factor √6",
+"math": "(0 \\times \\sqrt6)^2 = 0",
+"result": "0"
+},
+{
+"label": "Liquidity-adjusted ES",
+"math": "\\sqrt{1.00e12 + 2.5e11 + 1.8e11 + 1.8e11} = \\sqrt{1.61e12}",
+"result": "$1,268,858 — a 27% uplift on the 10-day ES"
+}
+]
+},
+"related_concepts": [
+{
+"slug": "expected-shortfall",
+"title": "Expected Shortfall (ES)",
+"authored": true
+},
+{
+"slug": "non-modellable-risk-factors",
+"title": "Non-Modellable Risk Factors (NMRF)",
+"authored": false
+},
+{
+"slug": "rfet",
+"title": "Risk Factor Eligibility Test (RFET)",
+"authored": false
+},
+{
+"slug": "ima-expected-shortfall",
+"title": "Expected Shortfall under the IMA",
+"authored": false
+}
+]
+},
+"exercise": {
+"calc_id": "liquidity_horizon_scaling",
+"title": "Stretch a 10-day ES across the five horizons",
+"description": "Enter the nested ES values (they must be non-increasing as the horizon grows if the excluded\nfactors add risk). Watch the uplift: setting every bucket equal to the base ES reproduces\n√12 ≈ 3.46× — the whole book at 120 days. Setting all buckets to zero leaves the base ES\nunchanged — everything hedgeable in ten days. Most real desks sit between 1.1× and 1.8×.\n"
+},
+"questions": [
+{
+"id": "q1",
+"stem": "Which are the FRTB liquidity horizons?",
+"choices": [
+"1, 5, 10, 20, 60 days",
+"10, 20, 40, 60, 120 days",
+"10, 30, 60, 90, 250 days",
+"10 days for all risk factors"
+],
+"answer_index": 1,
+"rationale": "MAR33.4 Table 1 lists 10, 20, 40, 60 and 120 days."
+},
+{
+"id": "q2",
+"stem": "If every risk factor in a portfolio has a 60-day horizon, the liquidity-adjusted ES equals the 10-day ES times…",
+"choices": [
+"6",
+"√6 ≈ 2.45",
+"√60 ≈ 7.75",
+"1 — horizons only matter for NMRFs"
+],
+"answer_index": 1,
+"rationale": "The nested ES values coincide and the formula collapses to ES·√(60/10)."
+},
+{
+"id": "q3",
+"stem": "Under MAR33.12 a large-cap equity price and a high-yield corporate credit spread have horizons of…",
+"choices": [
+"10 and 60 days",
+"20 and 20 days",
+"10 and 10 days",
+"60 and 120 days"
+],
+"answer_index": 0,
+"rationale": "Table 2 — equity price (large cap) 10 days; credit spread corporate (HY) 60 days."
+},
+{
+"id": "q4",
+"stem": "A bank wants to use a 10-day horizon for a risk factor the table assigns 40 days. It…",
+"choices": [
+"May do so with documentation",
+"May not — horizons are floors; it may only lengthen them (with approval)",
+"May if the instrument matures within 10 days",
+"May if the factor is modellable"
+],
+"answer_index": 1,
+"rationale": "MAR33.12 — horizons are floors; the only shortening is the cap at instrument maturity."
+}
+],
+"slug": "liquidity-horizons",
+"path_slug": "internal-models-approach",
+"regulatory_references": [
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Scaling formula and Table 1 horizons"
+},
+{
+"id": "MAR33.12",
+"title": "Mapping risk factors to liquidity horizon categories (Table 2)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_12",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "Risk factor category → horizon mapping (Table 2)"
+},
+{
+"id": "MAR33.16",
+"title": "Non-modellable risk factors capitalised with stress scenarios (SES)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_16",
+"chapter_code": "MAR33",
+"in_library": true,
+"note": "NMRFs: minimum 20-day horizon in SES"
+}
+]
+}
+},
+"chapters": [
+{
+"code": "MAR10",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Market risk terminology",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Definitions of the terms used throughout the market risk standard (risk factors, sensitivities, trading desk, notional, etc.).",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/10.htm",
+"provision_count": 0
+},
+{
+"code": "MAR11",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Definitions and application of market risk",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "What market risk is, which positions and risk types (interest rate, credit spread, equity, FX, commodity) the capital requirement covers, and how the SA and IMA fit together.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/11.htm",
+"provision_count": 0
+},
+{
+"code": "MAR12",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Definition of trading desk",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "The trading desk is the unit at which IMA approval is granted; this chapter sets the organisational and documentation requirements a desk must meet.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/12.htm",
+"provision_count": 0
+},
+{
+"code": "MAR20",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: general provisions and structure",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "The SA capital requirement is the sum of the sensitivities-based method, the default risk capital requirement and the residual risk add-on; this chapter sets out that structure.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/20.htm",
+"provision_count": 0
+},
+{
+"code": "MAR21",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: sensitivities-based method",
+"effective_date": "2023-01-01",
+"last_update": "2026-03-23",
+"summary": "Delta, vega and curvature risk charges by risk class (GIRR, CSR, equity, commodity, FX), with prescribed buckets, risk weights and correlations. Note the 2026 revision — risk-weight tables must be transcribed from the current text.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/21.htm",
+"provision_count": 0
+},
+{
+"code": "MAR22",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: default risk capital requirement",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Jump-to-default risk for non-securitisations, securitisations and the correlation trading portfolio, with netting, hedge-benefit ratio and default risk weights.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/22.htm",
+"provision_count": 0
+},
+{
+"code": "MAR23",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: residual risk add-on",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "A notional-based add-on for instruments with exotic underlyings or other residual risks not captured by the sensitivities-based method.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/23.htm",
+"provision_count": 0
+},
+{
+"code": "MAR30",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: general provisions",
+"effective_date": "2023-01-01",
+"last_update": "2024-07-05",
+"summary": "General criteria and qualitative standards a bank must meet to use internal models for market risk capital.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/30.htm",
+"provision_count": 0
+},
+{
+"code": "MAR31",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: model requirements",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"summary": "Specification of market risk factors, the risk factor eligibility test (RFET) and the distinction between modellable and non-modellable risk factors.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/31.htm",
+"provision_count": 0
+},
+{
+"code": "MAR32",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Desk-level and bank-wide backtesting, the P&L attribution test (Spearman correlation and Kolmogorov–Smirnov metrics) and the traffic-light consequences for IMA eligibility.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"provision_count": 0
+},
+{
+"code": "MAR33",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: capital requirements calculation",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"summary": "How the IMA capital requirement is computed — Expected Shortfall at 97.5%, liquidity horizons, stress calibration, non-modellable risk factors (SES), the default risk charge and aggregation.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm",
+"provision_count": 13
+},
+{
+"code": "MAR40",
+"standard": "MAR",
+"group": "Other",
+"title": "Simplified standardised approach",
+"effective_date": "2023-01-01",
+"last_update": "2024-07-05",
+"summary": "The Basel II-style simplified approach available to banks that meet supervisory criteria, with scalars applied to the legacy risk charges.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/40.htm",
+"provision_count": 0
+},
+{
+"code": "MAR90",
+"standard": "MAR",
+"group": "Other",
+"title": "Transitional arrangements",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Transitional provisions for the revised market risk framework.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/90.htm",
+"provision_count": 0
+},
+{
+"code": "MAR99",
+"standard": "MAR",
+"group": "Other",
+"title": "Guidance on use of the internal models approach",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Application guidance on internal model use, including stress testing and model validation.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/99.htm",
+"provision_count": 0
+},
+{
+"code": "RBC25",
+"standard": "RBC",
+"group": "Boundary",
+"title": "Boundary between the banking book and the trading book",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Which instruments belong in the trading book (market risk capital) versus the banking book (credit risk capital), and the limits on moving instruments between them.",
+"source_url": "https://www.bis.org/basel_framework/chapter/RBC/25.htm",
+"provision_count": 0
+}
+],
+"chapter_details": {
+"MAR10": {
+"code": "MAR10",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Market risk terminology",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Definitions of the terms used throughout the market risk standard (risk factors, sensitivities, trading desk, notional, etc.).",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/10.htm",
+"provisions": []
+},
+"MAR11": {
+"code": "MAR11",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Definitions and application of market risk",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "What market risk is, which positions and risk types (interest rate, credit spread, equity, FX, commodity) the capital requirement covers, and how the SA and IMA fit together.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/11.htm",
+"provisions": []
+},
+"MAR12": {
+"code": "MAR12",
+"standard": "MAR",
+"group": "Definitions",
+"title": "Definition of trading desk",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "The trading desk is the unit at which IMA approval is granted; this chapter sets the organisational and documentation requirements a desk must meet.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/12.htm",
+"provisions": []
+},
+"MAR20": {
+"code": "MAR20",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: general provisions and structure",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "The SA capital requirement is the sum of the sensitivities-based method, the default risk capital requirement and the residual risk add-on; this chapter sets out that structure.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/20.htm",
+"provisions": []
+},
+"MAR21": {
+"code": "MAR21",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: sensitivities-based method",
+"effective_date": "2023-01-01",
+"last_update": "2026-03-23",
+"summary": "Delta, vega and curvature risk charges by risk class (GIRR, CSR, equity, commodity, FX), with prescribed buckets, risk weights and correlations. Note the 2026 revision — risk-weight tables must be transcribed from the current text.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/21.htm",
+"provisions": []
+},
+"MAR22": {
+"code": "MAR22",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: default risk capital requirement",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Jump-to-default risk for non-securitisations, securitisations and the correlation trading portfolio, with netting, hedge-benefit ratio and default risk weights.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/22.htm",
+"provisions": []
+},
+"MAR23": {
+"code": "MAR23",
+"standard": "MAR",
+"group": "Standardised approach",
+"title": "Standardised approach: residual risk add-on",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "A notional-based add-on for instruments with exotic underlyings or other residual risks not captured by the sensitivities-based method.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/23.htm",
+"provisions": []
+},
+"MAR30": {
+"code": "MAR30",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: general provisions",
+"effective_date": "2023-01-01",
+"last_update": "2024-07-05",
+"summary": "General criteria and qualitative standards a bank must meet to use internal models for market risk capital.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/30.htm",
+"provisions": []
+},
+"MAR31": {
+"code": "MAR31",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: model requirements",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"summary": "Specification of market risk factors, the risk factor eligibility test (RFET) and the distinction between modellable and non-modellable risk factors.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/31.htm",
+"provisions": []
+},
+"MAR32": {
+"code": "MAR32",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Desk-level and bank-wide backtesting, the P&L attribution test (Spearman correlation and Kolmogorov–Smirnov metrics) and the traffic-light consequences for IMA eligibility.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"provisions": []
+},
+"MAR33": {
+"code": "MAR33",
+"standard": "MAR",
+"group": "Internal models approach",
+"title": "Internal models approach: capital requirements calculation",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"summary": "How the IMA capital requirement is computed — Expected Shortfall at 97.5%, liquidity horizons, stress calibration, non-modellable risk factors (SES), the default risk charge and aggregation.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm",
+"provisions": [
+{
+"id": "MAR33.2",
+"title": "ES must be computed daily, bank-wide and per IMA desk"
+},
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES"
+},
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon"
+},
+{
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors"
+},
+{
+"id": "MAR33.7",
+"title": "Identifying the 12-month stress period"
+},
+{
+"id": "MAR33.9",
+"title": "No prescribed model type (historical simulation, Monte Carlo or analytical)"
+},
+{
+"id": "MAR33.12",
+"title": "Mapping risk factors to liquidity horizon categories (Table 2)"
+},
+{
+"id": "MAR33.13",
+"title": "Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))"
+},
+{
+"id": "MAR33.14",
+"title": "Partial ES per broad risk class with other risk factors held constant"
+},
+{
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)"
+},
+{
+"id": "MAR33.16",
+"title": "Non-modellable risk factors capitalised with stress scenarios (SES)"
+},
+{
+"id": "MAR33.17",
+"title": "Aggregation of stress scenario capital (SES) across NMRFs"
+},
+{
+"id": "MAR33.22",
+"title": "IMA default risk charge — greater of 12-week average and latest measure"
+}
+]
+},
+"MAR40": {
+"code": "MAR40",
+"standard": "MAR",
+"group": "Other",
+"title": "Simplified standardised approach",
+"effective_date": "2023-01-01",
+"last_update": "2024-07-05",
+"summary": "The Basel II-style simplified approach available to banks that meet supervisory criteria, with scalars applied to the legacy risk charges.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/40.htm",
+"provisions": []
+},
+"MAR90": {
+"code": "MAR90",
+"standard": "MAR",
+"group": "Other",
+"title": "Transitional arrangements",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Transitional provisions for the revised market risk framework.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/90.htm",
+"provisions": []
+},
+"MAR99": {
+"code": "MAR99",
+"standard": "MAR",
+"group": "Other",
+"title": "Guidance on use of the internal models approach",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Application guidance on internal model use, including stress testing and model validation.",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/99.htm",
+"provisions": []
+},
+"RBC25": {
+"code": "RBC25",
+"standard": "RBC",
+"group": "Boundary",
+"title": "Boundary between the banking book and the trading book",
+"effective_date": "2023-01-01",
+"last_update": "2020-03-27",
+"summary": "Which instruments belong in the trading book (market risk capital) versus the banking book (credit risk capital), and the limits on moving instruments between them.",
+"source_url": "https://www.bis.org/basel_framework/chapter/RBC/25.htm",
+"provisions": []
+}
+},
+"provisions": {
+"MAR33.2": {
+"id": "MAR33.2",
+"title": "ES must be computed daily, bank-wide and per IMA desk",
+"excerpt_kind": "paraphrase",
+"excerpt": "Expected Shortfall must be computed on a daily basis, both for the bank-wide internal model and for each trading desk that uses the internal models approach.",
+"plain_language": "A bank using its own model cannot run it once a month. Every business day it must produce an ES number for the whole bank *and* a separate one for each desk that has model approval. The daily cadence feeds the backtesting and P&L attribution tests in MAR32 and the 60-day averaging in the capital formula.",
+"technical_interpretation": "Daily computation at desk level is what makes desk-level approval (MAR12, MAR32) operational: the desk's own ES, backtesting exceptions and PLA metrics are all produced from the same daily run. Operationally this requires end-of-day positions, a risk-factor time series updated at least quarterly (MAR33.8) and a full-revaluation or sensitivity-based P&L engine that can run inside the overnight batch.",
+"mathematical_implications": "The daily series $ES_t$ is the input to the time-averaging in the capital calculation, so a single bad day is smoothed but not ignored. It is also why the ES must be a *reproducible* function of positions and scenarios: two runs on the same inputs must agree.",
+"related_calculations": [
+{
+"calc_id": "var_es_historical",
+"title": "Historical VaR & ES simulator"
+}
+],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+},
+{
+"slug": "value-at-risk",
+"authored": true,
+"title": "Value at Risk (VaR)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "confidence level"
+},
+{
+"id": "MAR32",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"chapter_code": "MAR32",
+"in_library": false,
+"relation": "backtesting and PLA use the daily series"
+},
+{
+"id": "MAR12",
+"title": "Definition of trading desk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/12.htm",
+"chapter_code": "MAR12",
+"in_library": false,
+"relation": "trading desk definition"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_2",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.3": {
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"excerpt_kind": "quote",
+"excerpt": "In calculating ES, a bank must use a 97.5th percentile, one-tailed confidence level.",
+"plain_language": "Under Basel 2.5 the risk measure was VaR at 99%. FRTB replaced it with Expected Shortfall at 97.5%: instead of asking \"what is the loss we exceed only 1% of the time\", we ask \"what is the *average* loss on the worst 2.5% of days\". For a normal distribution the two numbers are almost identical, which is exactly why 97.5% was chosen — the switch does not mechanically inflate capital, it changes *what* is measured.",
+"technical_interpretation": "ES is coherent (sub-additive), so diversified portfolios never attract more capital than the sum of their parts, and it is sensitive to the shape of the tail beyond the quantile. The 97.5% level is applied to the 10-day base horizon ES and to every liquidity-horizon component in MAR33.4, and to the stressed calibration in MAR33.5. Backtesting (MAR32) still uses VaR at both 97.5% and 99% because ES itself is hard to backtest.",
+"mathematical_implications": "For a loss distribution $L$: $ES_{0.975} = \\mathbb{E}[L \\mid L \\ge VaR_{0.975}]$. Under normality $ES_{0.975} = \\sigma\\,\\varphi(z_{0.975})/0.025 \\approx 2.338\\,\\sigma$ while $VaR_{0.99} = 2.326\\,\\sigma$: a difference of about 0.5%. Under fat tails (Student-t with 4 degrees of freedom) the ratio $ES_{0.975}/VaR_{0.99}$ rises well above 1 — the **Historical VaR & ES simulator** lets you see this directly.",
+"related_calculations": [
+{
+"calc_id": "var_es_historical",
+"title": "Historical VaR & ES simulator"
+},
+{
+"calc_id": "var_es_parametric",
+"title": "Parametric VaR & ES"
+}
+],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+},
+{
+"slug": "value-at-risk",
+"authored": true,
+"title": "Value at Risk (VaR)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.2",
+"title": "ES must be computed daily, bank-wide and per IMA desk",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_2",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "daily computation"
+},
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "liquidity horizon scaling of the same ES"
+},
+{
+"id": "MAR32",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"chapter_code": "MAR32",
+"in_library": false,
+"relation": "backtesting uses VaR at 97.5% and 99%"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.4": {
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"excerpt_kind": "paraphrase",
+"excerpt": "Liquidity horizons must be reflected by scaling an ES calculated on a base horizon of 10 days. The ES for a position set P is computed as the square root of the sum of the squared base ES and, for each liquidity-horizon bucket j ≥ 2, the squared ES of the risk factors with liquidity horizon at least LH_j, scaled by the square root of (LH_j − LH_{j−1}) / 10. Table 1 lists the horizons 10, 20, 40, 60 and 120 days.",
+"plain_language": "Not every risk can be hedged or sold in ten days. A large-cap equity position can; a high-yield credit spread or an exotic commodity volatility cannot. FRTB therefore assigns each risk factor a *liquidity horizon* and stretches the 10-day ES so that slow-moving risks are measured over a longer holding period. Instead of re-running the model at 20, 40, 60 and 120 days, the formula builds the longer-horizon ES from a sequence of 10-day ES calculations on shrinking subsets of risk factors.",
+"technical_interpretation": "$ES_T(P)$ is the 10-day ES with all risk factors shocked. $ES_T(P,j)$ is the 10-day ES when only risk factors with liquidity horizon ≥ $LH_j$ are shocked and the others are frozen. Each increment $(LH_j - LH_{j-1})$ is scaled by square-root-of-time and the increments are combined in quadrature, which implicitly assumes the P&L over successive 10-day windows is uncorrelated. In practice banks compute $ES_T(P,j)$ by nesting the risk-factor subsets, so five ES runs (full set, LH ≥ 20, ≥ 40, ≥ 60, ≥ 120) are needed per calculation, each for current and stressed calibration and for the full and reduced risk-factor sets.",
+"mathematical_implications": "$$ES = \\sqrt{ES_T(P)^2 + \\sum_{j \\ge 2}\\left(ES_T(P,j)\\sqrt{\\tfrac{LH_j - LH_{j-1}}{T}}\\right)^2}, \\qquad T = 10$$ If every risk factor has the same horizon $LH_k$, the nested ES values coincide and the expression collapses to $ES_T(P)\\sqrt{LH_k/10}$: a 60-day book carries $\\sqrt 6 \\approx 2.45\\times$ its 10-day ES. Because the terms add in quadrature, moving a small portion of risk to a long horizon costs much less than moving all of it — try it in the **Liquidity-horizon ES scaling** calculator.",
+"related_calculations": [
+{
+"calc_id": "liquidity_horizon_scaling",
+"title": "Liquidity-horizon ES scaling (MAR33.4)"
+}
+],
+"related_topics": [
+{
+"slug": "liquidity-horizons",
+"authored": true,
+"title": "Liquidity horizons"
+},
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.12",
+"title": "Mapping risk factors to liquidity horizon categories (Table 2)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_12",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "liquidity horizon per risk factor category (Table 2)"
+},
+{
+"id": "MAR33.3",
+"title": "97.5th percentile, one-tailed confidence level for ES",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_3",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "confidence level of each ES term"
+},
+{
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_5",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "stressed calibration of the same ES"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.5": {
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors",
+"excerpt_kind": "paraphrase",
+"excerpt": "The ES measure must be calibrated to a period of significant financial stress. Because full risk-factor histories rarely reach back to the stress period, the calibration is done with a reduced set of risk factors that must explain at least 75% of the variation of the full ES model, subject to supervisory approval.",
+"plain_language": "A model calibrated to calm recent markets understates risk. Basel 2.5 fixed this by adding a separate \"stressed VaR\" on top of normal VaR. FRTB goes further: the *only* ES that matters for capital is the stressed one. Since many risk factors (new issuers, new indices) have no data from 2008, the bank is allowed to use a smaller set of long-history factors as long as that set captures at least three-quarters of the full model's risk.",
+"technical_interpretation": "Define $ES_{F,C}$ (full set, current period), $ES_{R,C}$ (reduced set, current period) and $ES_{R,S}$ (reduced set, stress period). MAR33.6 then scales the reduced-set stressed ES back up to the full set: $ES = ES_{R,S} \\cdot ES_{F,C}/ES_{R,C}$ with the ratio floored at 1. The 75% test is a model-adequacy test of the reduced set, assessed over a defined window.",
+"mathematical_implications": "$$ES = ES_{R,S}\\times\\max\\!\\left(1,\\ \\frac{ES_{F,C}}{ES_{R,C}}\\right)$$ The ratio is a proxy for the risk the reduced set misses; flooring it at 1 means a reduced set that happens to be riskier than the full set gives no capital relief.",
+"related_calculations": [],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+},
+{
+"slug": "why-frtb",
+"authored": true,
+"title": "Why Basel introduced FRTB"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.7",
+"title": "Identifying the 12-month stress period",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_7",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "identification of the stress period"
+},
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "liquidity horizon structure applies to the stressed ES"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_5",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.7": {
+"id": "MAR33.7",
+"title": "Identifying the 12-month stress period",
+"excerpt_kind": "paraphrase",
+"excerpt": "Banks must identify the 12-month period of stress over the observation horizon in which the portfolio experiences the largest loss, searching back at least to 2007, with observations equally weighted, and must update the identification at least quarterly.",
+"plain_language": "The stress period is not a fixed date chosen by regulators; it is whichever continuous year since 2007 would have hurt *this* portfolio the most. A rates-heavy book may find its worst year in 2022, an equity book in 2008–09, a credit book in 2020. Because the portfolio changes, the search has to be repeated at least every quarter.",
+"technical_interpretation": "The search is a rolling-window optimisation over the reduced risk-factor set (MAR33.5): for each candidate 12-month window compute the ES of the current portfolio and pick the maximum. Equal weighting rules out exponential decay schemes (contrast age-weighted VaR, which RiskLab includes as an educational calculator) inside the stress window.",
+"mathematical_implications": "$$\\text{stress window} = \\arg\\max_{w \\in \\mathcal W} ES_{R}\\big(P_{\\text{today}},\\, w\\big)$$ where $\\mathcal W$ is the set of 12-month windows from 2007 to today. The result is a portfolio-specific quantity, so two banks with different books will legitimately use different stress periods.",
+"related_calculations": [
+{
+"calc_id": "historical_var_fx",
+"title": "Historical VaR of an FX open position"
+}
+],
+"related_topics": [
+{
+"slug": "historical-vs-parametric",
+"authored": true,
+"title": "Historical vs parametric models"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.5",
+"title": "ES calibrated to a period of stress using a reduced set of risk factors",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_5",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "stressed calibration"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_7",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.9": {
+"id": "MAR33.9",
+"title": "No prescribed model type (historical simulation, Monte Carlo or analytical)",
+"excerpt_kind": "paraphrase",
+"excerpt": "No particular type of ES model is prescribed. Historical simulation, Monte Carlo simulation or other analytical methods are acceptable provided the model captures all material risks and meets the backtesting and P&L attribution requirements.",
+"plain_language": "Regulators care about outcomes, not technique. A bank can replay history, simulate thousands of random futures, or use closed-form approximations — as long as the resulting ES captures the risks it runs and the model passes the MAR32 tests.",
+"technical_interpretation": "In practice most IMA banks use (filtered) historical simulation because it needs no distributional assumption and makes the stress-period calibration (MAR33.5–33.7) natural. Monte Carlo is common for path-dependent options. Parametric methods are rare for ES because tail shape matters more than for VaR.",
+"mathematical_implications": "Whatever the method, the output is a loss distribution from which $ES_{0.975}$ is read. The **Historical VaR & ES simulator** and the **Parametric VaR & ES** calculators show the same statistic computed two ways and why they diverge under fat tails.",
+"related_calculations": [
+{
+"calc_id": "var_es_historical",
+"title": "Historical VaR & ES simulator"
+},
+{
+"calc_id": "var_es_parametric",
+"title": "Parametric VaR & ES"
+}
+],
+"related_topics": [
+{
+"slug": "historical-vs-parametric",
+"authored": true,
+"title": "Historical vs parametric models"
+}
+],
+"cross_references": [
+{
+"id": "MAR32",
+"title": "Internal models approach: backtesting and P&L attribution test requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/32.htm",
+"chapter_code": "MAR32",
+"in_library": false,
+"relation": "validation tests the model must pass"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_9",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.12": {
+"id": "MAR33.12",
+"title": "Mapping risk factors to liquidity horizon categories (Table 2)",
+"excerpt_kind": "paraphrase",
+"excerpt": "Each risk factor must be mapped to one of the risk factor categories in Table 2 using a consistent, documented and validated procedure. The liquidity horizon is a floor (a bank may, with approval, use a longer one) and is capped at the maturity of the instrument.",
+"plain_language": "This is the lookup table behind MAR33.4. Interest rates in major currencies and large-cap equities get 10 days; high-yield corporate credit spreads get 60; credit-spread volatility and exotic commodity volatility get 120. A bank cannot shorten a horizon, but a position maturing in 30 days need not be measured over 60.",
+"technical_interpretation": "The mapping is part of the risk-factor taxonomy and must be validated like any model input. Categories mix *asset class* (rates, credit, equity, FX, commodity), *liquidity tier* (specified vs other currencies, IG vs HY, large vs small cap) and *risk type* (price vs volatility vs \"other\"). Volatility and \"other\" types always carry a longer horizon than the underlying price.",
+"mathematical_implications": "The table determines the nesting in MAR33.4: factors with horizon $n$ appear in every $ES_T(P,j)$ with $LH_j \\le n$. A risk factor at 120 days contributes to all five terms, one at 10 days only to the first. The full table is stored in RiskLab's engine as `params/mar33_liquidity_horizons.json` and rendered on the **Liquidity horizons** topic page.",
+"related_calculations": [
+{
+"calc_id": "liquidity_horizon_scaling",
+"title": "Liquidity-horizon ES scaling (MAR33.4)"
+}
+],
+"related_topics": [
+{
+"slug": "liquidity-horizons",
+"authored": true,
+"title": "Liquidity horizons"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.4",
+"title": "Liquidity-horizon scaling of ES from a 10-day base horizon",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_4",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "scaling formula"
+},
+{
+"id": "MAR31",
+"title": "Internal models approach: model requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/31.htm",
+"chapter_code": "MAR31",
+"in_library": false,
+"relation": "risk factor specification and eligibility"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_12",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.13": {
+"id": "MAR33.13",
+"title": "Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))",
+"excerpt_kind": "paraphrase",
+"excerpt": "The bank-wide internal ES model must include all modellable risk factors and may be computed without supervisory constraints on cross-risk-class correlations; the resulting stressed ES is the unconstrained term IMCC(C).",
+"plain_language": "The first half of the modellable capital charge lets the bank's model use its own view of diversification across rates, credit, equity, FX and commodities.",
+"technical_interpretation": "IMCC(C) is the stressed, liquidity-adjusted ES (MAR33.4–33.7) of the whole modellable book. It is the \"diversified\" number; MAR33.14 produces the \"undiversified\" partner.",
+"mathematical_implications": "$IMCC(C) = ES_{R,S}(P)\\cdot\\max\\!\\big(1, ES_{F,C}(P)/ES_{R,C}(P)\\big)$ with full cross-class diversification.",
+"related_calculations": [],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.14",
+"title": "Partial ES per broad risk class with other risk factors held constant",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_14",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "constrained partial ES by risk class"
+},
+{
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_15",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "aggregation into IMCC"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_13",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.14": {
+"id": "MAR33.14",
+"title": "Partial ES per broad risk class with other risk factors held constant",
+"excerpt_kind": "paraphrase",
+"excerpt": "A partial ES is calculated for each broad regulatory risk class (interest rate, equity, FX, commodity, credit spread) by shocking only that class's risk factors and holding all others constant; the partial ES values are summed to give the constrained aggregate.",
+"plain_language": "The second half of the charge assumes *no* diversification between asset classes: compute the ES of the rates book alone, the equity book alone, and so on, then add them up.",
+"technical_interpretation": "Each partial ES follows the same stressed, liquidity-adjusted recipe. Summing across classes is equivalent to assuming correlation +1 between class-level losses, the most conservative aggregation.",
+"mathematical_implications": "$\\sum_i IMCC(C_i)$ where $i$ runs over the five broad risk classes. By sub-additivity of ES, $\\sum_i IMCC(C_i) \\ge IMCC(C)$.",
+"related_calculations": [],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.13",
+"title": "Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_13",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "unconstrained ES"
+},
+{
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_15",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "aggregation into IMCC"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_14",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.15": {
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)",
+"excerpt_kind": "paraphrase",
+"excerpt": "The aggregate capital requirement for modellable risk factors (IMCC) is a weighted average of the unconstrained ES and the sum of the partial ES values by risk class, with the weight ρ set at 0.5.",
+"plain_language": "Regulators split the difference: half the credit for the bank's own diversification view, half for the no-diversification view. A bank whose model claims very large diversification benefits only gets to keep half of them.",
+"technical_interpretation": "This is the FRTB replacement for the Basel 2.5 practice of simply summing VaR and stressed VaR. Because the constrained sum is always at least the unconstrained ES, IMCC lies between $IMCC(C)$ and $\\sum_i IMCC(C_i)$ and is at least the unconstrained ES.",
+"mathematical_implications": "$$IMCC = \\rho \\cdot IMCC(C) + (1-\\rho)\\sum_{i=1}^{5} IMCC(C_i), \\qquad \\rho = 0.5$$ The **SA vs IMA comparison engine** (Phase 5) exposes ρ as an educational slider so the effect of the supervisory correlation constraint on capital can be seen directly.",
+"related_calculations": [],
+"related_topics": [
+{
+"slug": "expected-shortfall",
+"authored": true,
+"title": "Expected Shortfall (ES)"
+}
+],
+"cross_references": [
+{
+"id": "MAR33.13",
+"title": "Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_13",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "IMCC(C)"
+},
+{
+"id": "MAR33.14",
+"title": "Partial ES per broad risk class with other risk factors held constant",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_14",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "IMCC(C_i)"
+},
+{
+"id": "MAR33.16",
+"title": "Non-modellable risk factors capitalised with stress scenarios (SES)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_16",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "non-modellable risk factors are capitalised separately"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_15",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.16": {
+"id": "MAR33.16",
+"title": "Non-modellable risk factors capitalised with stress scenarios (SES)",
+"excerpt_kind": "paraphrase",
+"excerpt": "Each non-modellable risk factor must be capitalised using a stress scenario calibrated to be at least as prudent as the ES calibration, with a common 12-month stress period per broad risk class and a liquidity horizon of at least 20 days; where no acceptable stress scenario can be found, the maximum possible loss is used.",
+"plain_language": "A risk factor that fails the eligibility test in MAR31 (too few real price observations) cannot go into the ES model. Instead the bank must work out how much it could lose on that factor in a stressed year and hold that amount — with far less diversification benefit than modellable risks enjoy (see MAR33.17).",
+"technical_interpretation": "The stress scenario risk measure SES is computed per NMRF over its liquidity horizon (floor 20 days), calibrated to the same type of stress window used for ES but chosen per risk class. Idiosyncratic equity and credit-spread NMRFs may be aggregated with zero correlation; all other NMRFs are aggregated with a correlation parameter ρ = 0.6 (MAR33.17).",
+"mathematical_implications": "Each $SES_k$ is a loss at a 97.5%-equivalent stress; the aggregate is roughly $\\sqrt{\\rho(\\sum_k SES_k)^2 + (1-\\rho)\\sum_k SES_k^2}$ for the non-idiosyncratic set (exact formula in MAR33.17, Phase 4). Because this sits *outside* the IMCC diversification, an NMRF-heavy desk can see capital rise sharply when a factor loses modellability — a scenario the Phase 5 comparison engine simulates.",
+"related_calculations": [],
+"related_topics": [
+{
+"slug": "liquidity-horizons",
+"authored": true,
+"title": "Liquidity horizons"
+}
+],
+"cross_references": [
+{
+"id": "MAR31",
+"title": "Internal models approach: model requirements",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/31.htm",
+"chapter_code": "MAR31",
+"in_library": false,
+"relation": "risk factor eligibility test"
+},
+{
+"id": "MAR33.17",
+"title": "Aggregation of stress scenario capital (SES) across NMRFs",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_17",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "SES aggregation formula"
+},
+{
+"id": "MAR33.15",
+"title": "IMCC — weighted average of constrained and unconstrained ES (ρ = 0.5)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_15",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "modellable counterpart IMCC"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_16",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.17": {
+"id": "MAR33.17",
+"title": "Aggregation of stress scenario capital (SES) across NMRFs",
+"excerpt_kind": "paraphrase",
+"excerpt": "The aggregate SES combines idiosyncratic credit-spread and equity NMRFs aggregated with zero correlation and all other NMRFs aggregated with a correlation parameter ρ of 0.6.",
+"plain_language": "Zero correlation for pure name-specific risks, 0.6 for everything else — a middle ground between \"add them all up\" (ρ = 1) and \"they fully diversify\" (ρ = 0).",
+"technical_interpretation": "The exact aggregation expression is set out in the paragraph as a formula; RiskLab will transcribe and implement it in Phase 4 (IMA Lab — NMRF/SES simulator) with a validation record. Until then this page records the structural facts only.",
+"mathematical_implications": "Status: formula transcription pending (flagged in docs/ARCHITECTURE.md §8). Do not rely on this page for the precise functional form.",
+"related_calculations": [],
+"related_topics": [],
+"cross_references": [
+{
+"id": "MAR33.16",
+"title": "Non-modellable risk factors capitalised with stress scenarios (SES)",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_16",
+"chapter_code": "MAR33",
+"in_library": true,
+"relation": "SES definition"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_17",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+},
+"MAR33.22": {
+"id": "MAR33.22",
+"title": "IMA default risk charge — greater of 12-week average and latest measure",
+"excerpt_kind": "paraphrase",
+"excerpt": "The default risk capital requirement under the IMA is the greater of the average of the DRC model measures over the previous 12 weeks and the most recent DRC model measure.",
+"plain_language": "Default risk in the trading book (the chance an issuer actually defaults, not just that its spread widens) is modelled separately from ES, at a 99.9% level over one year, and its capital charge is smoothed over roughly a quarter — but can never fall below the latest number.",
+"technical_interpretation": "The DRC model (MAR33.18–33.27) is a weekly default-simulation VaR with two systematic factors, PD floors of 0.03% and correlations calibrated to 10 years including a stress period. The \"greater of\" rule parallels the 60-day averaging used for ES-based capital and prevents a one-off low reading from reducing capital.",
+"mathematical_implications": "$$DRC = \\max\\!\\big(\\overline{DRC}_{12\\text{ weeks}},\\ DRC_{\\text{latest}}\\big)$$",
+"related_calculations": [],
+"related_topics": [],
+"cross_references": [
+{
+"id": "MAR22",
+"title": "Standardised approach: default risk capital requirement",
+"url": "https://www.bis.org/basel_framework/chapter/MAR/22.htm",
+"chapter_code": "MAR22",
+"in_library": false,
+"relation": "standardised DRC counterpart"
+}
+],
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm#paragraph_MAR33_22",
+"effective_date": "2023-01-01",
+"last_update": "2020-06-05",
+"version_tag": "MAR-2023-01",
+"chapter_code": "MAR33",
+"chapter_title": "Internal models approach: capital requirements calculation"
+}
+},
+"graph": {
+"nodes": [
+{
+"id": "reg:RBC25",
+"kind": "regulation",
+"label": "RBC25 · Boundary between the banking book and the trading book",
+"href": "/library/RBC25"
+},
+{
+"id": "reg:MAR10",
+"kind": "regulation",
+"label": "MAR10 · Market risk terminology",
+"href": "/library/MAR10"
+},
+{
+"id": "reg:MAR11",
+"kind": "regulation",
+"label": "MAR11 · Definitions and application of market risk",
+"href": "/library/MAR11"
+},
+{
+"id": "reg:MAR12",
+"kind": "regulation",
+"label": "MAR12 · Definition of trading desk",
+"href": "/library/MAR12"
+},
+{
+"id": "reg:MAR20",
+"kind": "regulation",
+"label": "MAR20 · Standardised approach: general provisions and structure",
+"href": "/library/MAR20"
+},
+{
+"id": "reg:MAR21",
+"kind": "regulation",
+"label": "MAR21 · Standardised approach: sensitivities-based method",
+"href": "/library/MAR21"
+},
+{
+"id": "reg:MAR22",
+"kind": "regulation",
+"label": "MAR22 · Standardised approach: default risk capital requirement",
+"href": "/library/MAR22"
+},
+{
+"id": "reg:MAR23",
+"kind": "regulation",
+"label": "MAR23 · Standardised approach: residual risk add-on",
+"href": "/library/MAR23"
+},
+{
+"id": "reg:MAR30",
+"kind": "regulation",
+"label": "MAR30 · Internal models approach: general provisions",
+"href": "/library/MAR30"
+},
+{
+"id": "reg:MAR31",
+"kind": "regulation",
+"label": "MAR31 · Internal models approach: model requirements",
+"href": "/library/MAR31"
+},
+{
+"id": "reg:MAR32",
+"kind": "regulation",
+"label": "MAR32 · Internal models approach: backtesting and P&L attribution test requirements",
+"href": "/library/MAR32"
+},
+{
+"id": "reg:MAR33",
+"kind": "regulation",
+"label": "MAR33 · Internal models approach: capital requirements calculation",
+"href": "/library/MAR33"
+},
+{
+"id": "reg:MAR40",
+"kind": "regulation",
+"label": "MAR40 · Simplified standardised approach",
+"href": "/library/MAR40"
+},
+{
+"id": "reg:MAR90",
+"kind": "regulation",
+"label": "MAR90 · Transitional arrangements",
+"href": "/library/MAR90"
+},
+{
+"id": "reg:MAR99",
+"kind": "regulation",
+"label": "MAR99 · Guidance on use of the internal models approach",
+"href": "/library/MAR99"
+},
+{
+"id": "reg:MAR33.12",
+"kind": "regulation",
+"label": "MAR33.12 · Mapping risk factors to liquidity horizon categories (Table 2)",
+"href": "/library/MAR33/MAR33.12"
+},
+{
+"id": "reg:MAR33.4",
+"kind": "regulation",
+"label": "MAR33.4",
+"href": "/library/MAR33/MAR33.4"
+},
+{
+"id": "calc:liquidity_horizon_scaling",
+"kind": "calculation",
+"label": "Liquidity-horizon ES scaling (MAR33.4)",
+"href": "/calc/liquidity_horizon_scaling"
+},
+{
+"id": "topic:liquidity-horizons",
+"kind": "module",
+"label": "Liquidity horizons",
+"href": "/learn/liquidity-horizons"
+},
+{
+"id": "reg:MAR33.13",
+"kind": "regulation",
+"label": "MAR33.13 · Unconstrained bank-wide ES across all modellable risk factors (IMCC(C))",
+"href": "/library/MAR33/MAR33.13"
+},
+{
+"id": "reg:MAR33.14",
+"kind": "regulation",
+"label": "MAR33.14",
+"href": "/library/MAR33/MAR33.14"
+},
+{
+"id": "reg:MAR33.15",
+"kind": "regulation",
+"label": "MAR33.15",
+"href": "/library/MAR33/MAR33.15"
+},
+{
+"id": "topic:expected-shortfall",
+"kind": "module",
+"label": "Expected Shortfall (ES)",
+"href": "/learn/expected-shortfall"
+},
+{
+"id": "reg:MAR33.16",
+"kind": "regulation",
+"label": "MAR33.16",
+"href": "/library/MAR33/MAR33.16"
+},
+{
+"id": "reg:MAR33.17",
+"kind": "regulation",
+"label": "MAR33.17",
+"href": "/library/MAR33/MAR33.17"
+},
+{
+"id": "reg:MAR33.2",
+"kind": "regulation",
+"label": "MAR33.2 · ES must be computed daily, bank-wide and per IMA desk",
+"href": "/library/MAR33/MAR33.2"
+},
+{
+"id": "reg:MAR33.3",
+"kind": "regulation",
+"label": "MAR33.3",
+"href": "/library/MAR33/MAR33.3"
+},
+{
+"id": "calc:var_es_historical",
+"kind": "calculation",
+"label": "Historical VaR & ES simulator",
+"href": "/calc/var_es_historical"
+},
+{
+"id": "topic:value-at-risk",
+"kind": "module",
+"label": "Value at Risk (VaR)",
+"href": "/learn/value-at-risk"
+},
+{
+"id": "reg:MAR33.22",
+"kind": "regulation",
+"label": "MAR33.22 · IMA default risk charge — greater of 12-week average and latest measure",
+"href": "/library/MAR33/MAR33.22"
+},
+{
+"id": "calc:var_es_parametric",
+"kind": "calculation",
+"label": "Parametric VaR & ES",
+"href": "/calc/var_es_parametric"
+},
+{
+"id": "reg:MAR33.5",
+"kind": "regulation",
+"label": "MAR33.5",
+"href": "/library/MAR33/MAR33.5"
+},
+{
+"id": "reg:MAR33.7",
+"kind": "regulation",
+"label": "MAR33.7",
+"href": "/library/MAR33/MAR33.7"
+},
+{
+"id": "topic:why-frtb",
+"kind": "module",
+"label": "Why Basel introduced FRTB",
+"href": "/learn/why-frtb"
+},
+{
+"id": "calc:historical_var_fx",
+"kind": "calculation",
+"label": "Historical VaR of an FX open position",
+"href": "/calc/historical_var_fx"
+},
+{
+"id": "topic:historical-vs-parametric",
+"kind": "module",
+"label": "Historical vs parametric models",
+"href": "/learn/historical-vs-parametric"
+},
+{
+"id": "reg:MAR33.9",
+"kind": "regulation",
+"label": "MAR33.9 · No prescribed model type (historical simulation, Monte Carlo or analytical)",
+"href": "/library/MAR33/MAR33.9"
+},
+{
+"id": "topic:trading-book-vs-banking-book",
+"kind": "module",
+"label": "Trading Book vs Banking Book",
+"href": "/learn/trading-book-vs-banking-book"
+},
+{
+"id": "topic:fx-risk",
+"kind": "module",
+"label": "Foreign exchange risk",
+"href": "/learn/fx-risk"
+},
+{
+"id": "calc:fx_option_gk",
+"kind": "calculation",
+"label": "FX option pricer (Garman–Kohlhagen)",
+"href": "/calc/fx_option_gk"
+}
+],
+"edges": [
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.12",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.12",
+"to": "reg:MAR33.4",
+"relation": "scaling formula"
+},
+{
+"from": "reg:MAR33.12",
+"to": "reg:MAR31",
+"relation": "risk factor specification and eligibility"
+},
+{
+"from": "reg:MAR33.12",
+"to": "calc:liquidity_horizon_scaling",
+"relation": "implemented by"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.12",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.13",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.13",
+"to": "reg:MAR33.14",
+"relation": "constrained partial ES by risk class"
+},
+{
+"from": "reg:MAR33.13",
+"to": "reg:MAR33.15",
+"relation": "aggregation into IMCC"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.13",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.14",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.14",
+"to": "reg:MAR33.13",
+"relation": "unconstrained ES"
+},
+{
+"from": "reg:MAR33.14",
+"to": "reg:MAR33.15",
+"relation": "aggregation into IMCC"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.14",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.15",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.15",
+"to": "reg:MAR33.13",
+"relation": "IMCC(C)"
+},
+{
+"from": "reg:MAR33.15",
+"to": "reg:MAR33.14",
+"relation": "IMCC(C_i)"
+},
+{
+"from": "reg:MAR33.15",
+"to": "reg:MAR33.16",
+"relation": "non-modellable risk factors are capitalised separately"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.15",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.16",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.16",
+"to": "reg:MAR31",
+"relation": "risk factor eligibility test"
+},
+{
+"from": "reg:MAR33.16",
+"to": "reg:MAR33.17",
+"relation": "SES aggregation formula"
+},
+{
+"from": "reg:MAR33.16",
+"to": "reg:MAR33.15",
+"relation": "modellable counterpart IMCC"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.16",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.17",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.17",
+"to": "reg:MAR33.16",
+"relation": "SES definition"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.2",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.2",
+"to": "reg:MAR33.3",
+"relation": "confidence level"
+},
+{
+"from": "reg:MAR33.2",
+"to": "reg:MAR32",
+"relation": "backtesting and PLA use the daily series"
+},
+{
+"from": "reg:MAR33.2",
+"to": "reg:MAR12",
+"relation": "trading desk definition"
+},
+{
+"from": "reg:MAR33.2",
+"to": "calc:var_es_historical",
+"relation": "implemented by"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.2",
+"relation": "explains"
+},
+{
+"from": "topic:value-at-risk",
+"to": "reg:MAR33.2",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.22",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.22",
+"to": "reg:MAR22",
+"relation": "standardised DRC counterpart"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.3",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.3",
+"to": "reg:MAR33.2",
+"relation": "daily computation"
+},
+{
+"from": "reg:MAR33.3",
+"to": "reg:MAR33.4",
+"relation": "liquidity horizon scaling of the same ES"
+},
+{
+"from": "reg:MAR33.3",
+"to": "reg:MAR32",
+"relation": "backtesting uses VaR at 97.5% and 99%"
+},
+{
+"from": "reg:MAR33.3",
+"to": "calc:var_es_historical",
+"relation": "implemented by"
+},
+{
+"from": "reg:MAR33.3",
+"to": "calc:var_es_parametric",
+"relation": "implemented by"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.3",
+"relation": "explains"
+},
+{
+"from": "topic:value-at-risk",
+"to": "reg:MAR33.3",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.4",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.4",
+"to": "reg:MAR33.12",
+"relation": "liquidity horizon per risk factor category (Table 2)"
+},
+{
+"from": "reg:MAR33.4",
+"to": "reg:MAR33.3",
+"relation": "confidence level of each ES term"
+},
+{
+"from": "reg:MAR33.4",
+"to": "reg:MAR33.5",
+"relation": "stressed calibration of the same ES"
+},
+{
+"from": "reg:MAR33.4",
+"to": "calc:liquidity_horizon_scaling",
+"relation": "implemented by"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.4",
+"relation": "explains"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.4",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.5",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.5",
+"to": "reg:MAR33.7",
+"relation": "identification of the stress period"
+},
+{
+"from": "reg:MAR33.5",
+"to": "reg:MAR33.4",
+"relation": "liquidity horizon structure applies to the stressed ES"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.5",
+"relation": "explains"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:MAR33.5",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.7",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.7",
+"to": "reg:MAR33.5",
+"relation": "stressed calibration"
+},
+{
+"from": "reg:MAR33.7",
+"to": "calc:historical_var_fx",
+"relation": "implemented by"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "reg:MAR33.7",
+"relation": "explains"
+},
+{
+"from": "reg:MAR33",
+"to": "reg:MAR33.9",
+"relation": "contains"
+},
+{
+"from": "reg:MAR33.9",
+"to": "reg:MAR32",
+"relation": "validation tests the model must pass"
+},
+{
+"from": "reg:MAR33.9",
+"to": "calc:var_es_historical",
+"relation": "implemented by"
+},
+{
+"from": "reg:MAR33.9",
+"to": "calc:var_es_parametric",
+"relation": "implemented by"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "reg:MAR33.9",
+"relation": "explains"
+},
+{
+"from": "topic:trading-book-vs-banking-book",
+"to": "reg:RBC25",
+"relation": "cites"
+},
+{
+"from": "topic:trading-book-vs-banking-book",
+"to": "reg:MAR11",
+"relation": "cites"
+},
+{
+"from": "topic:trading-book-vs-banking-book",
+"to": "reg:MAR12",
+"relation": "cites"
+},
+{
+"from": "topic:trading-book-vs-banking-book",
+"to": "topic:why-frtb",
+"relation": "related"
+},
+{
+"from": "topic:fx-risk",
+"to": "reg:MAR21",
+"relation": "cites"
+},
+{
+"from": "topic:fx-risk",
+"to": "reg:MAR33.12",
+"relation": "cites"
+},
+{
+"from": "topic:fx-risk",
+"to": "reg:MAR11",
+"relation": "cites"
+},
+{
+"from": "topic:fx-risk",
+"to": "calc:fx_option_gk",
+"relation": "exercise"
+},
+{
+"from": "topic:fx-risk",
+"to": "topic:value-at-risk",
+"relation": "related"
+},
+{
+"from": "topic:fx-risk",
+"to": "topic:historical-vs-parametric",
+"relation": "related"
+},
+{
+"from": "topic:fx-risk",
+"to": "topic:liquidity-horizons",
+"relation": "related"
+},
+{
+"from": "topic:value-at-risk",
+"to": "reg:MAR33.3",
+"relation": "cites"
+},
+{
+"from": "topic:value-at-risk",
+"to": "reg:MAR32",
+"relation": "cites"
+},
+{
+"from": "topic:value-at-risk",
+"to": "reg:MAR33.9",
+"relation": "cites"
+},
+{
+"from": "topic:value-at-risk",
+"to": "calc:var_es_historical",
+"relation": "exercise"
+},
+{
+"from": "topic:value-at-risk",
+"to": "topic:expected-shortfall",
+"relation": "related"
+},
+{
+"from": "topic:value-at-risk",
+"to": "topic:historical-vs-parametric",
+"relation": "related"
+},
+{
+"from": "topic:value-at-risk",
+"to": "topic:liquidity-horizons",
+"relation": "related"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.3",
+"relation": "cites"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.2",
+"relation": "cites"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.4",
+"relation": "cites"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "reg:MAR33.15",
+"relation": "cites"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "calc:var_es_historical",
+"relation": "exercise"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "topic:value-at-risk",
+"relation": "related"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "topic:liquidity-horizons",
+"relation": "related"
+},
+{
+"from": "topic:expected-shortfall",
+"to": "topic:historical-vs-parametric",
+"relation": "related"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "reg:MAR33.9",
+"relation": "cites"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "reg:MAR33.7",
+"relation": "cites"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "reg:MAR33.5",
+"relation": "cites"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "calc:historical_var_fx",
+"relation": "exercise"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "topic:value-at-risk",
+"relation": "related"
+},
+{
+"from": "topic:historical-vs-parametric",
+"to": "topic:expected-shortfall",
+"relation": "related"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:MAR33.3",
+"relation": "cites"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:MAR33.4",
+"relation": "cites"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:MAR33.5",
+"relation": "cites"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:RBC25",
+"relation": "cites"
+},
+{
+"from": "topic:why-frtb",
+"to": "reg:MAR20",
+"relation": "cites"
+},
+{
+"from": "topic:why-frtb",
+"to": "calc:var_es_historical",
+"relation": "exercise"
+},
+{
+"from": "topic:why-frtb",
+"to": "topic:expected-shortfall",
+"relation": "related"
+},
+{
+"from": "topic:why-frtb",
+"to": "topic:liquidity-horizons",
+"relation": "related"
+},
+{
+"from": "topic:why-frtb",
+"to": "topic:trading-book-vs-banking-book",
+"relation": "related"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.4",
+"relation": "cites"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.12",
+"relation": "cites"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "reg:MAR33.16",
+"relation": "cites"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "calc:liquidity_horizon_scaling",
+"relation": "exercise"
+},
+{
+"from": "topic:liquidity-horizons",
+"to": "topic:expected-shortfall",
+"relation": "related"
+}
+]
+},
+"calcs": [
+{
+"id": "var_es_historical",
+"title": "Historical VaR & ES simulator",
+"description": "Draw synthetic daily P&L scenarios and compare VaR with Expected Shortfall at any confidence level.",
+"validation_label": "educational",
+"regulatory_references": [
+"MAR33.3"
+],
+"input_schema": {
+"properties": {
+"n_scenarios": {
+"default": 500,
+"description": "Number of synthetic daily P&L scenarios",
+"maximum": 20000,
+"minimum": 100,
+"title": "N Scenarios",
+"type": "integer"
+},
+"daily_vol": {
+"default": 0.012,
+"description": "Daily P&L volatility as a fraction of a 1,000,000 position",
+"exclusiveMinimum": 0,
+"maximum": 0.5,
+"title": "Daily Vol",
+"type": "number"
+},
+"confidence": {
+"default": 0.99,
+"description": "One-tailed confidence level",
+"maximum": 0.999,
+"minimum": 0.9,
+"title": "Confidence",
+"type": "number"
+},
+"seed": {
+"default": 42,
+"description": "Random seed (reproducible)",
+"maximum": 10000000,
+"minimum": 0,
+"title": "Seed",
+"type": "integer"
+},
+"distribution": {
+"default": "normal",
+"description": "Scenario generator",
+"enum": [
+"normal",
+"student_t"
+],
+"title": "Distribution",
+"type": "string"
+},
+"df": {
+"default": 4,
+"description": "Degrees of freedom (Student-t only)",
+"maximum": 50,
+"minimum": 3,
+"title": "Df",
+"type": "integer"
+}
+},
+"title": "VarEsHistoricalInputs",
+"type": "object"
+},
+"defaults": {
+"n_scenarios": 500,
+"daily_vol": 0.012,
+"confidence": 0.99,
+"seed": 42,
+"distribution": "normal",
+"df": 4
+}
+},
+{
+"id": "var_es_parametric",
+"title": "Parametric VaR & ES",
+"description": "Closed-form normal VaR and ES with square-root-of-time horizon scaling.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": {
+"properties": {
+"position_value": {
+"default": 10000000,
+"description": "Position market value",
+"exclusiveMinimum": 0,
+"title": "Position Value",
+"type": "number"
+},
+"daily_vol": {
+"default": 0.01,
+"description": "Daily return volatility",
+"exclusiveMinimum": 0,
+"maximum": 0.5,
+"title": "Daily Vol",
+"type": "number"
+},
+"confidence": {
+"default": 0.99,
+"description": "One-tailed confidence level",
+"maximum": 0.999,
+"minimum": 0.9,
+"title": "Confidence",
+"type": "number"
+},
+"horizon_days": {
+"default": 1,
+"description": "Horizon in business days (√t scaling)",
+"maximum": 250,
+"minimum": 1,
+"title": "Horizon Days",
+"type": "integer"
+}
+},
+"title": "VarEsParametricInputs",
+"type": "object"
+},
+"defaults": {
+"position_value": 10000000,
+"daily_vol": 0.01,
+"confidence": 0.99,
+"horizon_days": 1
+}
+},
+{
+"id": "liquidity_horizon_scaling",
+"title": "Liquidity-horizon ES scaling (MAR33.4)",
+"description": "Apply the FRTB liquidity-horizon formula to ES components and see the uplift versus a 10-day base ES.",
+"validation_label": "partial-regulatory",
+"regulatory_references": [
+"MAR33.4",
+"MAR33.12"
+],
+"input_schema": {
+"properties": {
+"es_base": {
+"default": 1000000,
+"description": "ES_T(P): 10-day ES with all risk factors shocked",
+"minimum": 0,
+"title": "Es Base",
+"type": "number"
+},
+"es_lh20": {
+"default": 800000,
+"description": "ES_T(P,2): 10-day ES shocking only factors with LH ≥ 20d",
+"minimum": 0,
+"title": "Es Lh20",
+"type": "number"
+},
+"es_lh40": {
+"default": 500000,
+"description": "ES_T(P,3): factors with LH ≥ 40d",
+"minimum": 0,
+"title": "Es Lh40",
+"type": "number"
+},
+"es_lh60": {
+"default": 300000,
+"description": "ES_T(P,4): factors with LH ≥ 60d",
+"minimum": 0,
+"title": "Es Lh60",
+"type": "number"
+},
+"es_lh120": {
+"default": 100000,
+"description": "ES_T(P,5): factors with LH ≥ 120d",
+"minimum": 0,
+"title": "Es Lh120",
+"type": "number"
+},
+"single_horizon": {
+"default": 60,
+"description": "For the intuition panel: horizon applied to the whole portfolio (√(LH/10) scaling)",
+"enum": [
+10,
+20,
+40,
+60,
+120
+],
+"title": "Single Horizon",
+"type": "integer"
+}
+},
+"title": "LiquidityHorizonInputs",
+"type": "object"
+},
+"defaults": {
+"es_base": 1000000,
+"es_lh20": 800000,
+"es_lh40": 500000,
+"es_lh60": 300000,
+"es_lh120": 100000,
+"single_horizon": 60
+}
+},
+{
+"id": "fx_option_gk",
+"title": "FX option pricer (Garman–Kohlhagen)",
+"description": "Price a European FX option and see where a delta sensitivity comes from.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": {
+"properties": {
+"spot": {
+"default": 1.08,
+"description": "Spot (domestic per unit of foreign)",
+"exclusiveMinimum": 0,
+"title": "Spot",
+"type": "number"
+},
+"strike": {
+"default": 1.1,
+"exclusiveMinimum": 0,
+"title": "Strike",
+"type": "number"
+},
+"r_dom": {
+"default": 0.045,
+"description": "Domestic continuously compounded rate",
+"maximum": 1.0,
+"minimum": -0.05,
+"title": "R Dom",
+"type": "number"
+},
+"r_for": {
+"default": 0.03,
+"description": "Foreign continuously compounded rate",
+"maximum": 1.0,
+"minimum": -0.05,
+"title": "R For",
+"type": "number"
+},
+"vol": {
+"default": 0.09,
+"description": "Annualised implied volatility",
+"exclusiveMinimum": 0,
+"maximum": 3.0,
+"title": "Vol",
+"type": "number"
+},
+"days": {
+"default": 90,
+"description": "Days to expiry",
+"maximum": 3650,
+"minimum": 1,
+"title": "Days",
+"type": "integer"
+},
+"notional": {
+"default": 1000000,
+"description": "Foreign-currency notional",
+"exclusiveMinimum": 0,
+"title": "Notional",
+"type": "number"
+},
+"option": {
+"default": "call",
+"enum": [
+"call",
+"put"
+],
+"title": "Option",
+"type": "string"
+}
+},
+"title": "FxOptionInputs",
+"type": "object"
+},
+"defaults": {
+"spot": 1.08,
+"strike": 1.1,
+"r_dom": 0.045,
+"r_for": 0.03,
+"vol": 0.09,
+"days": 90,
+"notional": 1000000,
+"option": "call"
+}
+},
+{
+"id": "historical_var_fx",
+"title": "Historical VaR of an FX open position",
+"description": "Equal-weight vs age-weighted historical VaR for a three-currency position on synthetic history.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": {
+"properties": {
+"usd": {
+"default": 2000000,
+"description": "USD position (domestic = TRY in the example)",
+"title": "Usd",
+"type": "number"
+},
+"eur": {
+"default": -1500000,
+"description": "EUR position",
+"title": "Eur",
+"type": "number"
+},
+"gbp": {
+"default": 500000,
+"description": "GBP position",
+"title": "Gbp",
+"type": "number"
+},
+"n_days": {
+"default": 251,
+"description": "Length of synthetic history",
+"maximum": 2000,
+"minimum": 60,
+"title": "N Days",
+"type": "integer"
+},
+"seed": {
+"default": 7,
+"maximum": 10000000,
+"minimum": 0,
+"title": "Seed",
+"type": "integer"
+},
+"confidence": {
+"default": 0.99,
+"maximum": 0.999,
+"minimum": 0.9,
+"title": "Confidence",
+"type": "number"
+},
+"decay": {
+"default": 0.97,
+"description": "BRW age-weighting decay λ",
+"exclusiveMaximum": 1.0,
+"exclusiveMinimum": 0.5,
+"title": "Decay",
+"type": "number"
+}
+},
+"title": "HistoricalFxVarInputs",
+"type": "object"
+},
+"defaults": {
+"usd": 2000000,
+"eur": -1500000,
+"gbp": 500000,
+"n_days": 251,
+"seed": 7,
+"confidence": 0.99,
+"decay": 0.97
+}
+}
+],
+"dashboard": {
+"simulators": [
+{
+"id": "var_es_historical",
+"title": "Historical VaR & ES simulator",
+"description": "Draw synthetic daily P&L scenarios and compare VaR with Expected Shortfall at any confidence level.",
+"validation_label": "educational",
+"regulatory_references": [
+"MAR33.3"
+],
+"input_schema": null,
+"defaults": {
+"n_scenarios": 500,
+"daily_vol": 0.012,
+"confidence": 0.99,
+"seed": 42,
+"distribution": "normal",
+"df": 4
+}
+},
+{
+"id": "var_es_parametric",
+"title": "Parametric VaR & ES",
+"description": "Closed-form normal VaR and ES with square-root-of-time horizon scaling.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": null,
+"defaults": {
+"position_value": 10000000,
+"daily_vol": 0.01,
+"confidence": 0.99,
+"horizon_days": 1
+}
+},
+{
+"id": "liquidity_horizon_scaling",
+"title": "Liquidity-horizon ES scaling (MAR33.4)",
+"description": "Apply the FRTB liquidity-horizon formula to ES components and see the uplift versus a 10-day base ES.",
+"validation_label": "partial-regulatory",
+"regulatory_references": [
+"MAR33.4",
+"MAR33.12"
+],
+"input_schema": null,
+"defaults": {
+"es_base": 1000000,
+"es_lh20": 800000,
+"es_lh40": 500000,
+"es_lh60": 300000,
+"es_lh120": 100000,
+"single_horizon": 60
+}
+},
+{
+"id": "fx_option_gk",
+"title": "FX option pricer (Garman–Kohlhagen)",
+"description": "Price a European FX option and see where a delta sensitivity comes from.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": null,
+"defaults": {
+"spot": 1.08,
+"strike": 1.1,
+"r_dom": 0.045,
+"r_for": 0.03,
+"vol": 0.09,
+"days": 90,
+"notional": 1000000,
+"option": "call"
+}
+},
+{
+"id": "historical_var_fx",
+"title": "Historical VaR of an FX open position",
+"description": "Equal-weight vs age-weighted historical VaR for a three-currency position on synthetic history.",
+"validation_label": "educational",
+"regulatory_references": [],
+"input_schema": null,
+"defaults": {
+"usd": 2000000,
+"eur": -1500000,
+"gbp": 500000,
+"n_days": 251,
+"seed": 7,
+"confidence": 0.99,
+"decay": 0.97
+}
+}
+],
+"regulatory_updates": [
+{
+"code": "MAR21",
+"title": "Standardised approach: sensitivities-based method",
+"last_update": "2026-03-23",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/21.htm"
+},
+{
+"code": "MAR30",
+"title": "Internal models approach: general provisions",
+"last_update": "2024-07-05",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/30.htm"
+},
+{
+"code": "MAR40",
+"title": "Simplified standardised approach",
+"last_update": "2024-07-05",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/40.htm"
+},
+{
+"code": "MAR31",
+"title": "Internal models approach: model requirements",
+"last_update": "2020-06-05",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/31.htm"
+},
+{
+"code": "MAR33",
+"title": "Internal models approach: capital requirements calculation",
+"last_update": "2020-06-05",
+"source_url": "https://www.bis.org/basel_framework/chapter/MAR/33.htm"
+}
+],
+"featured": [
+{
+"calc_id": "var_es_historical",
+"title": "Historical VaR & ES simulator",
+"blurb": "Why 97.5% ES ≈ 99% VaR — until the tails get fat."
+},
+{
+"calc_id": "liquidity_horizon_scaling",
+"title": "Liquidity-horizon ES scaling (MAR33.4)",
+"blurb": "How a 60-day risk factor can add 2.45× to a 10-day ES (MAR33.4)."
+},
+{
+"calc_id": "fx_option_gk",
+"title": "FX option pricer (Garman–Kohlhagen)",
+"blurb": "From a pricing model to a delta sensitivity in one bump."
+}
+],
+"paths": [
+{
+"slug": "market-risk-foundations",
+"title": "Market Risk Foundations",
+"level": "beginner",
+"authored_count": 5,
+"total_count": 13
+},
+{
+"slug": "introduction-to-frtb",
+"title": "Introduction to FRTB",
+"level": "beginner",
+"authored_count": 1,
+"total_count": 7
+},
+{
+"slug": "standardised-approach",
+"title": "Standardised Approach (SA)",
+"level": "intermediate",
+"authored_count": 0,
+"total_count": 15
+},
+{
+"slug": "internal-models-approach",
+"title": "Internal Models Approach (IMA)",
+"level": "advanced",
+"authored_count": 1,
+"total_count": 10
+},
+{
+"slug": "model-validation-and-monitoring",
+"title": "Model Validation & Monitoring",
+"level": "advanced",
+"authored_count": 0,
+"total_count": 9
+},
+{
+"slug": "capital-calculation-and-reporting",
+"title": "Capital Calculation & Reporting",
+"level": "intermediate",
+"authored_count": 0,
+"total_count": 7
+}
+],
+"stats": {
+"topics_authored": 7,
+"topics_total": 61,
+"chapters": 15,
+"provisions": 13,
+"simulators": 5
+}
+}
+}
