@@ -14,6 +14,9 @@ jobs:
         with: { node-version: "22", cache: npm, cache-dependency-path: frontend/package-lock.json }
       - run: pip install -r backend/requirements.txt
       - run: python -m pytest backend/tests -q
+      - run: pip install -r black_scholes_lab/requirements.txt -r xva_lab/requirements.txt
+      - run: python -m pytest black_scholes_lab -q
+      - run: python -m pytest xva_lab -q
       - run: python backend/scripts/export_static.py
       - working-directory: frontend
         run: npm ci && npm run parity && NEXT_PUBLIC_STATIC=1 npm run build
