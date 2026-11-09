@@ -1,0 +1,100 @@
+site_name: Black-Scholes Laboratory
+site_description: Educational module on Black-Scholes option pricing, exotic option simulation and U.S. market-risk regulation (FRTB-SA, VaR/ES, stress, SR 11-7).
+site_url: https://sguven.github.io/market-risk-toolkit/black-scholes-lab/
+repo_url: https://github.com/sguven/market-risk-toolkit
+repo_name: sguven/market-risk-toolkit
+edit_uri: edit/main/black_scholes_lab/docs/
+docs_dir: docs
+site_dir: site
+copyright: Educational material. Illustrative data. Not investment, legal or regulatory advice.
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/sigma
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Course:
+      - 1. Black-Scholes theory: 01_black_scholes_theory.md
+      - 2. Greeks and hedging: 02_greeks_and_hedging.md
+      - 3. Exotic options: 03_exotic_options.md
+      - 4. Monte Carlo methods: 04_monte_carlo_methods.md
+  - Regulation:
+      - 5. U.S. regulatory landscape: 05_us_regulatory_landscape.md
+      - 6. FRTB standardised approach: 06_frtb_standardised_approach.md
+      - 7. Other risk frameworks: 07_other_risk_frameworks.md
+      - References: references.md
+  - Examples: 08_example_outputs.md
+  - API reference: 09_api_reference.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_root_heading: false
+            show_root_toc_entry: false
+            members_order: source
+            heading_level: 3
+            show_signature_annotations: true
+            separate_signature: true
+            filters: ["!^_"]
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sguven/market-risk-toolkit
