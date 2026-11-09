@@ -53,8 +53,8 @@ jobs:
 
       # Black-Scholes Laboratory (black_scholes_lab/) is published as a MkDocs sub-site
       # of the same Pages deployment, at /<repo>/black-scholes-lab/.
-      - name: Install Black-Scholes Lab, XVA Lab + MkDocs
-        run: pip install -r black_scholes_lab/requirements.txt -r xva_lab/requirements.txt mkdocs-material "mkdocstrings[python]"
+      - name: Install Black-Scholes Lab, XVA Lab, Volatility & Correlation Lab + MkDocs
+        run: pip install -r black_scholes_lab/requirements.txt -r xva_lab/requirements.txt -r vol_corr_lab/requirements.txt mkdocs-material "mkdocstrings[python]"
       - name: Black-Scholes Lab tests
         working-directory: black_scholes_lab
         run: python -m pytest -q
@@ -69,6 +69,14 @@ jobs:
       - name: Build XVA Lab site
         working-directory: xva_lab
         run: mkdocs build --strict --site-dir ../frontend/out/xva-lab
+
+      # Volatility & Correlation Risk Laboratory (vol_corr_lab/) is published the same way, at /<repo>/vol-corr-lab/.
+      - name: Volatility & Correlation Lab tests
+        working-directory: vol_corr_lab
+        run: python -m pytest -q
+      - name: Build Volatility & Correlation Lab site
+        working-directory: vol_corr_lab
+        run: mkdocs build --strict --site-dir ../frontend/out/vol-corr-lab
 
       - uses: actions/upload-pages-artifact@v3
         with: { path: frontend/out }

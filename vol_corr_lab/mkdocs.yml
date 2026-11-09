@@ -1,0 +1,100 @@
+site_name: Volatility & Correlation Laboratory
+site_description: Educational module on volatility risk and correlation risk - volatility estimation, the implied volatility surface, vega risk, variance swaps, correlation estimation and stress, correlation products - and their treatment under FRTB.
+site_url: https://sguven.github.io/market-risk-toolkit/vol-corr-lab/
+repo_url: https://github.com/sguven/market-risk-toolkit
+repo_name: sguven/market-risk-toolkit
+edit_uri: edit/main/vol_corr_lab/docs/
+docs_dir: docs
+site_dir: site
+copyright: Educational material. Illustrative data. Not investment, legal or regulatory advice.
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/sine-wave
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Course:
+      - 1. Volatility and correlation risk: 01_volatility_and_correlation_risk.md
+      - 2. Measuring volatility: 02_measuring_volatility.md
+      - 3. The implied volatility surface: 03_implied_volatility_surface.md
+      - 4. Vega risk: 04_vega_risk.md
+      - 5. Volatility products: 05_volatility_products.md
+      - 6. Correlation risk: 06_correlation_risk.md
+  - Regulation:
+      - 7. The regulatory framework: 07_regulation.md
+      - References: references.md
+  - Examples: 08_example_outputs.md
+  - API reference: 09_api_reference.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_root_heading: false
+            show_root_toc_entry: false
+            members_order: source
+            heading_level: 3
+            show_signature_annotations: true
+            separate_signature: true
+            filters: ["!^_"]
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sguven/market-risk-toolkit
