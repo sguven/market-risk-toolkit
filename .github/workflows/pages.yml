@@ -50,6 +50,18 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         run: npm run build
       - run: touch frontend/out/.nojekyll
+
+      # Black-Scholes Laboratory (black_scholes_lab/) is published as a MkDocs sub-site
+      # of the same Pages deployment, at /<repo>/black-scholes-lab/.
+      - name: Install Black-Scholes Lab + MkDocs
+        run: pip install -r black_scholes_lab/requirements.txt mkdocs-material "mkdocstrings[python]"
+      - name: Black-Scholes Lab tests
+        working-directory: black_scholes_lab
+        run: python -m pytest -q
+      - name: Build Black-Scholes Lab site
+        working-directory: black_scholes_lab
+        run: mkdocs build --strict --site-dir ../frontend/out/black-scholes-lab
+
       - uses: actions/upload-pages-artifact@v3
         with: { path: frontend/out }
 

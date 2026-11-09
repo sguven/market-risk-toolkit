@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 # Make the package importable when examples are run from any directory.
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
-FIG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+FIG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs", "figures")
 os.makedirs(FIG_DIR, exist_ok=True)
 
 # Fixed-order categorical palette (colour-vision-deficiency validated).
@@ -56,4 +56,4 @@ def save(fig, name: str) -> str:
     fig.tight_layout()
     fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
-    return os.path.relpath(path, os.path.join(FIG_DIR, ".."))
+    return os.path.relpath(path, os.path.join(FIG_DIR, "..", ".."))
