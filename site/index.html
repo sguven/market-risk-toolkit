@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Risk Toolkit — Educational Laboratories</title>
+<style>
+  :root { --bg:#0f1419; --card:#18202a; --text:#e6edf3; --muted:#9aa7b4; --accent:#4cc2a4; --line:#273340; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+  main { max-width:960px; margin:0 auto; padding:64px 24px; }
+  h1 { font-size:2.2rem; margin:0 0 8px; letter-spacing:-0.02em; }
+  .lead { color:var(--muted); font-size:1.08rem; max-width:680px; margin:0 0 40px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:18px; }
+  a.card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; color:inherit; text-decoration:none; transition:border-color .15s, transform .15s; }
+  a.card:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .tag { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  h2 { font-size:1.2rem; margin:0 0 10px; }
+  p { margin:0 0 14px; color:var(--muted); font-size:.95rem; }
+  .go { margin-top:auto; color:var(--accent); font-weight:600; font-size:.92rem; }
+  footer { margin-top:48px; color:var(--muted); font-size:.88rem; border-top:1px solid var(--line); padding-top:20px; }
+  footer a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Market Risk Toolkit</h1>
+  <p class="lead">Three self-contained educational laboratories on derivatives pricing and trading-book risk. Every formula is implemented in Python, tested against closed forms and published reference values, and tied to the Basel / U.S. rule text.</p>
+  <div class="grid">
+    <a class="card" href="black-scholes-lab/">
+      <span class="tag">Option pricing</span>
+      <h2>Black-Scholes Laboratory</h2>
+      <p>Black-Scholes-Merton, Greeks and hedging, exotic options, Monte Carlo, FRTB-SA capital, VaR / ES, stress testing and SR 11-7 model validation.</p>
+      <span class="go">Open the lab →</span>
+    </a>
+    <a class="card" href="xva-lab/">
+      <span class="tag">Counterparty risk</span>
+      <h2>Counterparty Exposure &amp; XVA Laboratory</h2>
+      <p>Exposure simulation, netting and CSA collateral, CVA / DVA / FVA / MVA / KVA, wrong-way risk, SA-CCR, IMM, BA-CVA and margin rules.</p>
+      <span class="go">Open the lab →</span>
+    </a>
+    <a class="card" href="vol-corr-lab/">
+      <span class="tag">Second-order risks</span>
+      <h2>Volatility &amp; Correlation Risk Laboratory</h2>
+      <p>Volatility estimation, the implied volatility surface, vega risk, variance swaps, correlation estimation, breakdown and stress, and how FRTB capitalises both.</p>
+      <span class="go">Open the lab →</span>
+    </a>
+  </div>
+  <footer>
+    Source: <a href="https://github.com/sguven/market-risk-toolkit">github.com/sguven/market-risk-toolkit</a> ·
+    Looking for the RiskLab platform? It now lives at <a href="https://sguven.github.io/risklab/">sguven.github.io/risklab</a>.
+    All data are illustrative; nothing here is investment, legal or regulatory advice.
+  </footer>
+</main>
+</body>
+</html>
