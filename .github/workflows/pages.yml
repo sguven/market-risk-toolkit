@@ -53,14 +53,22 @@ jobs:
 
       # Black-Scholes Laboratory (black_scholes_lab/) is published as a MkDocs sub-site
       # of the same Pages deployment, at /<repo>/black-scholes-lab/.
-      - name: Install Black-Scholes Lab + MkDocs
-        run: pip install -r black_scholes_lab/requirements.txt mkdocs-material "mkdocstrings[python]"
+      - name: Install Black-Scholes Lab, XVA Lab + MkDocs
+        run: pip install -r black_scholes_lab/requirements.txt -r xva_lab/requirements.txt mkdocs-material "mkdocstrings[python]"
       - name: Black-Scholes Lab tests
         working-directory: black_scholes_lab
         run: python -m pytest -q
       - name: Build Black-Scholes Lab site
         working-directory: black_scholes_lab
         run: mkdocs build --strict --site-dir ../frontend/out/black-scholes-lab
+
+      # Counterparty Exposure & XVA Laboratory (xva_lab/) is published the same way, at /<repo>/xva-lab/.
+      - name: XVA Lab tests
+        working-directory: xva_lab
+        run: python -m pytest -q
+      - name: Build XVA Lab site
+        working-directory: xva_lab
+        run: mkdocs build --strict --site-dir ../frontend/out/xva-lab
 
       - uses: actions/upload-pages-artifact@v3
         with: { path: frontend/out }
